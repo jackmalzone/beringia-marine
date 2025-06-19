@@ -1,0 +1,523 @@
+import { defineField, defineType } from 'sanity'
+
+// Define the model options directly in the schema
+const sketchfabModelOptions = [
+  { title: 'Hydrus Shipwreck', value: 'HYDRUS_SHIPWRECK' },
+  // Add other models as needed
+]
+
+export const client = defineType({
+  name: 'client',
+  title: 'Client',
+  type: 'document',
+  fields: [
+    // Basic Information
+    defineField({
+      name: 'name',
+      title: 'Name',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'name',
+      },
+      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'logo',
+      title: 'Logo',
+      type: 'image',
+      description: 'The client logo image that will be displayed and used as a clickable link',
+      options: {
+        hotspot: true,
+      },
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alt Text',
+          type: 'string',
+          description: 'Alternative text for the logo image (important for accessibility)',
+        }),
+        defineField({
+          name: 'website',
+          title: 'Website URL',
+          type: 'url',
+          description: 'The URL that the logo will link to when clicked',
+        }),
+      ],
+    }),
+    // SEO
+    defineField({
+      name: 'seo',
+      title: 'SEO',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+        }),
+        defineField({
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+        }),
+        defineField({
+          name: 'ogImage',
+          title: 'OG Image',
+          type: 'image',
+        }),
+      ],
+    }),
+    // Overview
+    defineField({
+      name: 'overview',
+      title: 'Overview',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+        }),
+        defineField({
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+        }),
+        defineField({
+          name: 'headerImage',
+          title: 'Header Image',
+          type: 'image',
+        }),
+      ],
+    }),
+    // Selling Points
+    defineField({
+      name: 'sellingPoints',
+      title: 'Selling Points',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+        }),
+        defineField({
+          name: 'points',
+          title: 'Points',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                defineField({
+                  name: 'id',
+                  title: 'ID',
+                  type: 'string',
+                }),
+                defineField({
+                  name: 'title',
+                  title: 'Title',
+                  type: 'string',
+                }),
+                defineField({
+                  name: 'description',
+                  title: 'Description',
+                  type: 'text',
+                }),
+                defineField({
+                  name: 'icon',
+                  title: 'Icon',
+                  type: 'image',
+                }),
+                defineField({
+                  name: 'features',
+                  title: 'Features',
+                  type: 'array',
+                  of: [{ type: 'string' }],
+                }),
+                defineField({
+                  name: 'link',
+                  title: 'Link',
+                  type: 'url',
+                }),
+                defineField({
+                  name: 'documentation',
+                  title: 'Documentation',
+                  type: 'object',
+                  fields: [
+                    defineField({
+                      name: 'specs',
+                      title: 'Specifications',
+                      type: 'object',
+                      fields: [
+                        defineField({
+                          name: 'type',
+                          title: 'Type',
+                          type: 'string',
+                          options: {
+                            list: [
+                              { title: 'URL', value: 'url' },
+                              { title: 'File', value: 'file' }
+                            ]
+                          },
+                          initialValue: 'url'
+                        }),
+                        defineField({
+                          name: 'url',
+                          title: 'URL',
+                          type: 'url',
+                          hidden: ({ parent }) => parent?.type !== 'url'
+                        }),
+                        defineField({
+                          name: 'file',
+                          title: 'File',
+                          type: 'file',
+                          options: {
+                            accept: '.pdf,.doc,.docx,.txt'
+                          },
+                          hidden: ({ parent }) => parent?.type !== 'file'
+                        })
+                      ]
+                    }),
+                    defineField({
+                      name: 'manual',
+                      title: 'Manual',
+                      type: 'object',
+                      fields: [
+                        defineField({
+                          name: 'type',
+                          title: 'Type',
+                          type: 'string',
+                          options: {
+                            list: [
+                              { title: 'URL', value: 'url' },
+                              { title: 'File', value: 'file' }
+                            ]
+                          },
+                          initialValue: 'url'
+                        }),
+                        defineField({
+                          name: 'url',
+                          title: 'URL',
+                          type: 'url',
+                          hidden: ({ parent }) => parent?.type !== 'url'
+                        }),
+                        defineField({
+                          name: 'file',
+                          title: 'File',
+                          type: 'file',
+                          options: {
+                            accept: '.pdf,.doc,.docx,.txt'
+                          },
+                          hidden: ({ parent }) => parent?.type !== 'file'
+                        })
+                      ]
+                    })
+                  ],
+                }),
+              ],
+            },
+          ],
+        }),
+      ],
+    }),
+    // Use Cases
+    defineField({
+      name: 'useCases',
+      title: 'Use Cases',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+        }),
+        defineField({
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+        }),
+        defineField({
+          name: 'cases',
+          title: 'Cases',
+          type: 'array',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                defineField({
+                  name: 'id',
+                  title: 'ID',
+                  type: 'string',
+                }),
+                defineField({
+                  name: 'title',
+                  title: 'Title',
+                  type: 'string',
+                }),
+                defineField({
+                  name: 'description',
+                  title: 'Description',
+                  type: 'text',
+                }),
+                defineField({
+                  name: 'keyPoints',
+                  title: 'Key Points',
+                  type: 'array',
+                  of: [{ type: 'string' }],
+                }),
+              ],
+            },
+          ],
+        }),
+      ],
+    }),
+    // Interactive 3D Model
+    defineField({
+      name: 'modelId',
+      title: 'Interactive 3D Model',
+      type: 'string',
+      description: 'ID for the main interactive 3D model',
+    }),
+    defineField({
+      name: 'interactiveTitle',
+      title: 'Interactive Model Title',
+      type: 'string',
+      description: 'Title for the interactive 3D model section',
+    }),
+    defineField({
+      name: 'interactiveDescription',
+      title: 'Interactive Model Description',
+      type: 'text',
+      description: 'Description of the 3D model and its features',
+    }),
+    // Value Proposition
+    defineField({
+      name: 'valueProposition',
+      title: 'Value Proposition',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+        }),
+        defineField({
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+        }),
+        defineField({
+          name: 'highlights',
+          title: 'Highlights',
+          type: 'array',
+          of: [{ type: 'string' }],
+        }),
+      ],
+    }),
+    // Demo
+    defineField({
+      name: 'demo',
+      title: 'Demo',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+        }),
+        defineField({
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+        }),
+        defineField({
+          name: 'videoFile',
+          title: 'Video File',
+          type: 'file',
+          options: {
+            accept: 'video/quicktime,video/mp4'
+          },
+          validation: Rule => Rule.required()
+        }),
+      ],
+    }),
+    // Media Links
+    defineField({
+      name: 'mediaLinks',
+      title: 'Media Links',
+      type: 'object',
+      fields: [
+        defineField({
+          name: 'website',
+          title: 'Website',
+          type: 'url',
+        }),
+        defineField({
+          name: 'youtube',
+          title: 'YouTube',
+          type: 'url',
+        }),
+        defineField({
+          name: 'linkedin',
+          title: 'LinkedIn',
+          type: 'url',
+        }),
+        defineField({
+          name: 'sketchfab',
+          title: 'Sketchfab',
+          type: 'url',
+        }),
+        defineField({
+          name: 'email',
+          title: 'Email',
+          type: 'string',
+        }),
+      ],
+    }),
+    // Gallery
+    defineField({
+      name: 'gallery',
+      title: 'Gallery',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'id',
+              title: 'ID',
+              type: 'string',
+            }),
+            defineField({
+              name: 'type',
+              title: 'Type',
+              type: 'string',
+              options: {
+                list: [
+                  { title: 'Image', value: 'image' },
+                  { title: 'Video', value: 'video' },
+                  { title: 'Sketchfab', value: 'sketchfab' },
+                ],
+              },
+            }),
+            defineField({
+              name: 'image',
+              title: 'Image',
+              type: 'image',
+              options: {
+                hotspot: true,
+              },
+              fields: [
+                {
+                  name: 'alt',
+                  type: 'string',
+                  title: 'Alt Text',
+                  description: 'Important for SEO and accessibility.',
+                },
+              ],
+              hidden: ({ parent }) => parent?.type !== 'image',
+              validation: Rule => Rule.custom((value, context) => {
+                const parent = context.parent as { type?: string }
+                if (parent?.type === 'image' && !value) {
+                  return 'Image is required for image type'
+                }
+                return true
+              })
+            }),
+            defineField({
+              name: 'videoFile',
+              title: 'Video File',
+              type: 'file',
+              options: {
+                accept: 'video/quicktime,video/mp4'
+              },
+              hidden: ({ parent }) => parent?.type !== 'video',
+              validation: Rule => Rule.custom((value, context) => {
+                const parent = context.parent as { type?: string }
+                if (parent?.type === 'video' && !value) {
+                  return 'Video file is required for video type'
+                }
+                return true
+              })
+            }),
+            defineField({
+              name: 'videoOptions',
+              title: 'Video Options',
+              type: 'object',
+              fields: [
+                defineField({
+                  name: 'autoplay',
+                  title: 'Autoplay',
+                  type: 'boolean',
+                }),
+                defineField({
+                  name: 'muted',
+                  title: 'Muted',
+                  type: 'boolean',
+                }),
+                defineField({
+                  name: 'controls',
+                  title: 'Controls',
+                  type: 'boolean',
+                }),
+                defineField({
+                  name: 'loop',
+                  title: 'Loop',
+                  type: 'boolean',
+                }),
+                defineField({
+                  name: 'preload',
+                  title: 'Preload',
+                  type: 'string',
+                  options: {
+                    list: [
+                      { title: 'None', value: 'none' },
+                      { title: 'Metadata', value: 'metadata' },
+                      { title: 'Auto', value: 'auto' },
+                    ],
+                  },
+                }),
+              ],
+              hidden: ({ parent }) => parent?.type !== 'video',
+            }),
+            defineField({
+              name: 'modelId',
+              title: 'Sketchfab Model ID',
+              type: 'string',
+              description: 'ID for the Sketchfab model',
+              hidden: ({ parent }) => parent?.type !== 'sketchfab',
+            }),
+            defineField({
+              name: 'alt',
+              title: 'Alt Text',
+              type: 'string',
+              description: 'Description of the 3D model for accessibility',
+              hidden: ({ parent }) => parent?.type !== 'sketchfab',
+            }),
+          ],
+          preview: {
+            select: {
+              title: 'id',
+              media: 'image',
+              type: 'type',
+            },
+            prepare({ title, media, type }) {
+              return {
+                title,
+                subtitle: type,
+                media,
+              }
+            },
+          },
+        },
+      ],
+    }),
+  ],
+}) 
