@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "studio": "cd cms/studio-beringia-marine && npm run dev",
+    "studio:install": "cd cms/studio-beringia-marine && npm install"
   },
   "dependencies": {
     "@sanity/client": "^7.6.0",
