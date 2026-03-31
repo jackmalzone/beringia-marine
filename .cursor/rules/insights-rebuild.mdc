@@ -1,0 +1,20 @@
+---
+description: Insights rebuild and migration guardrails
+globs: apps/web/src/app/insights/**,apps/web/src/lib/content/insights.ts,apps/web/src/lib/seo/insights-structured-data.ts
+alwaysApply: false
+---
+
+# Insights Rebuild Rules
+
+- Keep a single canonical insights registry in `apps/web/src/lib/content/insights.ts`.
+- Listing and detail routes must both consume canonical entries (no local duplicated mock arrays).
+- Use shared route helper(s) for insight detail URLs instead of inline `"/insights/${slug}"` strings.
+- Keep metadata and JSON-LD in sync with content model:
+  - `publishedAt` for publish date
+  - `updatedAt` for modified date fallback
+  - canonical URL from slug helper
+  - OG image from shared resolver/fallback
+- Category filtering should be data-driven (`All` + unique categories from canonical entries).
+- Preserve loading/empty/not-found parity behavior when adjusting UX.
+- If article body uses HTML, ensure content comes from trusted curated sources or is sanitized before render.
+- Prefer incremental, reversible changes that preserve the later Sanity migration path.

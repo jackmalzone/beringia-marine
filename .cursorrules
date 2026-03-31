@@ -1,0 +1,12 @@
+## Beringia Marine Migration Rules
+
+- Treat `apps/web` as the active web app surface; do not add new root-level web code in `src/` or `lib/`.
+- Keep newsletter flow patterns intact unless explicitly asked to remove them.
+- Use one canonical source for Insights content and consume it from both `/insights` and `/insights/:slug`.
+- Avoid duplicate article registries, duplicated fetch logic, or hardcoded insight route strings.
+- Prefer shared helpers for insight URLs and SEO image resolution.
+- Keep Insights structured data aligned with route slugs and canonical URLs.
+- Use `updatedAt` and reading-time fields when available for article metadata and JSON-LD.
+- Maintain a staged migration approach: keep currently-required web-side Sanity runtime code until a dedicated migration pass is requested.
+- Remove legacy Vital Ice branding/assets when encountered; replace with neutral Beringia usage.
+- After edits, run lint/type checks scoped to changed areas and avoid unrelated refactors.
