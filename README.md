@@ -9,4 +9,4 @@ Start there if you need:
 - **`sanity-studio-snapshot/`** — Sanity Studio source (no `node_modules`); run `npm install` before `npm run dev`.
 - **`ENV_TEMPLATE.md`** — environment variable checklist for Sanity.
 
-Paste or clone your new template into this repository root, then proceed with integration.
+Paste or clone your new template into this repository root, then follow **`INDEX_PLAN.md`** for a staged integration checklist (creates and maintains **`PROJECT_INDEX.md`** as the living map).
