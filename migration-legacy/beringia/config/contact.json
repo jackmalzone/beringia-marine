@@ -1,0 +1,17 @@
+{
+  "$schema_note": "Consolidated from contact page and footer. Resolve phone discrepancy before production.",
+  "email": {
+    "primary": "info@beringia-marine.com",
+    "mailto": "mailto:info@beringia-marine.com"
+  },
+  "phone": {
+    "display": "+1 805 316 1417",
+    "telHrefAsInSource": "tel:+18057040462",
+    "issue": "display number and tel: href do not match in src/app/contact/page.tsx — verify canonical number with business"
+  },
+  "location": {
+    "cityState": "San Luis Obispo, CA",
+    "streetAddress": null,
+    "coordinates": null
+  }
+}

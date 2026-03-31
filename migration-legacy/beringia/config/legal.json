@@ -1,0 +1,21 @@
+{
+  "$schema_note": "Legal references extracted from terms page and metadata.",
+  "termsPath": "/terms",
+  "termsPageTitle": "Terms & Conditions",
+  "governingLaw": "State of California, USA",
+  "termsDocument": {
+    "version": "Ver 240913_1",
+    "dateDisplay": "14 September 2024"
+  },
+  "sectionHeadings": [
+    "1. Prices",
+    "2. Payment, Cancellations and Changes",
+    "3. Delivery",
+    "4. Copyright and Confidentiality",
+    "5. General Provisions",
+    "6. Third Party End-User Warranties",
+    "7. Exclusion of Liability",
+    "8. Force Majeure"
+  ],
+  "fullTextStagingFile": "../copy/pages/terms.md"
+}

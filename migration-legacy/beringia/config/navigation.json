@@ -1,0 +1,29 @@
+{
+  "$schema_note": "Primary nav + solutions submenu. hrefs are app-router paths from Header.",
+  "primary": [
+    { "label": "Home", "href": "/" },
+    {
+      "label": "Solutions",
+      "type": "submenu",
+      "items": [
+        { "label": "Mission Robotics", "href": "/clients/mission-robotics" },
+        { "label": "Anchor Bot", "href": "/clients/anchor-bot" },
+        { "label": "Advanced Navigation", "href": "/clients/advanced-navigation" }
+      ]
+    },
+    { "label": "About", "href": "/about" },
+    { "label": "Contact", "href": "/contact" },
+    { "label": "Terms", "href": "/terms" }
+  ],
+  "utilityCta": {
+    "label": "Get in Touch",
+    "href": "/contact"
+  },
+  "notInMainNav": [
+    {
+      "label": "Our Clients (listing)",
+      "href": "/clients",
+      "note": "Linked from home hero; not a top-level header item in source"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "$schema_note": "Social profiles from About page; credits overlap with footer.json.",
+  "aboutPageSocial": [
+    {
+      "platform": "LinkedIn",
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/chrismalzone"
+    },
+    {
+      "platform": "Instagram",
+      "label": "Instagram",
+      "url": "https://instagram.com/inoceansgroup"
+    }
+  ],
+  "footerCredits": {
+    "art": {
+      "name": "Rebecca Rutstein",
+      "url": "https://www.rebeccarutstein.com"
+    },
+    "websiteBy": {
+      "name": "Jack Malzone",
+      "url": "https://linkedin.com/in/jackmalzone"
+    }
+  }
+}

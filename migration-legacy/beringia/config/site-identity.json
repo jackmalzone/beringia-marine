@@ -1,0 +1,15 @@
+{
+  "$schema_note": "Normalized from src/app/layout.tsx and header/home usage. Phase 2: single source in template.",
+  "legalName": "Beringia Marine Technologies",
+  "shortName": "Beringia Marine",
+  "tagline": "Sales Engineering & Consulting for Marine Technology",
+  "defaultMetadata": {
+    "title": "Beringia Marine Technologies",
+    "description": "Sales Engineering & Consulting for Marine Technology"
+  },
+  "language": "en",
+  "principal": {
+    "name": "Chris Malzone",
+    "role": "Principal"
+  }
+}

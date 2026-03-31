@@ -1,0 +1,74 @@
+{
+  "page": "home",
+  "source": "src/app/page.tsx",
+  "hero": {
+    "title": "Beringia Marine Technologies",
+    "subtitle": "Sales Engineering & Consulting for Marine Technology",
+    "backgroundImagePath": "/assets/beringia/seascape-wallpaper.jpg",
+    "primaryCta": {
+      "label": "Explore Solutions",
+      "href": "/clients"
+    },
+    "secondaryCta": {
+      "label": "Learn More",
+      "href": "/about"
+    },
+    "scrollIndicator": {
+      "label": "Scroll to explore",
+      "targetSectionId": "main-content"
+    }
+  },
+  "sections": [
+    {
+      "id": "mission",
+      "heading": "Our Mission",
+      "body": "Beringia Marine provides the experience and passion necessary for increasing our knowledge of the oceans. We work with companies to identify and fill the gaps in marine technology to provide scalable solutions for our oceans. Whether you're an established player or a startup, Beringia has the expertise, network and passion to rapidly scale your success."
+    },
+    {
+      "id": "solutions",
+      "heading": "Our Solutions",
+      "items": [
+        {
+          "title": "Mission Robotics",
+          "description": "Advanced underwater robotics for exploration and research missions.",
+          "ctaLabel": "Learn More →",
+          "href": "/clients/mission-robotics"
+        },
+        {
+          "title": "Anchor Bot",
+          "description": "Innovative anchoring solutions for marine applications.",
+          "ctaLabel": "Learn More →",
+          "href": "/clients/anchor-bot"
+        },
+        {
+          "title": "Advanced Navigation",
+          "description": "Cutting-edge navigation systems for marine vessels.",
+          "ctaLabel": "Learn More →",
+          "href": "/clients/advanced-navigation"
+        }
+      ]
+    },
+    {
+      "id": "expertise",
+      "heading": "Our Expertise",
+      "items": [
+        {
+          "title": "Marine Technology",
+          "description": "Deep understanding of underwater systems, robotics, and marine engineering."
+        },
+        {
+          "title": "Sales Engineering",
+          "description": "Technical sales expertise to bridge the gap between technology and market needs."
+        },
+        {
+          "title": "Consulting",
+          "description": "Strategic guidance for marine technology companies and startups."
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Hero default props in Hero.tsx differ from home usage; staged values reflect what home passes.",
+    "Solution slugs are duplicated in Header and Footer; normalize in config for Phase 2."
+  ]
+}

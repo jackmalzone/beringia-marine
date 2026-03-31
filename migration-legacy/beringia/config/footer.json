@@ -1,0 +1,47 @@
+{
+  "$schema_note": "Structured from Footer.tsx for template mapping.",
+  "columns": [
+    {
+      "id": "about",
+      "heading": "About Beringia",
+      "body": "Providing experience and passion necessary for increasing our knowledge of the oceans.",
+      "link": { "label": "Learn more →", "href": "/about" }
+    },
+    {
+      "id": "solutions",
+      "heading": "Solutions",
+      "links": [
+        { "label": "Advanced Navigation", "href": "/clients/advanced-navigation" },
+        { "label": "Anchorbot Marine", "href": "/clients/anchor-bot" },
+        { "label": "Mission Robotics", "href": "/clients/mission-robotics" }
+      ]
+    },
+    {
+      "id": "quick",
+      "heading": "Quick Links",
+      "links": [
+        { "label": "Home", "href": "/" },
+        { "label": "About Us", "href": "/about" },
+        { "label": "Contact", "href": "/contact" },
+        { "label": "Terms & Conditions", "href": "/terms" }
+      ]
+    },
+    {
+      "id": "contact",
+      "heading": "Contact",
+      "email": "info@beringia-marine.com",
+      "lines": ["San Luis Obispo, CA"]
+    }
+  ],
+  "copyrightTemplate": "© {{year}} Beringia Marine Technologies. All rights reserved.",
+  "credits": {
+    "art": {
+      "name": "Rebecca Rutstein",
+      "url": "https://www.rebeccarutstein.com"
+    },
+    "website": {
+      "name": "Jack Malzone",
+      "url": "https://linkedin.com/in/jackmalzone"
+    }
+  }
+}
