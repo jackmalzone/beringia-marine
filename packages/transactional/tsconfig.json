@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "noImplicitAny": false,
+    "noEmit": true,
+    "paths": {
+      "@vital-ice/config": ["../config/src"]
+    }
+  },
+  "include": ["src/**/*", "emails/**/*"],
+  "exclude": ["node_modules"]
+}

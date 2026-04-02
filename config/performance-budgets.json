@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "documentation": "See docs/predeploy/performance-budget-guide.md for rationale and escalation rules.",
+  "warningThreshold": 0.9,
+  "coreWebVitals": {
+    "lcp": {
+      "maxMs": 2500,
+      "reason": "LCP under 2.5s keeps the experience within 'good' and supports calm, imagery-led design."
+    },
+    "inp": {
+      "maxMs": 200,
+      "reason": "INP under 200ms keeps interactions responsive (replaces FID in CWV)."
+    },
+    "cls": {
+      "max": 0.1,
+      "reason": "CLS under 0.1 prevents visible layout shift; critical for motion and readability."
+    }
+  },
+  "assets": {
+    "totalJsKb": {
+      "max": 450,
+      "reason": "Total JS transfer cap to keep TTI and parse cost reasonable on mobile."
+    },
+    "totalCssKb": {
+      "max": 80,
+      "reason": "CSS budget supports design system and critical path without bloat."
+    },
+    "fontRequests": {
+      "max": 6,
+      "reason": "Limit font requests to avoid FOIT and extra round-trips."
+    }
+  },
+  "thirdParty": {
+    "maxRequests": 25,
+    "allowlist": [
+      "analytics",
+      "gtm",
+      "google-analytics",
+      "googletagmanager",
+      "sentry",
+      "sanity",
+      "mapbox",
+      "meta",
+      "facebook",
+      "doubleclick",
+      "resend",
+      "email"
+    ],
+    "reason": "Cap third-party request count; allowlist documents accepted vendors (CMS, analytics, maps, forms)."
+  }
+}

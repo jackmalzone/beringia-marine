@@ -1,0 +1,19 @@
+{
+  "name": "@vital-ice/performance-budget",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Performance budget check using Lighthouse (local-first)",
+  "type": "module",
+  "scripts": {
+    "check": "node run-budget-check.mjs",
+    "check:help": "node run-budget-check.mjs --help",
+    "check:prod": "node run-budget-check-prod.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "chrome-launcher": "^1.1.0",
+    "lighthouse": "^12.0.0"
+  }
+}

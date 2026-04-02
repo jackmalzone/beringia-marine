@@ -1,0 +1,17 @@
+{
+  "name": "@vital-ice/seo-crawl",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Minimal Playwright SEO crawler for Next.js App Router (local-first)",
+  "type": "module",
+  "scripts": {
+    "crawl": "node crawl.mjs",
+    "crawl:help": "node crawl.mjs --help"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}

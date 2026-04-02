@@ -1,0 +1,3 @@
+node_modules/
+output/performance-*.json
+output/performance-summary-*.md

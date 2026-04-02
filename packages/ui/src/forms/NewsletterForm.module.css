@@ -1,0 +1,243 @@
+/* Newsletter Form Styles - Absolutely minimal design */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formInput,
+.formSelect {
+  padding: 0.75rem 0;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 0;
+  font-size: 1rem;
+  background: transparent;
+  color: var(--color-text-primary, #ffffff);
+  transition: border-bottom-color 0.2s ease;
+  font-family: inherit;
+  width: 100%;
+}
+
+.formSelect {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ffffff' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0 top 50%;
+  padding-right: 1.5rem;
+}
+
+.formSelect option {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.formInput:focus,
+.formSelect:focus {
+  outline: none;
+  border-bottom-color: var(--color-primary, #00b7b5);
+  border-bottom-width: 2px;
+}
+
+.formInput::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  text-align: left;
+}
+
+.formInput.inputError,
+.formSelect.inputError {
+  border-bottom-color: var(--color-error, #ef4444);
+  border-bottom-width: 2px;
+}
+
+.errorText {
+  color: #ff6b6b;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.checkboxItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  cursor: pointer;
+  appearance: none;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background: transparent;
+  position: relative;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all 0.2s ease;
+}
+
+.checkbox:checked {
+  background: var(--color-primary, #00b7b5);
+  border-color: var(--color-primary, #00b7b5);
+}
+
+.checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border: solid #000000;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox:focus {
+  outline: none;
+  border-color: var(--color-primary, #00b7b5);
+}
+
+.checkboxLabel {
+  color: var(--color-text-primary, #ffffff);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  user-select: none;
+}
+
+.checkboxLabelInline {
+  color: var(--color-text-primary, #ffffff);
+  font-size: 0.9rem;
+  cursor: pointer;
+  line-height: 1.5;
+  user-select: none;
+  margin: 0;
+}
+
+.submitButton {
+  padding: 0.875rem 2rem;
+  background: transparent;
+  color: var(--color-primary, #00b7b5);
+  border: none;
+  border-bottom: 2px solid var(--color-primary, #00b7b5);
+  border-radius: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    border-bottom-color 0.2s ease;
+  align-self: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.5rem;
+}
+
+.submitButton:hover:not(:disabled) {
+  color: rgba(0, 183, 181, 0.8);
+  border-bottom-color: rgba(0, 183, 181, 0.8);
+}
+
+.submitButton:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.submitButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.successMessage {
+  padding: 1.5rem 0;
+  text-align: left;
+}
+
+.successMessage p {
+  color: var(--color-primary, #00b7b5);
+  font-size: 1rem;
+  margin: 0;
+}
+
+.errorMessage {
+  padding: 1rem 0;
+  color: var(--color-error, #ef4444);
+  font-size: 0.875rem;
+}
+
+.formFooter {
+  display: flex !important;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  position: relative;
+  min-height: 30px;
+}
+
+.mindbodyLogo {
+  width: 60px;
+  height: auto;
+  opacity: 0.3;
+  transition: opacity 0.2s ease;
+}
+
+.mindbodyLogo:hover {
+  opacity: 0.4;
+}
+
+.privacyLink {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.75rem;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.privacyLink:hover {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .form {
+    gap: 1.25rem;
+  }
+
+  .mindbodyLogo {
+    width: 50px;
+  }
+
+  .privacyLink {
+    font-size: 0.7rem;
+  }
+}
+

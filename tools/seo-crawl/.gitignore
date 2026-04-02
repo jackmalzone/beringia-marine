@@ -1,0 +1,4 @@
+node_modules/
+output/crawl-*.json
+output/crawl-*.csv
+output/summary-*.md
