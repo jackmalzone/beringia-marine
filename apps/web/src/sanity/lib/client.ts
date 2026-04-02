@@ -1,12 +1,15 @@
-import { createClient } from 'next-sanity'
+import { createClient, type SanityClient } from 'next-sanity'
 
 import { apiVersion, dataset, projectId } from '../env'
 
-// Create client for server-side rendering
-// useCdn: false ensures fresh data and avoids caching issues
-export const client = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-  useCdn: false, // Disable CDN for server-side to avoid caching issues
-})
+function buildClient(): SanityClient | null {
+  if (!projectId || !dataset) return null
+  return createClient({
+    projectId,
+    dataset,
+    apiVersion,
+    useCdn: false,
+  })
+}
+
+export const client = buildClient()

@@ -1,5 +1,8 @@
 import { client } from '@/sanity/lib/client';
 
+/* All query functions below guard on client/env availability and return
+   safe fallback values when Sanity is not configured. */
+
 /**
  * GROQ query for fetching all published articles
  * Handles optional fields safely
@@ -170,7 +173,7 @@ const SEARCH_ARTICLES_QUERY = `
  */
 export async function fetchAllArticles(): Promise<{ articles: any[]; fromSanity: boolean }> {
   // Validate environment variables
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || !process.env.NEXT_PUBLIC_SANITY_DATASET) {
+  if (!client || !process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || !process.env.NEXT_PUBLIC_SANITY_DATASET) {
     if (process.env.NODE_ENV === 'development') {
       console.warn('⚠️ Sanity environment variables not set, articles will use fallback data');
     }
@@ -199,7 +202,7 @@ export async function fetchAllArticles(): Promise<{ articles: any[]; fromSanity:
  * @returns Article and a flag indicating if data came from Sanity
  */
 export async function fetchArticleBySlug(slug: string): Promise<{ article: any | null; fromSanity: boolean }> {
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || !process.env.NEXT_PUBLIC_SANITY_DATASET) {
+  if (!client || !process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || !process.env.NEXT_PUBLIC_SANITY_DATASET) {
     return { article: null, fromSanity: false };
   }
 
@@ -221,7 +224,7 @@ export async function fetchArticleBySlug(slug: string): Promise<{ article: any |
  * @returns Array of articles and a flag indicating if data came from Sanity
  */
 export async function fetchArticlesByCategory(category: string): Promise<{ articles: any[]; fromSanity: boolean }> {
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || !process.env.NEXT_PUBLIC_SANITY_DATASET) {
+  if (!client || !process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || !process.env.NEXT_PUBLIC_SANITY_DATASET) {
     return { articles: [], fromSanity: false };
   }
 
@@ -243,7 +246,7 @@ export async function fetchArticlesByCategory(category: string): Promise<{ artic
  * @returns Array of articles and a flag indicating if data came from Sanity
  */
 export async function searchArticles(query: string): Promise<{ articles: any[]; fromSanity: boolean }> {
-  if (!process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || !process.env.NEXT_PUBLIC_SANITY_DATASET) {
+  if (!client || !process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || !process.env.NEXT_PUBLIC_SANITY_DATASET) {
     return { articles: [], fromSanity: false };
   }
 

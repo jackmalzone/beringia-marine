@@ -99,6 +99,7 @@ export const queries = {
 };
 
 export async function getGlobalSettings(): Promise<GlobalSettings | null> {
+  if (!client) return null;
   try {
     return await client.fetch<GlobalSettings | null>(queries.globalSettings);
   } catch (error) {
@@ -108,6 +109,7 @@ export async function getGlobalSettings(): Promise<GlobalSettings | null> {
 }
 
 export async function getPageBySlug(slug: string): Promise<PageContent | null> {
+  if (!client) return null;
   try {
     return await client.fetch<PageContent | null>(queries.pageBySlug, { slug });
   } catch (error) {
@@ -117,6 +119,7 @@ export async function getPageBySlug(slug: string): Promise<PageContent | null> {
 }
 
 export async function getServiceBySlug(slug: string): Promise<ServiceData | null> {
+  if (!client) return null;
   try {
     return await client.fetch<ServiceData | null>(queries.serviceBySlug, { slug });
   } catch (error) {
@@ -126,6 +129,7 @@ export async function getServiceBySlug(slug: string): Promise<ServiceData | null
 }
 
 export async function getAllServices(): Promise<ServiceData[]> {
+  if (!client) return [];
   try {
     return await client.fetch<ServiceData[]>(queries.allServices);
   } catch (error) {
@@ -137,6 +141,7 @@ export async function getAllServices(): Promise<ServiceData[]> {
 export async function getAllPages(): Promise<
   Array<{ _id: string; title: string; slug: { current: string }; _updatedAt: string }>
 > {
+  if (!client) return [];
   try {
     return await client.fetch(queries.allPages);
   } catch (error) {
@@ -146,6 +151,7 @@ export async function getAllPages(): Promise<
 }
 
 export async function getPageMetadata(slug: string): Promise<{ title: string; seo: SEOSettings } | null> {
+  if (!client) return null;
   try {
     return await client.fetch(queries.pageMetadata, { slug });
   } catch (error) {
@@ -155,6 +161,7 @@ export async function getPageMetadata(slug: string): Promise<{ title: string; se
 }
 
 export async function getServiceMetadata(slug: string): Promise<{ title: string; seo: SEOSettings } | null> {
+  if (!client) return null;
   try {
     return await client.fetch(queries.serviceMetadata, { slug });
   } catch (error) {
@@ -167,6 +174,7 @@ export async function getAllSlugs(): Promise<{
   pages: Array<{ slug: { current: string }; _updatedAt: string }>;
   services: Array<{ slug: { current: string }; _updatedAt: string }>;
 }> {
+  if (!client) return { pages: [], services: [] };
   try {
     return await client.fetch(queries.allSlugs);
   } catch (error) {
@@ -207,6 +215,7 @@ export async function checkContentFreshness(
   type: 'page' | 'service',
   slug: string
 ): Promise<{ lastModified: string | null; isFresh: boolean }> {
+  if (!client) return { lastModified: null, isFresh: false };
   try {
     const query = groq`*[_type == "${type}" && slug.current == $slug][0]._updatedAt`;
     const lastModified = await client.fetch<string | null>(query, { slug });
