@@ -28,20 +28,22 @@
 .artist__title {
   margin: 0;
   font-size: clamp(1.8rem, 4vw, 2.5rem);
-  color: #00a2b0;
+  color: var(--depth-accent, #00a2b0);
   margin-bottom: 0.35rem;
   text-transform: none;
   letter-spacing: 0.01em;
+  transition: color var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
 }
 
 .artist__name {
   margin: 0;
-  color: #0aecf9;
+  color: var(--depth-link-hover, #0aecf9);
   font-size: clamp(1.1rem, 2.4vw, 1.45rem);
   font-family: var(--font-ui);
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  transition: color var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
 }
 
 .artist__bio {
@@ -75,7 +77,7 @@
   bottom: -0.9rem;
   right: 0;
   font-size: 0.78rem;
-  color: #00a2b0;
+  color: var(--depth-link, #00a2b0);
   opacity: 0;
   transform: translateY(10px);
   transition: all 0.3s ease;
@@ -91,14 +93,14 @@
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   line-height: 1.7;
-  color: #c8deea;
+  color: var(--depth-text-muted, #c8deea);
   margin-bottom: 0.8rem;
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, color var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
 }
 
 .artist__bioText p {
@@ -115,11 +117,11 @@
 
 .artist__bioLink {
   display: inline-block;
-  color: #00a2b0;
+  color: var(--depth-link, #00a2b0);
   text-decoration: none;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease, color var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
   position: relative;
 }
 
@@ -130,16 +132,21 @@
   height: 2px;
   bottom: -2px;
   left: 0;
-  background-color: #00a2b0;
-  transition: width 0.3s ease;
+  background-color: var(--depth-link, #00a2b0);
+  transition: width 0.3s ease, background-color var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
 }
 
 .artist__bioLink:hover {
-  color: #4dd1db;
+  color: var(--depth-link-hover, #4dd1db);
 }
 
 .artist__bioLink:hover::after {
   width: 100%;
+}
+
+.artist__bioLink:focus-visible {
+  outline: 2px solid var(--depth-accent, var(--color-accent));
+  outline-offset: 2px;
 }
 
 .artist__gallery {
@@ -164,9 +171,12 @@
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1)),
+    border-color var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
   aspect-ratio: 16/9;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--depth-surface-border, rgba(255, 255, 255, 0.1));
   flex: 0 0 clamp(320px, 55vw, 600px);
   max-width: 600px;
   scroll-snap-align: start;
@@ -174,7 +184,7 @@
 
 .artist__galleryItem:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--depth-surface-shadow-hover, 0 8px 30px rgba(0, 0, 0, 0.3));
 }
 
 .artist__galleryImage {
@@ -209,7 +219,7 @@
 .artist__galleryTitle {
   margin: 0 0 0.55rem;
   font-size: 1.05rem;
-  color: #00a2b0;
+  color: var(--depth-accent, #00a2b0);
   font-weight: 600;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -235,7 +245,7 @@
   bottom: -1.5rem;
   left: 0;
   font-size: 0.9rem;
-  color: #00a2b0;
+  color: var(--depth-link, #00a2b0);
   opacity: 0;
   transform: translateY(10px);
   transition: all 0.3s ease;
@@ -318,7 +328,7 @@
 
 .artist__modalTitle {
   font-size: 2rem;
-  color: #00a2b0;
+  color: var(--depth-accent, #00a2b0);
   margin-bottom: 1rem;
 }
 

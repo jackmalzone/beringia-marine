@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import type { DepthZone } from '@/lib/depth-zones';
 import styles from './FeaturedArtistSection.module.css';
 
 interface Artwork {
@@ -12,6 +13,8 @@ interface Artwork {
 
 interface FeaturedArtistSectionProps {
   className?: string;
+  /** Homepage depth observer — which zone this section belongs to */
+  depthZone?: DepthZone;
 }
 
 const artworks: Artwork[] = [
@@ -38,7 +41,7 @@ const artworks: Artwork[] = [
   },
 ];
 
-export default function FeaturedArtistSection({ className = '' }: FeaturedArtistSectionProps) {
+export default function FeaturedArtistSection({ className = '', depthZone }: FeaturedArtistSectionProps) {
   const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isBioExpanded, setIsBioExpanded] = useState(false);
@@ -64,7 +67,11 @@ export default function FeaturedArtistSection({ className = '' }: FeaturedArtist
   };
 
   return (
-    <section className={`${styles.artist} ${className}`} id="featured-artist">
+    <section
+      className={`${styles.artist} ${className}`}
+      id="featured-artist"
+      {...(depthZone ? { 'data-depth': depthZone } : {})}
+    >
       <div className={styles.artist__container}>
         <div className={styles.artist__header}>
           <h2 className={styles.artist__title}>Featured Artist</h2>

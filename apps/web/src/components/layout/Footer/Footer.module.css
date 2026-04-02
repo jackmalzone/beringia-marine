@@ -1,19 +1,16 @@
 .footer {
-  background: none !important;
-  background-image: none !important;
+  background: transparent;
   border: 0;
   box-shadow: none;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   color: var(--color-ice);
   position: relative;
   isolation: isolate;
   z-index: 60;
   padding: 4rem 0 2rem;
-}
-
-.footer::before {
-  content: none;
+  border-top: 1px solid var(--depth-divider, rgba(136, 194, 219, 0.08));
+  transition: border-color var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
 }
 
 .footer__container {
@@ -21,8 +18,6 @@
   margin: 0 auto;
   position: relative;
   z-index: 2;
-  background: transparent !important;
-  background-image: none !important;
 }
 
 .footer__content {
@@ -49,11 +44,12 @@
 
 .footer__sectionTitle {
   margin: 0 0 0.9rem;
-  color: var(--color-accent);
+  color: var(--depth-accent, var(--color-accent));
   font-size: 1rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-family: var(--font-ui);
+  transition: color var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
 }
 
 .footer__linkList {
@@ -66,14 +62,14 @@
 
 .footer__link {
   text-decoration: none;
-  color: #eff9fb;
+  color: var(--depth-text, #eff9fb);
   font-size: 0.94rem;
   line-height: 1.55;
   transition: color var(--duration-fast) var(--ease-standard);
 }
 
 .footer__link:hover {
-  color: var(--color-accent);
+  color: var(--depth-accent, var(--color-accent));
 }
 
 .footer__contactInfo {
@@ -88,7 +84,8 @@
 }
 
 .footer__contactIcon {
-  color: var(--color-accent);
+  color: var(--depth-accent, var(--color-accent));
+  transition: color var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
 }
 
 .footer__addressContainer {
@@ -102,7 +99,7 @@
 }
 
 .footer__address:hover {
-  color: var(--color-accent);
+  color: var(--depth-accent, var(--color-accent));
 }
 
 .footer__address address {
@@ -137,8 +134,8 @@
 
 .footer__socialLink:hover,
 .footer__developerLink:hover {
-  color: var(--color-accent);
-  border-color: rgba(0, 162, 176, 0.5);
+  color: var(--depth-accent, var(--color-accent));
+  border-color: color-mix(in srgb, var(--depth-accent, var(--color-accent)) 50%, transparent);
   transform: translateY(-1px);
 }
 
@@ -165,9 +162,10 @@
 }
 
 .footer__creditLink {
-  color: var(--color-accent);
+  color: var(--depth-accent, var(--color-accent));
   text-decoration: none;
   font-weight: 600;
+  transition: color var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
 }
 
 .footer__creditLink:hover {

@@ -3,12 +3,11 @@
 :root {
   --suppress-mixpanel-errors: true;
 
-  /* Typography
-   * TODO(assets): wire real Domitian font files when available.
-   */
+  /* Typography */
   --font-heading: 'Domitian', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  --font-heading-compact: 'Inter', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
-  --font-ui: 'Inter', sans-serif;
+  --font-ui: 'Inter', system-ui, sans-serif;
   --font-caption: 'Courier New', monospace;
 
   /* Marine palette */
@@ -87,6 +86,239 @@
   --duration-slow: 0.5s;
   --ease-standard: ease;
   --ease-out-soft: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shared depth-transition timing — used across header + UI for cohesion */
+  --depth-transition: 0.8s;
+  --depth-ease: cubic-bezier(0.35, 0, 0.15, 1);
+
+  /* Homepage depth (defaults; overridden when `html[data-home-depth]` is set by observer) */
+
+  /* — Header layer (Phase 3; bg is flat color so CSS can transition it) */
+  --depth-header-bg: rgba(3, 38, 52, 0.97);
+  --depth-header-backdrop: var(--blur-glass);
+  --depth-header-text: #e8fbfc;
+  --depth-header-text-muted: rgba(230, 249, 251, 0.88);
+  --depth-header-border: rgba(255, 255, 255, 0.1);
+  --depth-header-shadow: 0 2px 10px rgba(0, 20, 30, 0.18);
+  --depth-accent: var(--color-accent);
+  --depth-accent-deep: var(--color-accent-deep);
+  --depth-gradient-cta: var(--gradient-cta);
+  --depth-header-nav-tracking: 0.04em;
+  --depth-header-wordmark-tracking: 0.14em;
+
+  /* — UI surface layer (Phase 4) */
+  --depth-surface: rgba(10, 42, 61, 0.5);
+  --depth-surface-strong: rgba(10, 50, 72, 0.58);
+  --depth-surface-border: rgba(136, 194, 219, 0.22);
+  --depth-surface-shadow: 0 10px 26px rgba(1, 12, 22, 0.3);
+  --depth-surface-shadow-hover: 0 14px 38px rgba(1, 12, 22, 0.42);
+  --depth-surface-inset: rgba(255, 255, 255, 0.08);
+  --depth-text: #e7f6fc;
+  --depth-text-muted: #c7dce7;
+  --depth-text-meta: #8bc0d0;
+  --depth-link: var(--color-accent);
+  --depth-link-hover: #4dd1db;
+  --depth-button-bg: var(--gradient-cta);
+  --depth-button-text: #f3fbfd;
+  --depth-button-border: rgba(230, 249, 251, 0.35);
+  --depth-divider: rgba(136, 194, 219, 0.18);
+  --depth-glow: rgba(0, 162, 176, 0.15);
+}
+
+/*
+ * Homepage only: `HomepageDepthObserver` sets `html[data-home-depth]`.
+ * Restrained shifts in one marine family — tune here, not in components.
+ */
+html[data-home-depth='epipelagic'] {
+  --depth-header-bg: rgba(3, 52, 68, 0.86);
+  --depth-header-backdrop: blur(12px);
+  --depth-header-text: #eefcfd;
+  --depth-header-text-muted: rgba(238, 252, 253, 0.92);
+  --depth-header-border: rgba(255, 255, 255, 0.12);
+  --depth-header-shadow: 0 2px 14px rgba(0, 30, 42, 0.16);
+  --depth-accent: #10b6c6;
+  --depth-accent-deep: #009aa6;
+  --depth-gradient-cta: linear-gradient(135deg, #10b6c6 0%, #009aa6 100%);
+  --depth-header-nav-tracking: 0.045em;
+  --depth-header-wordmark-tracking: 0.15em;
+  --color-accent: var(--depth-accent);
+  --color-accent-deep: var(--depth-accent-deep);
+
+  /* UI surfaces */
+  --depth-surface: rgba(12, 50, 68, 0.42);
+  --depth-surface-strong: rgba(14, 58, 78, 0.5);
+  --depth-surface-border: rgba(140, 200, 225, 0.24);
+  --depth-surface-shadow: 0 8px 22px rgba(2, 16, 28, 0.22);
+  --depth-surface-shadow-hover: 0 14px 36px rgba(2, 16, 28, 0.35);
+  --depth-surface-inset: rgba(255, 255, 255, 0.1);
+  --depth-text: #eefcfd;
+  --depth-text-muted: #cce2ec;
+  --depth-text-meta: #92c8d8;
+  --depth-link: #10b6c6;
+  --depth-link-hover: #50d8e6;
+  --depth-button-bg: linear-gradient(135deg, #10b6c6 0%, #009aa6 100%);
+  --depth-button-text: #f5fdfe;
+  --depth-button-border: rgba(230, 249, 251, 0.38);
+  --depth-divider: rgba(140, 200, 225, 0.2);
+  --depth-glow: rgba(18, 184, 200, 0.14);
+}
+
+html[data-home-depth='mesopelagic'] {
+  --depth-header-bg: rgba(2, 40, 54, 0.92);
+  --depth-header-backdrop: blur(10px);
+  --depth-header-text: #e8f8fa;
+  --depth-header-text-muted: rgba(232, 248, 250, 0.9);
+  --depth-header-border: rgba(255, 255, 255, 0.09);
+  --depth-header-shadow: 0 2px 16px rgba(0, 20, 30, 0.26);
+  --depth-accent: #0cb4ca;
+  --depth-accent-deep: #008c9c;
+  --depth-gradient-cta: linear-gradient(135deg, #0cb4ca 0%, #008c9c 100%);
+  --depth-header-nav-tracking: 0.04em;
+  --depth-header-wordmark-tracking: 0.135em;
+  --color-accent: var(--depth-accent);
+  --color-accent-deep: var(--depth-accent-deep);
+
+  /* UI surfaces */
+  --depth-surface: rgba(8, 38, 55, 0.52);
+  --depth-surface-strong: rgba(10, 44, 62, 0.6);
+  --depth-surface-border: rgba(120, 185, 210, 0.2);
+  --depth-surface-shadow: 0 10px 26px rgba(1, 12, 22, 0.32);
+  --depth-surface-shadow-hover: 0 14px 38px rgba(1, 12, 22, 0.44);
+  --depth-surface-inset: rgba(255, 255, 255, 0.07);
+  --depth-text: #e8f8fb;
+  --depth-text-muted: #c2d9e4;
+  --depth-text-meta: #86b8c8;
+  --depth-link: #0cb4ca;
+  --depth-link-hover: #46d2e0;
+  --depth-button-bg: linear-gradient(135deg, #0cb4ca 0%, #008c9c 100%);
+  --depth-button-text: #f3fbfd;
+  --depth-button-border: rgba(230, 249, 251, 0.32);
+  --depth-divider: rgba(120, 185, 210, 0.16);
+  --depth-glow: rgba(14, 180, 196, 0.12);
+}
+
+html[data-home-depth='bathypelagic'] {
+  --depth-header-bg: rgba(1, 26, 36, 0.97);
+  --depth-header-backdrop: blur(6px);
+  --depth-header-text: #e4f4f7;
+  --depth-header-text-muted: rgba(228, 244, 247, 0.88);
+  --depth-header-border: rgba(255, 255, 255, 0.06);
+  --depth-header-shadow: 0 3px 20px rgba(0, 6, 12, 0.42);
+  --depth-accent: #0cb8d0;
+  --depth-accent-deep: #008da2;
+  --depth-gradient-cta: linear-gradient(135deg, #0cb8d0 0%, #008698 100%);
+  --depth-header-nav-tracking: 0.036em;
+  --depth-header-wordmark-tracking: 0.125em;
+  --color-accent: var(--depth-accent);
+  --color-accent-deep: var(--depth-accent-deep);
+
+  /* UI surfaces */
+  --depth-surface: rgba(4, 28, 42, 0.62);
+  --depth-surface-strong: rgba(6, 34, 48, 0.7);
+  --depth-surface-border: rgba(80, 160, 195, 0.16);
+  --depth-surface-shadow: 0 10px 28px rgba(0, 8, 16, 0.45);
+  --depth-surface-shadow-hover: 0 16px 42px rgba(0, 8, 16, 0.56);
+  --depth-surface-inset: rgba(255, 255, 255, 0.05);
+  --depth-text: #e2f4f7;
+  --depth-text-muted: #b8d2de;
+  --depth-text-meta: #7eb0c2;
+  --depth-link: #0cb8d0;
+  --depth-link-hover: #3cd6e6;
+  --depth-button-bg: linear-gradient(135deg, #0cb8d0 0%, #008698 100%);
+  --depth-button-text: #f0fafc;
+  --depth-button-border: rgba(226, 244, 250, 0.26);
+  --depth-divider: rgba(80, 160, 195, 0.13);
+  --depth-glow: rgba(12, 184, 210, 0.1);
+}
+
+html[data-home-depth='abyssal'] {
+  --depth-header-bg: rgba(0, 14, 22, 0.98);
+  --depth-header-backdrop: none;
+  --depth-header-text: #e0f0f3;
+  --depth-header-text-muted: rgba(224, 240, 243, 0.87);
+  --depth-header-border: rgba(255, 255, 255, 0.05);
+  --depth-header-shadow: 0 4px 24px rgba(0, 2, 6, 0.52);
+  --depth-accent: #14c2da;
+  --depth-accent-deep: #0096ae;
+  --depth-gradient-cta: linear-gradient(135deg, #14c2da 0%, #008ea4 100%);
+  --depth-header-nav-tracking: 0.034em;
+  --depth-header-wordmark-tracking: 0.118em;
+  --color-accent: var(--depth-accent);
+  --color-accent-deep: var(--depth-accent-deep);
+
+  /* UI surfaces */
+  --depth-surface: rgba(2, 18, 28, 0.72);
+  --depth-surface-strong: rgba(3, 22, 34, 0.78);
+  --depth-surface-border: rgba(50, 140, 185, 0.12);
+  --depth-surface-shadow: 0 12px 32px rgba(0, 4, 10, 0.55);
+  --depth-surface-shadow-hover: 0 18px 46px rgba(0, 4, 10, 0.65);
+  --depth-surface-inset: rgba(255, 255, 255, 0.04);
+  --depth-text: #deeff3;
+  --depth-text-muted: #b0ccda;
+  --depth-text-meta: #78aec0;
+  --depth-link: #14c2da;
+  --depth-link-hover: #40d8ec;
+  --depth-button-bg: linear-gradient(135deg, #14c2da 0%, #008ea4 100%);
+  --depth-button-text: #eefafd;
+  --depth-button-border: rgba(222, 240, 248, 0.22);
+  --depth-divider: rgba(50, 140, 185, 0.1);
+  --depth-glow: rgba(20, 194, 218, 0.08);
+}
+
+html[data-home-depth='hadal'] {
+  --depth-header-bg: rgba(0, 8, 14, 0.99);
+  --depth-header-backdrop: none;
+  --depth-header-text: #dcecf0;
+  --depth-header-text-muted: rgba(220, 236, 240, 0.9);
+  --depth-header-border: rgba(255, 255, 255, 0.04);
+  --depth-header-shadow: 0 4px 28px rgba(0, 0, 0, 0.62);
+  --depth-accent: #20cae4;
+  --depth-accent-deep: #00a4c0;
+  --depth-gradient-cta: linear-gradient(135deg, #20cae4 0%, #0098b6 100%);
+  --depth-header-nav-tracking: 0.032em;
+  --depth-header-wordmark-tracking: 0.11em;
+  --color-accent: var(--depth-accent);
+  --color-accent-deep: var(--depth-accent-deep);
+
+  /* UI surfaces */
+  --depth-surface: rgba(1, 12, 22, 0.78);
+  --depth-surface-strong: rgba(2, 16, 28, 0.84);
+  --depth-surface-border: rgba(40, 150, 200, 0.1);
+  --depth-surface-shadow: 0 14px 36px rgba(0, 2, 6, 0.65);
+  --depth-surface-shadow-hover: 0 20px 50px rgba(0, 2, 6, 0.74);
+  --depth-surface-inset: rgba(255, 255, 255, 0.03);
+  --depth-text: #dcecf2;
+  --depth-text-muted: #a8c6d8;
+  --depth-text-meta: #72a6be;
+  --depth-link: #20cae4;
+  --depth-link-hover: #4cdcf2;
+  --depth-button-bg: linear-gradient(135deg, #20cae4 0%, #0098b6 100%);
+  --depth-button-text: #eefafe;
+  --depth-button-border: rgba(220, 238, 250, 0.18);
+  --depth-divider: rgba(40, 150, 200, 0.08);
+  --depth-glow: rgba(32, 202, 228, 0.06);
+}
+
+
+/*
+ * Dev / preview: toggle via <html data-font-preset="legacy"> (see FontPresetToggle).
+ * Legacy stack matches earlier Beringia marketing shell for A/B comparison.
+ */
+:root[data-font-preset='legacy'] {
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-heading-compact: 'Montserrat', system-ui, sans-serif;
+  --font-body: 'Montserrat', system-ui, sans-serif;
+  --font-ui: 'Montserrat', system-ui, sans-serif;
+}
+
+:root[data-font-preset='legacy'] h1,
+:root[data-font-preset='legacy'] h2,
+:root[data-font-preset='legacy'] h3,
+:root[data-font-preset='legacy'] h4,
+:root[data-font-preset='legacy'] h5,
+:root[data-font-preset='legacy'] h6 {
+  line-height: 1.08;
+  letter-spacing: 0.04em;
 }
 
 /* Reset and base styles */
@@ -113,11 +345,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-footer {
-  background: transparent !important;
+/*
+ * Site layout footer (see layout/Footer) — must stay visually continuous with page backgrounds
+ * (DepthBackground, ocean gradients, body). Scoped so nested <footer> in pages (e.g. terms doc block) keep their own rules.
+ */
+footer[data-site-footer] {
+  background: none !important;
+  background-color: transparent !important;
   background-image: none !important;
+  border: 0 !important;
   border-top: 0 !important;
   box-shadow: none !important;
+  outline: 0 !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 }
@@ -149,8 +388,8 @@ h5,
 h6 {
   font-family: var(--font-heading);
   font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: 0.01em;
+  line-height: 1.14;
+  letter-spacing: 0.014em;
 }
 
 h1 {

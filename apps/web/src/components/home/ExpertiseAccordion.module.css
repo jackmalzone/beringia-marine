@@ -1,0 +1,238 @@
+.root {
+  width: min(860px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1)),
+    transform 0.7s var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
+}
+
+.header[data-revealed] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.heading {
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--depth-text, #e6f9fb);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--depth-text-meta, #b6cfdb);
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-family: var(--font-ui);
+  font-weight: 600;
+  transition: color 1s var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
+}
+
+/* ── List + items ── */
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.list > * {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.6s var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1)),
+    transform 0.6s var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
+}
+
+.list > [data-revealed] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*
+ * The .item wraps both trigger and panel so they share the same
+ * background surface when expanded — no visual seam.
+ */
+.item {
+  border-top: 1px solid var(--depth-divider, rgba(136, 194, 219, 0.14));
+  border-radius: 0;
+  transition:
+    background var(--duration-medium) var(--ease-standard),
+    border-color var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
+}
+
+.list > *:last-child .item {
+  border-bottom: 1px solid var(--depth-divider, rgba(136, 194, 219, 0.14));
+}
+
+.item:hover {
+  background: var(--depth-surface, rgba(10, 42, 61, 0.18));
+}
+
+.itemOpen {
+  background: var(--depth-surface, rgba(10, 42, 61, 0.28));
+  border-radius: var(--radius-md, 8px);
+  border-color: var(--depth-surface-border, rgba(136, 194, 219, 0.16));
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+.itemOpen:hover {
+  background: var(--depth-surface, rgba(10, 42, 61, 0.28));
+}
+
+/* ── Trigger button ── */
+
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.15rem 1.25rem;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.trigger:focus-visible {
+  outline: 2px solid var(--depth-accent, var(--color-accent));
+  outline-offset: -2px;
+}
+
+.step {
+  flex-shrink: 0;
+  width: 2.2rem;
+  font-family: var(--font-caption);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--depth-accent, var(--color-accent));
+  font-weight: 600;
+  transition: color var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
+}
+
+.triggerText {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-heading-compact);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+  color: var(--depth-text, #e7f6fc);
+  transition: color var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
+}
+
+.triggerSub {
+  margin: 0.2rem 0 0;
+  font-size: 0.86rem;
+  color: var(--depth-text-meta, #8bc0d0);
+  transition: color 1s var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
+}
+
+.icon {
+  flex-shrink: 0;
+  color: var(--depth-text-meta, #8bc0d0);
+  transition:
+    transform var(--duration-medium) var(--ease-standard),
+    color var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
+}
+
+.iconOpen {
+  transform: rotate(180deg);
+}
+
+/* ── Expandable panel ── */
+
+.panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.panelOpen {
+  grid-template-rows: 1fr;
+}
+
+.panelInner {
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 1.25rem 0 calc(2.2rem + 1rem + 1.25rem);
+}
+
+.panelOpen .panelInner {
+  padding-bottom: 1.25rem;
+}
+
+.description {
+  margin: 0 0 1rem;
+  color: var(--depth-text-muted, #c7dce7);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  transition: color var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
+}
+
+.cardCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  color: var(--depth-accent, var(--color-accent));
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.cardCta:hover {
+  color: var(--depth-link-hover, #4dd1db);
+  text-decoration: underline;
+}
+
+.cardCta:focus-visible {
+  outline: 2px solid var(--depth-accent, var(--color-accent));
+  outline-offset: 2px;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 640px) {
+  .trigger {
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .step {
+    width: 1.8rem;
+    font-size: 0.78rem;
+  }
+
+  .panelInner {
+    padding-left: calc(1.8rem + 0.75rem + 1rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .list > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .panel {
+    transition: none;
+  }
+}

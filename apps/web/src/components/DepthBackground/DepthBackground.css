@@ -1,0 +1,338 @@
+/**
+ * Homepage ocean depth — Phase 1 column + Phase 2 atmosphere.
+ *
+ * Stack (back → front): gradient → depth veil → bio glow → surface glow → light beams.
+ * Phase 3+: scroll-linked depth, header tint — keep hooks on .depth-background only.
+ */
+
+.depth-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Base: continuous vertical descent (epi → meso → bathy → abyss → hadal)     */
+/* -------------------------------------------------------------------------- */
+.depth-background__gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #9dc4d4 0%,
+    #7eb3c6 6%,
+    #68a2b8 12%,
+    #5592aa 18%,
+    #47849e 25%,
+    #3a7490 33%,
+    #2f6580 42%,
+    #255672 52%,
+    #1c4862 62%,
+    #153b52 72%,
+    #0f2e42 82%,
+    #0a2234 90%,
+    #061a28 96%,
+    #04111c 100%
+  );
+}
+
+/*
+ * Depth-linked dimmer: darkens the upper viewport as the user descends.
+ * The base gradient is fixed, so its bright upper band is always visible.
+ * This overlay absorbs surface light progressively via opacity.
+ */
+.depth-background__gradient::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgb(2, 10, 16) 0%,
+    rgb(2, 12, 18) 40%,
+    transparent 100%
+  );
+  opacity: 0;
+  transition: opacity var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
+}
+
+html[data-home-depth='mesopelagic'] .depth-background__gradient::after {
+  opacity: 0.4;
+}
+
+html[data-home-depth='bathypelagic'] .depth-background__gradient::after {
+  opacity: 0.72;
+}
+
+html[data-home-depth='abyssal'] .depth-background__gradient::after {
+  opacity: 0.88;
+}
+
+html[data-home-depth='hadal'] .depth-background__gradient::after {
+  opacity: 0.94;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Depth veil: absorptive “thicker water” from mid column down — not flat     */
+/* black; mineral teal-black and indigo absorption.                           */
+/* -------------------------------------------------------------------------- */
+.depth-background__depth-veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 35%,
+    rgba(4, 22, 32, 0.1) 50%,
+    rgba(3, 18, 30, 0.2) 65%,
+    rgba(2, 14, 26, 0.3) 78%,
+    rgba(1, 10, 20, 0.38) 90%,
+    rgba(1, 8, 16, 0.42) 100%
+  );
+  transition: opacity var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
+}
+
+.depth-background__depth-veil::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 36%,
+    rgba(12, 42, 52, 0.14) 62%,
+    rgba(8, 38, 48, 0.22) 82%,
+    rgba(6, 32, 44, 0.2) 100%
+  );
+  pointer-events: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Bioluminescent undertone: diffuse cool teal in deep band only — barely     */
+/* perceptible tonal richness, no bright spots.                               */
+/* -------------------------------------------------------------------------- */
+.depth-background__bio-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0.42;
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, transparent 48%, #000 72%, #000 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, transparent 48%, #000 72%, #000 100%);
+  background:
+    radial-gradient(
+      ellipse 95% 42% at 50% 100%,
+      rgba(35, 95, 102, 0.22) 0%,
+      rgba(20, 70, 82, 0.1) 45%,
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 55% 28% at 22% 92%,
+      rgba(28, 88, 96, 0.14) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 50% 26% at 78% 96%,
+      rgba(32, 92, 98, 0.12) 0%,
+      transparent 58%
+    );
+}
+
+/* -------------------------------------------------------------------------- */
+/* Surface glow: diffuse filtered sun / bloom — confined to upper water column */
+/* (vertical mask kills spill into deep zones; large ellipses were bleeding    */
+/*  light to the footer; radials kept smaller + top-anchored.)                */
+/* -------------------------------------------------------------------------- */
+.depth-background__surface-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0.62;
+  transition: opacity var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    #000 0%,
+    #000 22%,
+    rgba(0, 0, 0, 0.6) 38%,
+    rgba(0, 0, 0, 0.25) 55%,
+    rgba(0, 0, 0, 0.08) 72%,
+    transparent 85%
+  );
+  mask-image: linear-gradient(
+    180deg,
+    #000 0%,
+    #000 22%,
+    rgba(0, 0, 0, 0.6) 38%,
+    rgba(0, 0, 0, 0.25) 55%,
+    rgba(0, 0, 0, 0.08) 72%,
+    transparent 85%
+  );
+  background:
+    radial-gradient(
+      ellipse 85% 42% at 50% -8%,
+      rgba(228, 240, 244, 0.22) 0%,
+      rgba(175, 210, 222, 0.07) 34%,
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 55% 28% at 82% 4%,
+      rgba(190, 224, 232, 0.09) 0%,
+      transparent 42%
+    ),
+    radial-gradient(
+      ellipse 50% 26% at 14% 8%,
+      rgba(168, 210, 222, 0.075) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      ellipse 90% 35% at 50% 85%,
+      rgba(80, 155, 185, 0.06) 0%,
+      rgba(55, 130, 165, 0.03) 40%,
+      transparent 65%
+    );
+}
+
+/* -------------------------------------------------------------------------- */
+/* Light beams: soft vertical ellipses — shorter columns + aggressive mask    */
+/* so shafts vanish well above mid-viewport (no surface light near footer).   */
+/* -------------------------------------------------------------------------- */
+.depth-background__light-beams {
+  position: absolute;
+  inset: 0;
+  opacity: 0.62;
+  transition: opacity var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    #000 0%,
+    #000 16%,
+    rgba(0, 0, 0, 0.5) 32%,
+    rgba(0, 0, 0, 0.15) 48%,
+    rgba(0, 0, 0, 0.04) 60%,
+    transparent 70%
+  );
+  mask-image: linear-gradient(
+    180deg,
+    #000 0%,
+    #000 16%,
+    rgba(0, 0, 0, 0.5) 32%,
+    rgba(0, 0, 0, 0.15) 48%,
+    rgba(0, 0, 0, 0.04) 60%,
+    transparent 70%
+  );
+  background:
+    radial-gradient(
+      ellipse 10% 52% at 20% 0%,
+      rgba(230, 242, 246, 0.075) 0%,
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse 8% 48% at 38% 0%,
+      rgba(210, 234, 240, 0.055) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 11% 54% at 52% 0%,
+      rgba(220, 238, 244, 0.065) 0%,
+      transparent 51%
+    ),
+    radial-gradient(
+      ellipse 9% 50% at 68% 0%,
+      rgba(200, 228, 236, 0.048) 0%,
+      transparent 49%
+    ),
+    radial-gradient(
+      ellipse 8% 46% at 86% 0%,
+      rgba(188, 220, 232, 0.04) 0%,
+      transparent 48%
+    );
+}
+
+/* -------------------------------------------------------------------------- */
+/* Optional motion: imperceptible breathing — disabled for reduced motion     */
+/* -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-home-depth='epipelagic'] .depth-background__surface-glow {
+    animation: depth-background-surface-drift 22s ease-in-out infinite alternate;
+  }
+
+  html[data-home-depth='epipelagic'] .depth-background__light-beams {
+    animation: depth-background-beam-drift 28s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes depth-background-surface-drift {
+  from {
+    opacity: 0.54;
+  }
+  to {
+    opacity: 0.66;
+  }
+}
+
+@keyframes depth-background-beam-drift {
+  from {
+    opacity: 0.54;
+  }
+  to {
+    opacity: 0.66;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .depth-background__surface-glow,
+  .depth-background__light-beams {
+    animation: none;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+/* Depth-linked light attenuation: surface glow and light beams fade as the   */
+/* user descends. Fixed layers persist in the viewport, so we dim them via    */
+/* the scroll-driven depth attribute on <html>.                               */
+/* -------------------------------------------------------------------------- */
+html[data-home-depth='mesopelagic'] .depth-background__surface-glow {
+  opacity: 0.35;
+}
+html[data-home-depth='mesopelagic'] .depth-background__light-beams {
+  opacity: 0.28;
+}
+
+html[data-home-depth='bathypelagic'] .depth-background__surface-glow {
+  opacity: 0.12;
+}
+html[data-home-depth='bathypelagic'] .depth-background__light-beams {
+  opacity: 0.08;
+}
+
+html[data-home-depth='abyssal'] .depth-background__surface-glow {
+  opacity: 0.03;
+}
+html[data-home-depth='abyssal'] .depth-background__light-beams {
+  opacity: 0;
+}
+
+html[data-home-depth='hadal'] .depth-background__surface-glow {
+  opacity: 0;
+}
+html[data-home-depth='hadal'] .depth-background__light-beams {
+  opacity: 0;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Mobile: slightly less bloom/beam energy — keeps text and hero readable     */
+/* -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .depth-background__surface-glow {
+    opacity: 0.52;
+  }
+
+  .depth-background__light-beams {
+    opacity: 0.5;
+  }
+
+  .depth-background__bio-glow {
+    opacity: 0.36;
+  }
+}

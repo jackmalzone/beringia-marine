@@ -17,17 +17,7 @@ const Footer: FC = () => {
   const linkedin = TEMPLATE_BUSINESS.socialMedia.linkedin?.trim();
 
   return (
-    <footer
-      className={styles.footer}
-      style={{
-        background: 'transparent',
-        backgroundImage: 'none',
-        border: '0',
-        boxShadow: 'none',
-        backdropFilter: 'none',
-        WebkitBackdropFilter: 'none',
-      }}
-    >
+    <footer data-site-footer className={styles.footer}>
       <div className={styles.footer__container}>
         <div className={styles.footer__content}>
           <motion.div

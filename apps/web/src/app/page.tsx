@@ -2,23 +2,29 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 import { mergeMetadata } from '@/lib/seo/metadata';
 import ServerSideSEO from '@/components/seo/ServerSideSEO';
-import {
-  BERINGIA_HOME,
-  BERINGIA_EXPERTISE_CARDS,
-  BERINGIA_CONTRIBUTIONS,
-} from '@/lib/content/beringia-static';
+import { BERINGIA_HOME, BERINGIA_EXPERTISE_CARDS } from '@/lib/content/beringia-static';
 import FeaturedArtistSection from '@/components/artist/FeaturedArtistSection';
+import ContributionsTimeline from '@/components/home/ContributionsTimeline';
+import DepthBackground from '@/components/DepthBackground/DepthBackground';
+import HomepageDepthObserver from '@/components/home/HomepageDepthObserver';
+import ExpertiseAccordion from '@/components/home/ExpertiseAccordion';
+import ScrollReveal from '@/components/home/ScrollReveal';
+import { SOLUTIONS } from '@/lib/content/solutions';
 import styles from './page.module.css';
 
 export const metadata: Metadata = mergeMetadata('home');
-export const revalidate = 3600; // Revalidate every hour
+export const revalidate = 3600;
 
 export default function Home() {
   return (
-    <main className={styles.page}>
+    <main className={styles.page} data-home-page>
+      <DepthBackground />
       <ServerSideSEO pageKey="home" />
       <div className={styles.oceanField}>
-        <section className={styles.hero}>
+        <HomepageDepthObserver />
+
+        {/* ── Hero ── */}
+        <section className={styles.hero} data-depth="epipelagic">
           <div className={styles.heroOverlay} />
           <div className={styles.container}>
             <p className={styles.eyebrow}>Integrated marine technology solutions</p>
@@ -35,69 +41,99 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.section}>
+        {/* ── Mission Statement ── */}
+        <section className={styles.mission} data-depth="mesopelagic">
           <div className={styles.containerNarrow}>
-            <h2>{BERINGIA_HOME.missionHeading}</h2>
-            <p>{BERINGIA_HOME.missionBody}</p>
+            <ScrollReveal className={styles.missionInner}>
+              <span className={styles.missionAccent} aria-hidden="true" />
+              <h2 className={styles.missionHeading}>{BERINGIA_HOME.missionHeading}</h2>
+              <p className={styles.missionBody}>{BERINGIA_HOME.missionBody}</p>
+            </ScrollReveal>
           </div>
         </section>
 
-        <section className={styles.sectionAlt}>
-          <div className={styles.containerNarrow}>
-            <h2>Solutions</h2>
-            <p>{BERINGIA_HOME.solutionsTeaser}</p>
-            <Link href="/solutions" className={styles.inlineLink}>
-              View solutions overview
-            </Link>
-          </div>
-        </section>
-
-        <section className={styles.sectionMuted}>
+        {/* ── Solutions ── */}
+        <section className={styles.solutionsFull} data-depth="mesopelagic">
           <div className={styles.container}>
-            <h2>{BERINGIA_HOME.approachHeading}</h2>
-            <p className={styles.sectionSubtitle}>{BERINGIA_HOME.approachSubtitle}</p>
-            <div className={styles.grid}>
-              {BERINGIA_EXPERTISE_CARDS.map((card) => (
-                <article key={card.title} className={styles.card}>
-                  <h3>{card.title}</h3>
-                  <p className={styles.cardSubtitle}>{card.subtitle}</p>
-                  <p>{card.description}</p>
-                  <ul>
-                    {card.details.map((detail) => (
-                      <li key={detail}>{detail}</li>
-                    ))}
-                  </ul>
-                </article>
+            <ScrollReveal className={styles.solutionsHeader}>
+              <h2 className={styles.solutionsHeading}>Solutions</h2>
+              <p className={styles.solutionsTeaser}>{BERINGIA_HOME.solutionsTeaser}</p>
+            </ScrollReveal>
+
+            <div className={styles.solutionsGrid}>
+              {SOLUTIONS.map((sol, i) => (
+                <ScrollReveal key={sol.slug} delay={i * 100}>
+                  <Link href={`/solutions/${sol.slug}`} className={styles.solutionCard}>
+                    <span className={styles.solutionIndex}>{String(i + 1).padStart(2, '0')}</span>
+                    <h3 className={styles.solutionName}>{sol.name}</h3>
+                    <p className={styles.solutionTagline}>{sol.tagline}</p>
+                  </Link>
+                </ScrollReveal>
               ))}
+            </div>
+
+            <ScrollReveal className={styles.solutionsFooter}>
+              <Link href="/solutions" className={styles.inlineLink}>
+                View solutions overview
+              </Link>
+            </ScrollReveal>
+          </div>
+        </section>
+
+        {/* ── Expertise ── */}
+        <section className={styles.sectionMuted} data-depth="bathypelagic">
+          <ExpertiseAccordion
+            cards={BERINGIA_EXPERTISE_CARDS}
+            heading={BERINGIA_HOME.approachHeading}
+            subtitle={BERINGIA_HOME.approachSubtitle}
+          />
+        </section>
+
+        {/* ── Notable Contributions ── */}
+        <section
+          className={styles.contributionsWrap}
+          aria-labelledby="home-contributions-heading"
+          data-depth="abyssal"
+        >
+          <div className={styles.container}>
+            <div className={styles.contributionsGlow}>
+              <ContributionsTimeline
+                heading={BERINGIA_HOME.contributionsHeading}
+                teaser={BERINGIA_HOME.contributionsTeaser}
+              />
             </div>
           </div>
         </section>
 
-        <section className={styles.sectionDark}>
-          <div className={styles.container}>
-            <h2>{BERINGIA_HOME.contributionsHeading}</h2>
-            <p>{BERINGIA_HOME.contributionsTeaser}</p>
-            <div className={styles.timeline}>
-              {BERINGIA_CONTRIBUTIONS.map((item) => (
-                <article key={item.period} className={styles.timelineItem}>
-                  <p className={styles.period}>{item.period}</p>
-                  <h3>{item.title}</h3>
-                  <p>{item.description}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* ── Featured Artist ── */}
+        <FeaturedArtistSection className={styles.artistSection} depthZone="abyssal" />
 
-        <FeaturedArtistSection className={styles.artistSection} />
-
-        <section className={styles.cta}>
+        {/* ── Final CTA ── */}
+        <section className={styles.ctaSection} data-depth="hadal">
           <div className={styles.containerNarrow}>
-            <h2>{BERINGIA_HOME.contactCtaHeading}</h2>
-            <p>{BERINGIA_HOME.contactCtaBody}</p>
-            <Link href={BERINGIA_HOME.contactCtaHref} className={styles.primaryButton}>
-              {BERINGIA_HOME.contactCtaLabel}
-            </Link>
+            <ScrollReveal className={styles.ctaInner}>
+              <span className={styles.ctaDivider} aria-hidden="true" />
+              <span className={styles.ctaEyebrow}>Work With Beringia</span>
+              <h2 className={styles.ctaHeading}>{BERINGIA_HOME.contactCtaHeading}</h2>
+              <p className={styles.ctaBody}>{BERINGIA_HOME.contactCtaBody}</p>
+              <Link href={BERINGIA_HOME.contactCtaHref} className={styles.ctaButton}>
+                {BERINGIA_HOME.contactCtaLabel}
+                <svg
+                  className={styles.ctaArrow}
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </ScrollReveal>
           </div>
         </section>
       </div>
