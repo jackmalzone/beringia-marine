@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@vital-ice/ui": ["./packages/ui/src"],
+      "@vital-ice/config": ["./packages/config/src"],
+      "@vital-ice/test-utils": ["./packages/test-utils/src"]
+    }
+  },
+  "include": [],
+  "exclude": ["node_modules"]
+}

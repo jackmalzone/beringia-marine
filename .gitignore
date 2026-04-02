@@ -25,6 +25,19 @@ yarn-error.log*
 # Vercel
 .vercel
 
+# Turbo
+.turbo/
+
+# Test coverage
+coverage/
+
+# Playwright
+test-results/
+
+# Migration archives (large, reference-only)
+migration/
+migration-legacy/
+
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts

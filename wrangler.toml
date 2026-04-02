@@ -1,0 +1,13 @@
+name = "vital-ice-r2"
+compatibility_date = "2024-01-01"
+
+[[r2_buckets]]
+binding = "VIDEOS"
+bucket_name = "vital-ice-videos"
+preview_bucket_name = "vital-ice-videos-dev"
+
+[env.production]
+name = "vital-ice-r2-prod"
+
+[env.staging]
+name = "vital-ice-r2-staging"

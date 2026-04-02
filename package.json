@@ -1,0 +1,45 @@
+{
+  "name": "vital-ice-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "dev:studio": "pnpm --filter studio dev",
+    "build": "pnpm build -r",
+    "start": "pnpm --filter web start",
+    "lint": "pnpm lint -r",
+    "lint:all": "pnpm lint -r",
+    "type-check": "pnpm type-check -r",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "format:all": "prettier --write .",
+    "format:staged": "prettier --write $(git diff --cached --name-only --diff-filter=ACMR | grep -E \"\\.(ts|tsx|js|jsx|json|css|scss|md)\" | xargs)",
+    "clean": "pnpm clean -r && rm -rf node_modules",
+    "test": "pnpm test -r",
+    "test:watch": "pnpm --filter web test:watch",
+    "test:coverage": "pnpm test:coverage -r",
+    "ssr:guardrails": "pnpm --filter @vital-ice/web test:compliance",
+    "check:perf": "pnpm --filter @vital-ice/performance-budget check",
+    "check:perf:prod": "pnpm --filter @vital-ice/performance-budget check:prod"
+  },
+  "devDependencies": {
+    "@sanity/client": "^7.13.1",
+    "@sanity/image-url": "^1.2.0",
+    "baseline-browser-mapping": "^2.9.19",
+    "dotenv": "^16.4.5",
+    "prettier": "^3.5.3",
+    "typescript": "^5"
+  },
+  "pnpm": {
+    "overrides": {
+      "glob": "^10.3.10",
+      "jsdom": "^26.1.0"
+    },
+    "allowedDeprecatedVersions": {
+      "abab": "*",
+      "domexception": "*",
+      "inflight": "*",
+      "whatwg-encoding": "*"
+    }
+  }
+}
