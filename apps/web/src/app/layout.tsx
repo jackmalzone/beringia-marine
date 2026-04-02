@@ -22,7 +22,7 @@ import { mergeMetadata } from '@/lib/seo/metadata';
 import { SITE_CONFIG } from '@/lib/config/site-config';
 import { headers } from 'next/headers';
 import FontPresetToggle from '@/components/dev/FontPresetToggle';
-import LoadingScreen from '@/components/shared/LoadingScreen/LoadingScreen';
+import LoadingScreenClient from '@/components/shared/LoadingScreen/LoadingScreenClient';
 import './globals.css';
 
 const FONT_PRESET_BOOT_SCRIPT = `(function(){try{var k='beringia-font-preset';if(localStorage.getItem(k)==='legacy')document.documentElement.setAttribute('data-font-preset','legacy');}catch(e){}})();`;
@@ -133,7 +133,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <StructuredData data={getPageSchema('home')} />
       </head>
       <body className={`${bebasNeue.variable} ${geistSans.variable} ${geistMono.variable}`}>
-        <LoadingScreen />
+        <LoadingScreenClient />
         {/* Crawler-visible SSR block (literal HTML) for fetch-based SEO checks */}
         <SSRBodyBlock />
         <FontPresetToggle />

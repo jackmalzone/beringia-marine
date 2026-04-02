@@ -67,13 +67,12 @@ export default function LoadingScreen({
         <Image
           src="/assets/beringia/logo-white-transparent.png"
           alt="Beringia Marine"
-          width={360}
-          height={360}
+          width={200}
+          height={200}
           className={styles.logo}
           priority
         />
         <span className={styles.pulse} aria-hidden="true" />
-        <span className={styles.pulse2} aria-hidden="true" />
       </div>
 
       <div className={styles.phrases}>
