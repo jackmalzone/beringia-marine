@@ -1,0 +1,545 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  padding: 120px 24px 60px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 183, 181, 0.2);
+}
+
+.title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0 0 24px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 auto;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.registrationSection {
+  padding: 60px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.registrationContainer {
+  background: rgba(0, 183, 181, 0.05);
+  border: 2px solid rgba(0, 183, 181, 0.4);
+  border-radius: 12px;
+  padding: 3rem;
+  backdrop-filter: blur(10px);
+}
+
+.sectionTitle {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 400;
+  color: #00b7b5;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+.sectionDescription {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+}
+
+.mailtoFallback {
+  margin: 0 0 1.5rem 0;
+  padding: 1rem 1.5rem;
+  background: rgba(0, 183, 181, 0.1);
+  border: 1px solid rgba(0, 183, 181, 0.3);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.mailtoText {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.mailtoLink {
+  color: #00b7b5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.mailtoLink:hover {
+  color: #9ec7c5;
+  border-bottom-color: #9ec7c5;
+}
+
+.registrationWidget {
+  margin-top: 2rem;
+}
+
+.resetButtonContainer {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.resetButton {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.resetButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+/* Registration Widget Styles */
+.registrationWidget :global(healcode-widget) {
+  color: #ffffff !important;
+  background: transparent !important;
+  text-align: left !important;
+}
+
+.registrationWidget :global(healcode-widget *) {
+  color: #ffffff !important;
+  text-align: left !important;
+}
+
+.registrationWidget :global(healcode-widget input:not([type='checkbox']):not([type='radio'])),
+.registrationWidget :global(healcode-widget select),
+.registrationWidget :global(healcode-widget textarea) {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+  font-size: 1.2rem !important;
+  font-weight: 300 !important;
+  padding: 1rem 0 !important;
+  outline: none !important;
+  text-align: left !important;
+}
+
+/* Prevent default checkbox styling */
+.registrationWidget :global(healcode-widget input[type='checkbox']),
+.registrationWidget :global(healcode-widget input[type='radio']) {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  min-width: 1.25rem !important;
+  margin: 0.2rem 0.5rem 0 0 !important;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+  background: transparent !important;
+  border-radius: 3px !important;
+  cursor: pointer !important;
+  position: relative !important;
+  vertical-align: middle !important;
+  transition: all 0.3s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.registrationWidget :global(healcode-widget input[type='radio']) {
+  border-radius: 50% !important;
+}
+
+.registrationWidget :global(healcode-widget input[type='checkbox']:checked),
+.registrationWidget :global(healcode-widget input[type='radio']:checked) {
+  background: rgba(0, 183, 181, 0.8) !important;
+  border-color: rgba(0, 183, 181, 0.8) !important;
+}
+
+.registrationWidget :global(healcode-widget input[type='checkbox']:checked::after) {
+  content: '' !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) rotate(45deg) !important;
+  width: 0.4rem !important;
+  height: 0.7rem !important;
+  border: solid #000000 !important;
+  border-width: 0 2px 2px 0 !important;
+}
+
+.registrationWidget :global(healcode-widget input[type='radio']:checked::after) {
+  content: '' !important;
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  width: 0.5rem !important;
+  height: 0.5rem !important;
+  border-radius: 50% !important;
+  background: #000000 !important;
+}
+
+.registrationWidget :global(healcode-widget input:focus),
+.registrationWidget :global(healcode-widget select:focus),
+.registrationWidget :global(healcode-widget textarea:focus) {
+  border-bottom-color: rgba(0, 183, 181, 0.8) !important;
+}
+
+.registrationWidget :global(healcode-widget input::placeholder) {
+  color: rgba(255, 255, 255, 0.4) !important;
+  opacity: 1 !important;
+  font-weight: 300 !important;
+}
+
+.registrationWidget :global(healcode-widget button) {
+  background: transparent !important;
+  color: rgba(0, 183, 181, 0.8) !important;
+  border: none !important;
+  font-weight: 400 !important;
+  font-size: 1.1rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 1rem 2rem !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+.registrationWidget :global(healcode-widget button:hover) {
+  color: rgba(0, 183, 181, 1) !important;
+}
+
+.registrationWidget :global(healcode-widget .error),
+.registrationWidget :global(healcode-widget .validation-error),
+.registrationWidget :global(healcode-widget .error-message),
+.registrationWidget :global(healcode-widget .form-error),
+.registrationWidget :global(healcode-widget span[class*='error']),
+.registrationWidget :global(healcode-widget div[class*='error']),
+.registrationWidget :global(healcode-widget .message),
+.registrationWidget :global(healcode-widget .alert),
+.registrationWidget :global(healcode-widget .notification) {
+  color: #f56f0d !important;
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+  margin-top: 0.5rem !important;
+}
+
+/* Fix checkbox label spacing */
+.registrationWidget :global(healcode-widget label:has(input[type='checkbox'])),
+.registrationWidget :global(healcode-widget label:has(input[type='radio'])) {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.5rem !important;
+  margin-bottom: 1rem !important;
+  cursor: pointer !important;
+}
+
+/* Fix form group spacing */
+.registrationWidget :global(healcode-widget .form-group),
+.registrationWidget :global(healcode-widget .field-group),
+.registrationWidget :global(healcode-widget .input-group) {
+  margin-bottom: 1.5rem !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+}
+
+/* Waiver Section */
+.waiverSection {
+  padding: 60px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.waiverContainer {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 3rem;
+  backdrop-filter: blur(10px);
+}
+
+.effectiveDate {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 2rem 0;
+  font-style: italic;
+}
+
+.waiverContent {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  max-height: 600px;
+  height: 600px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 183, 181, 0.5) rgba(0, 0, 0, 0.3);
+}
+
+.waiverContent::-webkit-scrollbar {
+  width: 8px;
+}
+
+.waiverContent::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.waiverContent::-webkit-scrollbar-thumb {
+  background: rgba(0, 183, 181, 0.5);
+  border-radius: 4px;
+}
+
+.waiverContent::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 183, 181, 0.7);
+}
+
+.waiverContent h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #00b7b5;
+  margin: 40px 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(0, 183, 181, 0.3);
+  padding-bottom: 12px;
+  position: relative;
+}
+
+.waiverContent h3:first-child {
+  margin-top: 0;
+}
+
+.waiverContent h3::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 183, 181, 0.2), transparent);
+}
+
+.waiverContent ul {
+  margin: 20px 0 25px 25px;
+  padding: 0;
+}
+
+.waiverContent li {
+  margin: 12px 0;
+  line-height: 1.7;
+  position: relative;
+}
+
+.waiverContent li::before {
+  content: '•';
+  color: #00b7b5;
+  font-weight: bold;
+  position: absolute;
+  left: -15px;
+}
+
+.waiverParagraph {
+  margin: 0 0 20px 0;
+  text-align: justify;
+}
+
+.waiverParagraph:last-child {
+  margin-bottom: 0;
+}
+
+.waiverAcceptance {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(0, 183, 181, 0.1);
+  border: 1px solid rgba(0, 183, 181, 0.3);
+  border-radius: 8px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  line-height: 1.6;
+}
+
+.checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  min-width: 1.25rem;
+  margin-top: 0.2rem;
+  cursor: pointer;
+  accent-color: #00b7b5;
+}
+
+.waiverLink {
+  color: #00b7b5;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.waiverLink:hover {
+  color: #9ec7c5;
+}
+
+/* Contact Section */
+.contactSection {
+  padding: 60px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.contactContainer {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 183, 181, 0.1);
+  border: 1px solid rgba(0, 183, 181, 0.3);
+  border-radius: 12px;
+}
+
+.contactTitle {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #00b7b5;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contactText {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+.contactInfo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.contactInfo strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.contactLink {
+  color: #00b7b5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contactLink:hover {
+  color: #9ec7c5;
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 20px 40px;
+  }
+
+  .registrationSection,
+  .waiverSection,
+  .contactSection {
+    padding: 40px 20px;
+  }
+
+  .registrationContainer,
+  .waiverContainer {
+    padding: 2rem 1.5rem;
+  }
+
+  .waiverContent {
+    max-height: 500px;
+    height: 500px;
+    padding: 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 80px 16px 30px;
+  }
+
+  .registrationSection,
+  .waiverSection,
+  .contactSection {
+    padding: 30px 16px;
+  }
+
+  .registrationContainer,
+  .waiverContainer {
+    padding: 1.5rem 1rem;
+  }
+
+  .waiverContent {
+    max-height: 400px;
+    height: 400px;
+    padding: 0.75rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+
+  .checkboxLabel {
+    font-size: 0.9rem;
+  }
+}

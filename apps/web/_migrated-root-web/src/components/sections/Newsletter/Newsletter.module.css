@@ -1,0 +1,283 @@
+.newsletter {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  position: relative;
+  background: transparent;
+}
+
+.content {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 3;
+}
+
+.title {
+  color: #fff;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 300;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.subtext {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  text-align: left;
+  max-width: 50ch;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+.mailtoFallback {
+  margin: 0 0 2rem 0;
+  padding: 1rem 1.5rem;
+  background: rgba(245, 111, 13, 0.1);
+  border: 1px solid rgba(245, 111, 13, 0.3);
+  border-radius: 8px;
+  text-align: left;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  z-index: 1;
+}
+
+.mailtoText {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.mailtoText strong {
+  color: #ffffff;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.mailtoLink {
+  color: #00b7b5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.mailtoLink:hover {
+  color: #9ec7c5;
+  border-bottom-color: #9ec7c5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.input {
+  flex: 1;
+  padding: 1rem 0;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: #ffffff;
+  font-size: 1.2rem;
+  outline: none;
+  transition: all 0.3s ease;
+  font-weight: 300;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+  font-weight: 300;
+}
+
+.input:focus {
+  border-bottom-color: rgba(0, 183, 181, 0.8);
+  background: transparent;
+}
+
+.button {
+  padding: 1rem 2rem;
+  border: none;
+  background: transparent;
+  color: rgba(0, 183, 181, 0.8);
+  font-weight: 400;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  outline: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+
+.button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: rgba(0, 183, 181, 0.8);
+  transition: width 0.3s ease;
+}
+
+.button:hover:not(:disabled)::after,
+.button:focus-visible:not(:disabled)::after {
+  width: 100%;
+}
+
+.button:hover:not(:disabled),
+.button:focus-visible:not(:disabled) {
+  color: rgba(0, 183, 181, 1);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.feedback {
+  color: rgba(0, 183, 181, 0.8);
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  min-height: 1.5em;
+  text-align: left;
+  font-weight: 300;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.widgetContainer {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  z-index: 1;
+}
+
+.widgetContent {
+  width: 100%;
+  min-height: 200px;
+}
+
+.loadingContainer {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.1rem;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  padding: 2rem;
+}
+
+.errorContainer {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  font-weight: 300;
+  text-align: center;
+  padding: 2rem;
+}
+
+.retryButton {
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(0, 183, 181, 0.1);
+  border: 2px solid rgba(0, 183, 181, 0.3);
+  border-radius: 6px;
+  color: rgba(0, 183, 181, 0.9);
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.retryButton:hover:not(:disabled) {
+  background: rgba(0, 183, 181, 0.2);
+  border-color: rgba(0, 183, 181, 0.5);
+  color: rgba(0, 183, 181, 1);
+}
+
+.retryButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Widget styling now handled by centralized Widget component */
+
+@media (max-width: 768px) {
+  .content {
+    padding: 0 1.5rem;
+  }
+
+  .title {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .subtext {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin-bottom: 2.5rem;
+  }
+
+  .inputGroup {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .input {
+    width: 100%;
+    font-size: 1.1rem;
+  }
+
+  .button {
+    font-size: 1rem;
+    padding: 0.75rem 0;
+    margin-left: 0;
+  }
+}

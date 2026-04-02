@@ -1,0 +1,179 @@
+.founders {
+  padding: 6rem 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.98) 0%,
+    rgba(10, 10, 10, 0.98) 50%,
+    rgba(0, 0, 0, 0.98) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.founders::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 80%, rgba(0, 183, 181, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.founders__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.founders__content {
+  text-align: center;
+}
+
+.founders__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.founders__subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 4rem 0;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.founders__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.founder__card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.founder__card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.founder__image {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.founder__imageElement {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.founder__card:hover .founder__imageElement {
+  transform: scale(1.05);
+}
+
+.founder__info {
+  padding: 2rem;
+  text-align: left;
+}
+
+.founder__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.75rem;
+  color: #ffffff;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.founder__role {
+  font-size: 0.875rem;
+  color: rgba(0, 183, 181, 0.8);
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.founder__philosophy {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 1.5rem 0;
+  font-weight: 300;
+}
+
+.founder__linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.founder__linkedin:hover {
+  color: rgba(0, 183, 181, 0.8);
+  transform: translateX(4px);
+}
+
+.founder__linkedin svg {
+  transition: transform 0.3s ease;
+}
+
+.founder__linkedin:hover svg {
+  transform: translateX(2px);
+}
+
+@media (max-width: 768px) {
+  .founders {
+    padding: 4rem 0;
+  }
+
+  .founders__container {
+    padding: 0 1rem;
+  }
+
+  .founders__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .founder__image {
+    height: 250px;
+  }
+
+  .founder__info {
+    padding: 1.5rem;
+  }
+
+  .founder__name {
+    font-size: 1.5rem;
+  }
+
+  .founder__philosophy {
+    font-size: 0.875rem;
+  }
+}

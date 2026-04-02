@@ -1,0 +1,45 @@
+/* Shared ocean surface — content lives in SolutionPartnerClient */
+
+.page {
+  position: relative;
+  overflow: clip;
+  background: transparent;
+  color: #e6f9fb;
+  padding-bottom: 0;
+}
+
+.oceanField {
+  position: relative;
+  isolation: isolate;
+  padding-bottom: clamp(3rem, 8vw, 5rem);
+  background:
+    radial-gradient(circle at 16% 18%, rgba(0, 162, 176, 0.2), transparent 44%),
+    radial-gradient(circle at 82% 68%, rgba(17, 57, 88, 0.44), transparent 48%),
+    radial-gradient(circle at 48% 8%, rgba(0, 162, 176, 0.07), transparent 40%),
+    linear-gradient(180deg, #052533 0%, #112c38 32%, #0d2a35 52%, #0a222d 72%, #07151c 88%, #050a11 100%);
+}
+
+.oceanField::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 14% 30%, rgba(0, 162, 176, 0.09), transparent 34%),
+    radial-gradient(circle at 78% 42%, rgba(90, 140, 168, 0.06), transparent 38%);
+  z-index: 0;
+}
+
+.oceanField::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(5, 10, 17, 0) 36%, rgba(5, 10, 17, 0.2) 62%, rgba(3, 8, 14, 0.42) 100%);
+  z-index: 0;
+}
+
+.oceanField > * {
+  position: relative;
+  z-index: 1;
+}

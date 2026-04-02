@@ -1,0 +1,539 @@
+.main {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  color: #ebede5;
+}
+
+.hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__videoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.hero__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+
+.hero__videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 183, 181, 0.1) 100%);
+  z-index: 1;
+}
+
+.hero__content {
+  max-width: 800px;
+  padding: 0 2rem;
+  z-index: 1001;
+  position: relative;
+}
+
+.hero__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  color: #00b7b5;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero__subtitle {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  color: #9ec7c5;
+  font-weight: 300;
+  line-height: 1.4;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Unified Content Container */
+.contentContainer {
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    #0a0a0a 0%,
+    #0a0a0a 15%,
+    #1a1a1a 30%,
+    #0f0f0f 45%,
+    #0a0a0a 60%,
+    #0a0a0a 75%,
+    #1a1a1a 90%,
+    #0a0a0a 100%
+  );
+}
+
+.story {
+  padding: 8rem 0 6rem 0;
+  position: relative;
+}
+
+.story__container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.story__content {
+  width: 100%;
+  text-align: center;
+}
+
+.story__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  margin-bottom: 3rem;
+  color: #00b7b5;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.story__title::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #00b7b5 50%, transparent 100%);
+  border-radius: 2px;
+}
+
+.story__textContainer {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.story__text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: #ebede5;
+  font-weight: 300;
+  text-align: left;
+}
+
+.story__quote {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin: 2.5rem 0 1.5rem 0;
+  color: #00b7b5;
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+}
+
+.story__signature {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  color: #9ec7c5;
+  font-weight: 400;
+  text-align: center;
+  font-style: italic;
+}
+
+.values {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.values__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.values__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  margin-bottom: 5rem;
+  text-align: center;
+  color: #00b7b5;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.values__title::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #00b7b5 50%, transparent 100%);
+  border-radius: 2px;
+}
+
+.values__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  justify-content: center;
+}
+
+.value {
+  position: relative;
+  background: rgba(211, 243, 255, 0.02);
+  border: 1px solid rgba(211, 243, 255, 0.1);
+  border-radius: 8px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 500px;
+}
+
+.value:hover {
+  background: rgba(211, 243, 255, 0.04);
+  border-color: rgba(211, 243, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.value__accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  opacity: 0.8;
+}
+
+.value__title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #d3f3ff;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+}
+
+.value__description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #94a9b8;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+
+.team {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.team__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.team__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  margin-bottom: 5rem;
+  text-align: center;
+  color: #00b7b5;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.team__title::after {
+  content: '';
+  position: absolute;
+  bottom: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #00b7b5 50%, transparent 100%);
+  border-radius: 2px;
+}
+
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team__member {
+  text-align: center;
+  padding: 3rem;
+  background: rgba(0, 183, 181, 0.05);
+  border: 1px solid rgba(0, 183, 181, 0.15);
+  border-radius: 20px;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 183, 181, 0.1);
+}
+
+.team__member:hover {
+  background: rgba(0, 183, 181, 0.08);
+  border-color: rgba(0, 183, 181, 0.25);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 183, 181, 0.2);
+}
+
+.team__image {
+  position: relative;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.team__imageElement {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.4s ease;
+}
+
+.team__member:hover .team__imageElement {
+  transform: scale(1.05);
+}
+
+.team__info {
+  text-align: left;
+}
+
+.team__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: #9ec7c5;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.team__name::after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #00b7b5 0%, transparent 100%);
+  border-radius: 1px;
+}
+
+.team__role {
+  font-size: 1.1rem;
+  color: #00b7b5;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.team__bio {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #ebede5;
+  font-weight: 300;
+  text-align: justify;
+}
+
+.team__paragraph {
+  margin-bottom: 1.5rem;
+}
+
+.team__paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.team__readMore,
+.team__readLess {
+  background: transparent;
+  border: none;
+  color: #00b7b5;
+  padding: 0;
+  font-size: 1.1rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline;
+  margin-left: 0.25rem;
+}
+
+.team__readMore:hover,
+.team__readLess:hover {
+  color: #00d4d2;
+  text-decoration: underline;
+}
+
+.mission {
+  padding: 6rem 0 8rem 0;
+  position: relative;
+}
+
+.mission__container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.mission__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  margin-bottom: 3rem;
+  color: #00b7b5;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.mission__text {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  color: #ebede5;
+  font-weight: 300;
+  text-align: center;
+  position: relative;
+}
+
+.mission__text::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, #00b7b5 50%, transparent 100%);
+  border-radius: 2px;
+}
+
+.mission__ritualLink {
+  color: #00b7b5;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+
+.mission__ritualLink:hover {
+  color: #00d4d2;
+  border-bottom-color: #00d4d2;
+  text-shadow: 0 0 10px rgba(0, 183, 181, 0.3);
+}
+
+.mission__button {
+  padding: 1.2rem 3rem;
+  background: linear-gradient(135deg, #00b7b5 0%, #9ec7c5 100%);
+  color: #000000;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 10px 30px rgba(0, 183, 181, 0.3);
+}
+
+.mission__button:hover {
+  background: linear-gradient(135deg, #9ec7c5 0%, #00b7b5 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(0, 183, 181, 0.4);
+}
+
+@media (max-width: 1024px) {
+  .team__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__content {
+    padding: 0 1rem;
+  }
+
+  .story__container {
+    padding: 0 1rem;
+  }
+
+  .story__textContainer {
+    max-width: 100%;
+  }
+
+  .values__container,
+  .team__container,
+  .mission__container {
+    padding: 0 1rem;
+  }
+
+  .values__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .team__member {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .values__grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .value {
+    max-width: 100%;
+    padding: 2rem;
+  }
+
+  .team__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

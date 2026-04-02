@@ -1,0 +1,121 @@
+.newsletter {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+  color: #ffffff;
+}
+
+.newsletter__container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.newsletter__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.newsletter__title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 0;
+  color: #ffffff;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.newsletter__subtitle {
+  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+}
+
+.newsletter__form {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 1rem;
+}
+
+.newsletter__inputGroup {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  padding: 0.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.newsletter__inputGroup:focus-within {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.newsletter__input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 0.875rem 1.25rem;
+  color: #ffffff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.newsletter__input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.newsletter__button {
+  background: #ffffff;
+  color: #1a1a1a;
+  border: none;
+  border-radius: 50px;
+  padding: 0.875rem 2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.newsletter__button:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .newsletter {
+    padding: 3rem 0;
+  }
+
+  .newsletter__container {
+    padding: 0 1rem;
+  }
+
+  .newsletter__inputGroup {
+    flex-direction: column;
+    gap: 0.75rem;
+    border-radius: 12px;
+    padding: 1rem;
+  }
+
+  .newsletter__input {
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .newsletter__button {
+    border-radius: 8px;
+    padding: 1rem 2rem;
+  }
+}

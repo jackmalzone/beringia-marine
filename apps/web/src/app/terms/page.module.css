@@ -1,0 +1,262 @@
+.page {
+  position: relative;
+  overflow: clip;
+  background: transparent;
+  color: #e6f9fb;
+  padding-bottom: 0;
+}
+
+/* Match About page ocean palette — lighter blues & teal wash */
+.oceanField {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(5rem, 12vw, 7.5rem) 0 4rem;
+  padding-bottom: clamp(3rem, 8vw, 5rem);
+  background:
+    radial-gradient(circle at 16% 18%, rgba(0, 162, 176, 0.2), transparent 44%),
+    radial-gradient(circle at 82% 68%, rgba(17, 57, 88, 0.44), transparent 48%),
+    radial-gradient(circle at 48% 8%, rgba(0, 162, 176, 0.07), transparent 40%),
+    linear-gradient(180deg, #052533 0%, #112c38 32%, #0d2a35 52%, #0a222d 72%, #07151c 88%, #050a11 100%);
+}
+
+.oceanField::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 14% 30%, rgba(0, 162, 176, 0.09), transparent 34%),
+    radial-gradient(circle at 78% 42%, rgba(90, 140, 168, 0.06), transparent 38%);
+  z-index: 0;
+}
+
+.oceanField::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(5, 10, 17, 0) 36%, rgba(5, 10, 17, 0.2) 62%, rgba(3, 8, 14, 0.42) 100%);
+  z-index: 0;
+}
+
+.container {
+  width: min(1200px, calc(100% - 3rem));
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: #e6f9fb;
+  letter-spacing: -0.02em;
+  transition:
+    color var(--duration-normal, 0.25s) var(--ease-standard, ease),
+    text-shadow var(--duration-normal, 0.25s) var(--ease-standard, ease);
+}
+
+.header:hover .title {
+  color: #f0fcff;
+  text-shadow: 0 0 28px rgba(0, 162, 176, 0.25);
+}
+
+.content {
+  background: linear-gradient(165deg, rgba(12, 42, 58, 0.72) 0%, rgba(8, 32, 48, 0.88) 45%, rgba(6, 24, 38, 0.92) 100%);
+  border-radius: 14px;
+  border: 1px solid rgba(0, 162, 176, 0.28);
+  box-shadow:
+    0 4px 28px rgba(0, 0, 0, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  padding: clamp(1.75rem, 4vw, 3rem);
+  transition:
+    border-color var(--duration-normal, 0.28s) var(--ease-standard, ease),
+    box-shadow var(--duration-normal, 0.28s) var(--ease-standard, ease),
+    transform var(--duration-normal, 0.28s) var(--ease-standard, ease);
+}
+
+.content:hover {
+  border-color: rgba(0, 162, 176, 0.38);
+  box-shadow:
+    0 8px 36px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(0, 162, 176, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+}
+
+.section {
+  margin: 0;
+  padding: 1.25rem 1rem 1.5rem 1.15rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid rgba(0, 162, 176, 0.12);
+  transition:
+    background var(--duration-normal, 0.28s) var(--ease-standard, ease),
+    border-color var(--duration-normal, 0.28s) var(--ease-standard, ease),
+    transform var(--duration-normal, 0.28s) var(--ease-standard, ease),
+    box-shadow var(--duration-normal, 0.28s) var(--ease-standard, ease);
+}
+
+.section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 1.25rem;
+}
+
+.section:hover {
+  background: rgba(0, 162, 176, 0.07);
+  border-color: rgba(0, 162, 176, 0.18);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.sectionTitle {
+  margin: 0 0 1rem;
+  font-family: var(--font-body);
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  color: #7ee8f2;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition:
+    color var(--duration-fast, 0.2s) var(--ease-standard, ease),
+    letter-spacing var(--duration-fast, 0.2s) var(--ease-standard, ease);
+}
+
+.section:hover .sectionTitle {
+  color: #9af0f7;
+  letter-spacing: -0.01em;
+}
+
+.sectionTitle::before {
+  content: '';
+  flex-shrink: 0;
+  width: 4px;
+  height: 1.35em;
+  background: linear-gradient(180deg, #3dd4e4 0%, #00a2b0 100%);
+  border-radius: 2px;
+  transition:
+    width var(--duration-fast, 0.22s) var(--ease-standard, ease),
+    box-shadow var(--duration-fast, 0.22s) var(--ease-standard, ease),
+    filter var(--duration-fast, 0.22s) var(--ease-standard, ease);
+}
+
+.section:hover .sectionTitle::before {
+  width: 5px;
+  box-shadow: 0 0 14px rgba(0, 212, 230, 0.45);
+  filter: brightness(1.08);
+}
+
+.sectionText {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #c9dbe4;
+  transition: color var(--duration-fast, 0.2s) var(--ease-standard, ease);
+}
+
+.section:hover .sectionText {
+  color: #d8e8f0;
+}
+
+.docFooter {
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(0, 162, 176, 0.2);
+  text-align: center;
+}
+
+.docFooterLine {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: #8ba8b6;
+  transition:
+    color var(--duration-fast, 0.2s) var(--ease-standard, ease),
+    transform var(--duration-fast, 0.2s) var(--ease-standard, ease);
+}
+
+.docFooterLine:first-child {
+  margin-bottom: 0.5rem;
+}
+
+.docFooter:hover .docFooterLine {
+  color: #a3bec9;
+}
+
+@media (max-width: 768px) {
+  .oceanField {
+    padding: 4.5rem 0 3rem;
+  }
+
+  .container {
+    width: calc(100% - 2rem);
+  }
+
+  .content {
+    padding: 1.75rem;
+  }
+
+  .content:hover {
+    transform: none;
+  }
+
+  .section {
+    padding: 1rem 0.75rem;
+  }
+
+  .section:hover {
+    transform: none;
+  }
+
+  .sectionTitle {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .oceanField {
+    padding: 4rem 0 2rem;
+  }
+
+  .container {
+    width: calc(100% - 1.5rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title,
+  .content,
+  .section,
+  .sectionTitle,
+  .sectionTitle::before,
+  .sectionText,
+  .docFooterLine {
+    transition: none;
+  }
+
+  .header:hover .title,
+  .content:hover,
+  .section:hover,
+  .section:hover .sectionTitle,
+  .section:hover .sectionTitle::before,
+  .section:hover .sectionText,
+  .docFooter:hover .docFooterLine {
+    transform: none;
+    text-shadow: none;
+    box-shadow: none;
+    filter: none;
+  }
+}

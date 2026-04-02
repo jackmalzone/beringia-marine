@@ -1,0 +1,127 @@
+.photoGallery {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.backgroundImage img {
+  transition: opacity 2s ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  z-index: 2;
+}
+
+.indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.indicatorDots {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.1);
+}
+
+.dot.active {
+  background: rgba(0, 183, 181, 0.8);
+  border-color: rgba(0, 183, 181, 1);
+  box-shadow: 0 0 10px rgba(0, 183, 181, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .indicator {
+    bottom: 1.5rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .indicatorDots {
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .indicator {
+    bottom: 1rem;
+  }
+}
+
+/* Performance optimizations */
+.photoGallery {
+  will-change: transform;
+}
+
+.backgroundImage {
+  will-change: transform;
+}
+
+/* Smooth image transitions */
+.backgroundImage img {
+  will-change: opacity;
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .backgroundImage {
+    transition: none;
+  }
+
+  .backgroundImage img {
+    transition: none;
+  }
+
+  .dot {
+    transition: none;
+  }
+}

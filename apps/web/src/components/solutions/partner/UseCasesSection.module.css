@@ -1,0 +1,58 @@
+.section {
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 3vw, 2rem);
+  background: transparent;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.55rem, 3.5vw, 2.1rem);
+  text-align: center;
+  color: #e6f9fb;
+}
+
+.description {
+  margin: 0 auto 1.75rem;
+  text-align: center;
+  color: #a8c7d3;
+  line-height: 1.65;
+  max-width: 65ch;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 1.15rem;
+}
+
+.card {
+  background: rgba(6, 22, 34, 0.35);
+  border: 1px solid rgba(0, 162, 176, 0.16);
+  border-radius: 12px;
+  padding: 1.25rem 1.35rem;
+}
+
+.cardTitle {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  color: #e6f9fb;
+}
+
+.cardDesc {
+  margin: 0 0 0.65rem;
+  color: #c9dbe4;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.points {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #b8d0dc;
+  line-height: 1.65;
+  font-size: 0.9rem;
+}

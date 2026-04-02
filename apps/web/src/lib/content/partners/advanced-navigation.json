@@ -1,0 +1,176 @@
+{
+  "sourceFile": "src/data/clients/advanced-navigation/advanced-navigation.ts",
+  "sketchfabConstants": {
+    "HYDRUS_SHIPWRECK": "11c4619cc5e44045b1df5fd4abdcb586",
+    "note": "Hydrus shipwreck model in Interactive + gallery; Subsonus has no public embed id in source data — link via mediaLinks.sketchfab"
+  },
+  "id": "advanced-navigation",
+  "name": "Advanced Navigation",
+  "slug": "advanced-navigation",
+  "modelId": "11c4619cc5e44045b1df5fd4abdcb586",
+  "seo": {
+    "title": "Advanced Navigation | Marine Technology Solutions",
+    "description": "Global leader in navigation and autonomous systems. Made possible with extensive research, testing and vertically integrated manufacturing, the company has progressed into deep technology fields, including robotics, underwater acoustics, inertial, photonic and quantum sensing.",
+    "ogImage": "bundled: src/assets/clients/advanced-navigation/header.jpg"
+  },
+  "overview": {
+    "title": "Advanced Navigation",
+    "description": "Advanced Navigation is a global leader in navigation and autonomous systems. By leveraging capabilities in software-enhanced hardware, every solution delivers unrivalled capabilities and exceptional performance across land, air, sea and space applications where GPS is unreliable. Headquartered in Sydney, Australia, with research and production facilities nationwide and offices globally, Advanced Navigation is an Australian manufacturer exporting worldwide."
+  },
+  "sellingPoints": {
+    "title": "Core Subsea Solutions",
+    "points": [
+      {
+        "id": "hydrus",
+        "title": "HYDRUS",
+        "description": "Hydrus is a hovering micro autonomous underwater vehicle (AUV) revolutionising underwater data collection across reef monitoring and subsea inspections.",
+        "features": [
+          "Fully autonomous with advanced navigation and communication systems",
+          "Integrated DVL, USBL, INS and acoustic modem",
+          "High-quality 4K camera for accurate, georeferenced video and imagery",
+          "Compact and lightweight at 15 lbs",
+          "Hand deployable from small boats",
+          "Obstacle detection and collision avoidance"
+        ],
+        "icon": "bundled: src/assets/clients/advanced-navigation/hydrus-icon.webp",
+        "link": "https://www.advancednavigation.com/robotics/micro-auv/hydrus/",
+        "documentation": {
+          "specs": "https://www.advancednavigation.com/robotics/micro-auv/hydrus/datasheet/",
+          "manual": "https://docs.advancednavigation.com/hydrus/Printed_Title.htm",
+          "benthicSurvey": "https://pub-264ce0c4c88b4573839aee612dbbfd27.r2.dev/250819-Hydrus_Evaluation_Final.pdf"
+        }
+      },
+      {
+        "id": "subsonus",
+        "title": "Subsonus",
+        "description": "Subsonus is a miniature underwater acoustic positioning system that provides high accuracy position, velocity, and heading at ranges of up to 1000 meters.",
+        "features": [
+          "Next-generation USBL2 configuration with multi-transducer architecture",
+          "Integrated Inertial Navigation Systems (INS) for 6DoF accuracy",
+          "Industry-leading eight-channel factory-calibrated hydrophone array",
+          "Dynamic power and signal encoding for improved performance",
+          "Acoustic heading transfer technology",
+          "Internal speed of sound measurement",
+          "Fully integrated miniature enclosure",
+          "Built-in acoustic modem functionality"
+        ],
+        "icon": "bundled: src/assets/clients/advanced-navigation/subsonus-icon.webp",
+        "link": "https://www.advancednavigation.com/acoustic-navigation/usbl/subsonus/",
+        "documentation": {
+          "specs": "https://www.advancednavigation.com/acoustic-navigation/usbl/subsonus/datasheet/",
+          "manual": "https://docs.advancednavigation.com/subsonus/Introduction.htm"
+        }
+      },
+      {
+        "id": "subsonus-tag",
+        "title": "Subsonus Tag",
+        "description": "Subsonus Tag is an acoustic positioning transponder that operates with the Subsonus USBL.",
+        "features": [
+          "Ultra-long battery life up to 18 months",
+          "Multi-track technology for multiple tag deployment",
+          "Integrated pressure tolerant display for diver communication",
+          "Hermetically sealed design requiring no servicing",
+          "Wireless Qi charging and Bluetooth configuration"
+        ],
+        "icon": "bundled: src/assets/clients/advanced-navigation/subsonus-tag-icon.webp",
+        "link": "https://www.advancednavigation.com/acoustic-navigation/transponders/subsonus-tag/",
+        "documentation": {
+          "specs": "https://www.advancednavigation.com/acoustic-navigation/transponders/subsonus-tag/datasheet/"
+        }
+      }
+    ]
+  },
+  "useCases": {
+    "title": "Applications",
+    "description": "Advanced Navigation provides cutting-edge solutions across multiple marine sectors",
+    "cases": [
+      {
+        "id": "subsea",
+        "title": "Subsea Positioning",
+        "description": "High-precision positioning solutions for ROVs, AUVs, and subsea vehicles.",
+        "keyPoints": [
+          "Ultra-short baseline (USBL) positioning",
+          "Inertial navigation systems (INS)",
+          "Depth-rated solutions to 4000m"
+        ]
+      },
+      {
+        "id": "survey",
+        "title": "Hydrographic Survey",
+        "description": "Unprecedented performance for each class of marine survey and mapping regardless of application.",
+        "keyPoints": [
+          "Singlebeam, multibeam, Sub-bottom profiling, magnetometer",
+          "Time synchronization including 1PPS, PTP",
+          "1000 Hz sampling",
+          "IHO Special Order"
+        ]
+      },
+      {
+        "id": "vessel",
+        "title": "Vessel & Rig Monitoring",
+        "description": "Advanced navigation, positioning and monitoring for offshore vessels, rigs, FPSO's and more.",
+        "keyPoints": [
+          "Dynamic positioning reference",
+          "Dynamic attitude including heading, surge, sway, heave, pitch and roll",
+          "Precision Navigation regardless of GNSS availability"
+        ]
+      }
+    ]
+  },
+  "valueProposition": {
+    "title": "Why Choose Advanced Navigation",
+    "description": "Built on a culture of research and discovery, Advanced Navigation merges cutting-edge technologies into simple solutions, ensuring swift delivery of capabilities to customers.",
+    "highlights": [
+      "Extensive research and testing capabilities",
+      "Vertically integrated manufacturing",
+      "Deep technology expertise across multiple fields",
+      "Rapid product delivery worldwide",
+      "Unmatched technical field expertise",
+      "Progress in robotics, underwater acoustics, and quantum sensing",
+      "Comprehensive support network",
+      "Australian-made quality"
+    ]
+  },
+  "mediaLinks": {
+    "website": "https://www.advancednavigation.com",
+    "youtube": "https://youtube.com/@advancednavigation",
+    "linkedin": "https://linkedin.com/company/advanced-navigation",
+    "sketchfab": "https://sketchfab.com/advanced-navigation"
+  },
+  "gallery": [
+    { "id": "hydrus-overview", "alt": "Overview of Hydrus autonomous underwater vehicle", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-1-hydrus.jpg" },
+    { "id": "hydrus-auv", "alt": "Detailed specifications of Hydrus AUV system", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-2-subsonus.jpg" },
+    { "id": "hydrus-revolution", "alt": "Revolutionary features of Hydrus platform", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-3-catalyst.jpg" },
+    { "id": "subsonus-overview", "alt": "Overview of Subsonus underwater positioning system", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-4-history.jpg" },
+    { "id": "subsonus-usbl", "alt": "Subsonus USBL system capabilities", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-5-solutions.jpg" },
+    { "id": "subsonus-specifications", "alt": "Technical specifications of Subsonus system", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-6-trust.jpg" },
+    { "id": "subsonus-tag-specs", "alt": "Specifications of Subsonus Tag transponder", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-7-acousticnav.jpg" },
+    { "id": "acoustic-navigation", "alt": "Acoustic navigation system overview", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-8-subsonus-specs.jpg" },
+    { "id": "acoustic-nav-specs", "alt": "Acoustic navigation system specifications", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-9-acousticnav-specs.jpg" },
+    { "id": "hydrus-features", "alt": "Key features of Hydrus platform", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-10-subsonus-usbl.jpg" },
+    { "id": "hydrus-payload", "alt": "Hydrus payload capabilities", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-11-subsonustag-specs.jpg" },
+    { "id": "navigation-capabilities", "alt": "Advanced navigation capabilities", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-12-hydrus-rev.jpg" },
+    { "id": "current-analysis", "alt": "Current analysis and monitoring capabilities", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-13-hydrus-auv.jpg" },
+    { "id": "shipwreck-survey", "alt": "Shipwreck survey capabilities", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-14-3d-data.jpg" },
+    { "id": "photogrammetry", "alt": "Underwater photogrammetry capabilities", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-15-navigation.jpg" },
+    { "id": "3d-data", "alt": "3D data collection and processing", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-16-payload.jpg" },
+    { "id": "solutions-overview", "alt": "Overview of Advanced Navigation solutions", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-17-features.jpg" },
+    { "id": "trust-factors", "alt": "Why trust Advanced Navigation", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-18-photogrammatry.jpg" },
+    { "id": "catalyst-tech", "alt": "Catalyst technology overview", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-19-shipwreck.jpg" },
+    { "id": "company-history", "alt": "Advanced Navigation company history", "type": "image", "bundledAsset": "src/assets/clients/advanced-navigation/pptx-20-currents.jpg" },
+    {
+      "id": "hydrus-3d",
+      "alt": "Hydrus — shipwreck photogrammetry (Sketchfab)",
+      "type": "sketchfab",
+      "modelId": "11c4619cc5e44045b1df5fd4abdcb586",
+      "url": "https://sketchfab.com/models/11c4619cc5e44045b1df5fd4abdcb586"
+    }
+  ],
+  "headerImage": "bundled: src/assets/clients/advanced-navigation/header.jpg",
+  "logo": "bundled: src/assets/clients/advanced-navigation/logo-title.webp",
+  "clientPageInteractiveCopy": {
+    "note": "Hardcoded in Client.tsx when modelId matches HYDRUS_SHIPWRECK — not part of ClientData",
+    "title": "Hydrus",
+    "description": "Explore this detailed 3D model of a shipwreck captured by Hydrus. This scan demonstrates Hydrus's advanced underwater mapping capabilities, allowing you to rotate and zoom to examine the wreck from every angle."
+  }
+}

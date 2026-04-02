@@ -1,0 +1,147 @@
+/* Loading Screen Container */
+.loadingScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Background */
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000000;
+}
+
+/* Logo Container */
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+  margin-left: 15px; /* Slight adjustment to the right to balance visual weight */
+  animation: logoFadeIn 1s ease-out;
+}
+
+@keyframes logoFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.loadingLogo {
+  filter: drop-shadow(0 0 20px rgba(0, 183, 181, 0.3));
+}
+
+/* Progress Container */
+.progressContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  z-index: 10;
+}
+
+.progressBar {
+  width: 300px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 183, 181, 0.2);
+  position: relative;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #00b7b5 0%, #9ec7c5 100%);
+  border-radius: 2px;
+  transition:
+    width 0.05s ease-out,
+    opacity 0.2s ease;
+  box-shadow: 0 0 10px rgba(0, 183, 181, 0.4);
+  min-width: 1px; /* Ensure it's always visible when progress > 0 */
+  position: relative;
+}
+
+.progressFill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.progressText {
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  opacity: 0.8;
+  letter-spacing: 1px;
+  min-width: 40px; /* Ensure consistent width */
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .logoContainer {
+    margin-bottom: 60px;
+  }
+
+  .progressBar {
+    width: 250px;
+    height: 3px;
+  }
+
+  .progressText {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoContainer {
+    margin-bottom: 50px;
+  }
+
+  .progressBar {
+    width: 200px;
+    height: 3px;
+  }
+
+  .progressText {
+    font-size: 0.85rem;
+  }
+}

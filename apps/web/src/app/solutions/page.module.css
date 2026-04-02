@@ -1,0 +1,370 @@
+.page {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background: transparent;
+  color: var(--depth-text, #e6f9fb);
+  min-height: 100vh;
+  padding-bottom: 0;
+}
+
+/* Content stacks above fixed DepthBackground (same pattern as Home) */
+.oceanField {
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
+  padding-bottom: clamp(3.5rem, 9vw, 5.5rem);
+  background: transparent;
+}
+
+/* Light read veil + teal lift — shared across sections without opaque bands */
+.oceanField::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(0, 162, 176, 0.12), transparent 42%),
+    radial-gradient(circle at 82% 55%, rgba(17, 57, 88, 0.2), transparent 48%);
+}
+
+.oceanField::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(5, 10, 17, 0) 40%, rgba(3, 8, 14, 0.28) 100%);
+}
+
+.container {
+  width: min(1100px, calc(100% - 3rem));
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.containerNarrow {
+  width: min(760px, calc(100% - 3rem));
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  padding-top: clamp(9.5rem, 18vh, 14rem);
+  padding-bottom: clamp(3rem, 6vh, 4.5rem);
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: var(--depth-text-meta, #8bc0d0);
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.1rem, 5.8vw, 4rem);
+  line-height: 1.08;
+  color: var(--depth-text, #e6f9fb);
+}
+
+.heroLead {
+  margin: 1.15rem 0 0;
+  max-width: 56ch;
+  color: var(--depth-text-muted, #c7dbe4);
+  line-height: 1.75;
+  font-size: clamp(1.02rem, 2vw, 1.2rem);
+}
+
+.section,
+.sectionAlt {
+  padding: clamp(2.7rem, 5vw, 4rem) 0;
+  background: transparent;
+  color: var(--depth-text, #e6f9fb);
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--depth-divider, rgba(136, 194, 219, 0.18));
+}
+
+/* Hero is the first <section>; this is the first content band below it */
+.introSection {
+  border-top: none;
+}
+
+.section p,
+.sectionAlt p {
+  margin: 0;
+  line-height: 1.75;
+  color: var(--depth-text-muted, #c7dce7);
+}
+
+.underlinedTitle {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 1rem;
+  padding-bottom: 0.8rem;
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+  color: var(--depth-text, #e6f9fb);
+}
+
+.underlinedTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--gradient-title-underline);
+}
+
+.sectionLabel {
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  color: var(--depth-text-meta, #8bc0d0);
+}
+
+.gridTitle {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 600;
+  color: var(--depth-text, #e6f9fb);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: clamp(1.25rem, 3vw, 1.85rem);
+}
+
+/* Depth surfaces — aligned with Home expertise cards */
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--depth-surface, rgba(10, 42, 61, 0.5));
+  border: 1px solid var(--depth-surface-border, rgba(136, 194, 219, 0.22));
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow:
+    var(--depth-surface-shadow, 0 10px 26px rgba(1, 12, 22, 0.3)),
+    inset 0 1px 0 var(--depth-surface-inset, rgba(255, 255, 255, 0.08));
+  backdrop-filter: var(--blur-glass);
+  transition:
+    transform var(--duration-medium) var(--ease-standard),
+    border-color var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1)),
+    box-shadow var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 162, 176, 0.38);
+  box-shadow:
+    var(--depth-surface-shadow-hover, 0 14px 38px rgba(1, 12, 22, 0.42)),
+    0 0 0 1px var(--depth-glow, rgba(0, 162, 176, 0.15)),
+    inset 0 1px 0 var(--depth-surface-inset, rgba(255, 255, 255, 0.08));
+}
+
+.cardMediaLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+}
+
+.cardMediaLink:focus-visible {
+  outline: 2px solid var(--depth-accent, var(--color-accent));
+  outline-offset: 2px;
+}
+
+.cardMedia {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #0b141d;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-medium) var(--ease-standard);
+}
+
+.card:hover .cardImage {
+  transform: scale(1.04);
+}
+
+.cardBody {
+  padding: clamp(1.15rem, 2.5vw, 1.45rem);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.35rem;
+}
+
+.cardTagline {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--depth-text-meta, #8bc0d0);
+}
+
+.cardName {
+  margin: 0.15rem 0 0;
+  font-size: clamp(1.2rem, 2.4vw, 1.45rem);
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.cardTitleLink {
+  color: var(--depth-text, #e7f6fc);
+  text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.cardTitleLink:hover {
+  color: var(--depth-accent, var(--color-accent));
+}
+
+.cardDescription {
+  margin: 0.35rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--depth-text-muted, #c7dce7);
+  flex: 1;
+}
+
+.cardMeta {
+  margin: 0.85rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.cardMetaLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  color: var(--depth-text-meta, #8bc0d0);
+  opacity: 0.88;
+}
+
+.cardMetaValue {
+  color: var(--depth-text-muted, #c7dce7);
+}
+
+.cardCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  width: fit-content;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--depth-link, var(--color-accent));
+  text-decoration: none;
+  transition:
+    color var(--duration-fast) var(--ease-standard),
+    gap var(--duration-fast) var(--ease-standard);
+}
+
+.cardCta:hover {
+  color: var(--depth-link-hover, #4dd1db);
+  gap: 0.55rem;
+}
+
+.cardCta:focus-visible {
+  outline: 2px solid var(--depth-accent, var(--color-accent));
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.cardCtaArrow {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.ctaBand {
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
+  padding: clamp(2.75rem, 6vw, 4rem) 0 clamp(1rem, 3vw, 2rem);
+  position: relative;
+  z-index: 1;
+  border-top: 1px solid var(--depth-divider, rgba(136, 194, 219, 0.18));
+  background: linear-gradient(180deg, transparent 0%, rgba(0, 162, 176, 0.07) 50%, transparent 100%);
+}
+
+.ctaTitle {
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.65rem, 3.8vw, 2.2rem);
+  color: var(--depth-text, #e6f9fb);
+}
+
+.ctaCopy {
+  margin: 0 0 1.35rem;
+  max-width: 52ch;
+  line-height: 1.75;
+  color: var(--depth-text-muted, #c7dce7);
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.74rem 1.35rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: var(--depth-gradient-cta, var(--gradient-cta));
+  color: var(--depth-button-text, #f3fbfd);
+  border: 1px solid var(--depth-button-border, rgba(230, 249, 251, 0.35));
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition:
+    transform var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.primaryButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px var(--depth-glow, rgba(0, 162, 176, 0.15));
+}
+
+.primaryButton:focus-visible {
+  outline: 2px solid var(--depth-accent, var(--color-accent));
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .cardImage,
+  .primaryButton {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .card:hover .cardImage {
+    transform: none;
+  }
+
+  .primaryButton:hover {
+    transform: none;
+  }
+}

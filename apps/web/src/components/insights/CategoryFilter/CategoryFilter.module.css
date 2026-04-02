@@ -1,0 +1,150 @@
+/**
+ * CategoryFilter Component Styles
+ * Category filter focus and active states (template palette)
+ */
+
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin: 32px 0;
+  padding: 0 16px;
+}
+
+.filter__button {
+  /* Base styles */
+  position: relative;
+  padding: 12px 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  /* Ensure button doesn't shrink */
+  flex-shrink: 0;
+}
+
+/* Hover state */
+.filter__button:hover {
+  color: #ffffff;
+  background: rgba(0, 183, 181, 0.15);
+  border-color: rgba(0, 183, 181, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 183, 181, 0.2);
+}
+
+/* Active / selected state */
+.filter__button--active {
+  color: #000000;
+  background: #00b7b5;
+  border-color: #00b7b5;
+  box-shadow:
+    0 4px 16px rgba(0, 183, 181, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.filter__button--active:hover {
+  background: #00d4d1;
+  border-color: #00d4d1;
+  transform: translateY(-2px);
+  box-shadow:
+    0 6px 20px rgba(0, 183, 181, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+/* Focus state - WCAG 2.1 AA compliant visible focus indicator */
+.filter__button:focus {
+  outline: none;
+}
+
+.filter__button:focus-visible {
+  outline: 3px solid #00b7b5;
+  outline-offset: 3px;
+  box-shadow:
+    0 0 0 3px rgba(0, 183, 181, 0.3),
+    0 4px 12px rgba(0, 183, 181, 0.2);
+}
+
+.filter__button--active:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.5),
+    0 4px 16px rgba(0, 183, 181, 0.4);
+}
+
+/* Active (pressed) state */
+.filter__button:active {
+  transform: translateY(0);
+  transition-duration: 0.1s;
+}
+
+/* Disabled state (if needed in future) */
+.filter__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .filter {
+    gap: 8px;
+    margin: 24px 0;
+  }
+
+  .filter__button {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter {
+    gap: 6px;
+    margin: 20px 0;
+  }
+
+  .filter__button {
+    padding: 8px 16px;
+    font-size: 11px;
+  }
+}
+
+/* Reduced motion support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .filter__button {
+    transition: none;
+  }
+
+  .filter__button:hover,
+  .filter__button:active {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .filter__button {
+    border-width: 2px;
+  }
+
+  .filter__button--active {
+    border-width: 3px;
+  }
+
+  .filter__button:focus-visible {
+    outline-width: 4px;
+  }
+}

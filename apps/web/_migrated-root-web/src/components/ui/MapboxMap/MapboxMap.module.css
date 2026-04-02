@@ -1,0 +1,840 @@
+/* Map Wrapper - Container for the entire map component */
+.mapWrapper {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Map Container - Responsive and matches page design with performance optimizations */
+.mapContainer {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  /* Performance optimizations */
+  contain: layout style paint;
+  will-change: transform;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+.mapContainer:hover {
+  border-color: rgba(0, 183, 181, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 183, 181, 0.15);
+}
+
+/* Loading State - Matches contact page design */
+.loadingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  gap: 20px;
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+}
+
+.loadingSpinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top: 3px solid #00b7b5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loadingText {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error State - Dark theme matching contact page */
+.errorState {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.errorContent {
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.errorIcon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.errorMessage h4 {
+  margin: 0 0 12px 0;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+  letter-spacing: -0.01em;
+}
+
+.errorMessage p {
+  margin: 0 0 24px 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+}
+
+/* Fallback Content - Matches contact page styling */
+.fallbackContent {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(0, 183, 181, 0.2);
+  border-radius: 12px;
+  padding: 24px;
+  margin-top: 20px;
+  text-align: left;
+  backdrop-filter: blur(10px);
+}
+
+.fallbackContent h5 {
+  margin: 0 0 16px 0;
+  color: #00b7b5;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+}
+
+.businessInfo {
+  margin-bottom: 20px;
+}
+
+.businessName {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 18px;
+  margin-bottom: 8px;
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+}
+
+.businessAddress {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+}
+
+.businessPhone a {
+  color: #00b7b5;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.businessPhone a:hover {
+  color: #9ec7c5;
+  text-decoration: underline;
+}
+
+/* Action Buttons - Matches contact page button styling */
+.fallbackActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.retryButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: var(--font-ui, 'Inter', sans-serif);
+}
+
+.retryButton:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.retryButton:active {
+  transform: translateY(0);
+}
+
+.directionsButton {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #00b7b5, #9ec7c5);
+  color: #000000;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 183, 181, 0.3);
+  font-family: var(--font-ui, 'Inter', sans-serif);
+  position: relative;
+  overflow: hidden;
+}
+
+.directionsButton::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #9ec7c5, #00b7b5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.directionsButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 183, 181, 0.4);
+}
+
+.directionsButton:hover::before {
+  opacity: 1;
+}
+
+.directionsButton span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Error Details - Development only */
+.errorDetails {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.errorDetails summary {
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  margin-bottom: 8px;
+  font-family: var(--font-ui, 'Inter', sans-serif);
+}
+
+.errorDetails code {
+  display: block;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 11px;
+  color: #ff6b6b;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+/* Map Instance with performance optimizations */
+.mapInstance {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  /* Performance optimizations */
+  contain: strict;
+  will-change: transform;
+  transform: translateZ(0); /* Force hardware acceleration */
+  /* Optimize rendering */
+  image-rendering: optimizeSpeed;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+}
+
+/* Custom Mapbox Popup Styling - Dark theme with Vital Ice branding */
+.mapContainer :global(.custom-mapbox-popup .mapboxgl-popup-content) {
+  padding: 0;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 183, 181, 0.2);
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+  min-width: 300px;
+  max-width: 340px;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  overflow: hidden;
+}
+
+.mapContainer :global(.custom-mapbox-popup .mapboxgl-popup-close-button) {
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 8px;
+  right: 12px;
+  top: 12px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mapContainer :global(.custom-mapbox-popup .mapboxgl-popup-close-button:hover) {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.mapContainer :global(.custom-mapbox-popup .mapbox-popup-content) {
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(0, 183, 181, 0.05) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.mapContainer :global(.custom-mapbox-popup .popup-header) {
+  margin-bottom: 20px;
+  padding-right: 40px;
+  position: relative;
+}
+
+.mapContainer :global(.custom-mapbox-popup .popup-header::after) {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: linear-gradient(90deg, #00b7b5, #9ec7c5);
+  border-radius: 1px;
+}
+
+.mapContainer :global(.custom-mapbox-popup .popup-title) {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+}
+
+.mapContainer :global(.custom-mapbox-popup .popup-body) {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mapContainer :global(.custom-mapbox-popup .popup-address),
+.mapContainer :global(.custom-mapbox-popup .popup-phone) {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.mapContainer :global(.custom-mapbox-popup .popup-address:hover),
+.mapContainer :global(.custom-mapbox-popup .popup-phone:hover) {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(0, 183, 181, 0.3);
+}
+
+.mapContainer :global(.custom-mapbox-popup .popup-icon) {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #00b7b5;
+  filter: drop-shadow(0 0 4px rgba(0, 183, 181, 0.3));
+}
+
+.mapContainer :global(.custom-mapbox-popup .popup-phone-link) {
+  color: #00b7b5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.mapContainer :global(.custom-mapbox-popup .popup-phone-link::after) {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #9ec7c5;
+  transition: width 0.3s ease;
+}
+
+.mapContainer :global(.custom-mapbox-popup .popup-phone-link:hover) {
+  color: #9ec7c5;
+  text-shadow: 0 0 8px rgba(0, 183, 181, 0.4);
+}
+
+.mapContainer :global(.custom-mapbox-popup .popup-phone-link:hover::after) {
+  width: 100%;
+}
+
+.mapContainer :global(.custom-mapbox-popup .mapboxgl-popup-tip) {
+  border-top-color: rgba(0, 0, 0, 0.95);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 768px) {
+  .mapContainer {
+    height: 300px;
+    border-radius: 8px;
+  }
+
+  .mapInstance {
+    border-radius: 8px;
+  }
+
+  .loadingState {
+    gap: 16px;
+  }
+
+  .loadingSpinner {
+    width: 32px;
+    height: 32px;
+  }
+
+  .errorContent {
+    padding: 16px;
+  }
+
+  .fallbackContent {
+    padding: 20px;
+  }
+
+  .fallbackActions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .retryButton,
+  .directionsButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Mobile popup adjustments */
+  .mapContainer :global(.custom-mapbox-popup .mapboxgl-popup-content) {
+    min-width: 280px;
+    max-width: 300px;
+    border-radius: 12px;
+  }
+
+  .mapContainer :global(.custom-mapbox-popup .mapbox-popup-content) {
+    padding: 20px;
+  }
+
+  .mapContainer :global(.custom-mapbox-popup .popup-title) {
+    font-size: 18px;
+  }
+
+  .mapContainer :global(.custom-mapbox-popup .popup-address),
+  .mapContainer :global(.custom-mapbox-popup .popup-phone) {
+    padding: 10px;
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .mapContainer :global(.custom-mapbox-popup .mapboxgl-popup-close-button) {
+    width: 32px;
+    height: 32px;
+    right: 8px;
+    top: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapContainer {
+    height: 280px;
+    border-radius: 6px;
+  }
+
+  .mapInstance {
+    border-radius: 6px;
+  }
+
+  .errorMessage h4 {
+    font-size: 18px;
+  }
+
+  .businessName {
+    font-size: 16px;
+  }
+
+  /* Extra small mobile popup */
+  .mapContainer :global(.custom-mapbox-popup .mapboxgl-popup-content) {
+    min-width: 260px;
+    max-width: 280px;
+  }
+
+  .mapContainer :global(.custom-mapbox-popup .mapbox-popup-content) {
+    padding: 16px;
+  }
+
+  .mapContainer :global(.custom-mapbox-popup .popup-title) {
+    font-size: 16px;
+  }
+}
+
+/* Touch-friendly interactions */
+@media (hover: none) and (pointer: coarse) {
+  .retryButton,
+  .directionsButton {
+    min-height: 44px;
+    padding: 12px 24px;
+  }
+
+  .mapContainer :global(.custom-mapbox-popup .mapboxgl-popup-close-button) {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .mapContainer :global(.custom-mapbox-popup .popup-address),
+  .mapContainer :global(.custom-mapbox-popup .popup-phone) {
+    min-height: 44px;
+    padding: 12px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .loadingSpinner {
+    animation: none;
+  }
+
+  .mapContainer,
+  .retryButton,
+  .directionsButton {
+    transition: none;
+  }
+
+  .mapContainer :global(.custom-mapbox-popup .mapboxgl-popup-close-button),
+  .mapContainer :global(.custom-mapbox-popup .popup-address),
+  .mapContainer :global(.custom-mapbox-popup .popup-phone),
+  .mapContainer :global(.custom-mapbox-popup .popup-phone-link) {
+    transition: none;
+  }
+
+  .retryButton:hover,
+  .directionsButton:hover {
+    transform: none;
+  }
+
+  .mapContainer :global(.custom-mapbox-popup .mapboxgl-popup-close-button:hover) {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .mapContainer {
+    border: 2px solid #ffffff;
+  }
+
+  .loadingSpinner {
+    border-top-color: #ffffff;
+  }
+
+  .errorMessage h4,
+  .businessName {
+    color: #ffffff;
+  }
+
+  .retryButton {
+    border: 2px solid #ffffff;
+  }
+
+  .mapContainer :global(.custom-mapbox-popup .mapboxgl-popup-content) {
+    border: 2px solid #ffffff;
+  }
+
+  .mapContainer :global(.custom-mapbox-popup .popup-title) {
+    color: #ffffff;
+  }
+}
+
+/* Accessibility: Screen reader only content */
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Accessibility: Focus indicators for interactive elements */
+.mapInstance:focus {
+  outline: 2px solid #00b7b5;
+  outline-offset: 2px;
+}
+
+.retryButton:focus,
+.directionsButton:focus {
+  outline: 2px solid #00b7b5;
+  outline-offset: 2px;
+}
+
+/* Accessibility: Enhanced focus for popup close button */
+.mapContainer :global(.custom-mapbox-popup .mapboxgl-popup-close-button:focus) {
+  outline: 2px solid #00b7b5;
+  outline-offset: 2px;
+  background: rgba(0, 183, 181, 0.2);
+}
+
+/* Accessibility: Enhanced focus for marker elements */
+.mapContainer :global(.mapboxgl-marker:focus) {
+  outline: 3px solid #00b7b5;
+  outline-offset: 3px;
+  border-radius: 50%;
+}
+
+/* Accessibility: Ensure sufficient color contrast for links */
+.mapContainer :global(.custom-mapbox-popup .popup-phone-link:focus) {
+  outline: 2px solid #00b7b5;
+  outline-offset: 2px;
+  background: rgba(0, 183, 181, 0.1);
+  border-radius: 4px;
+}
+
+/* Popup Content - Basic styling for popup content */
+.popupContent {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.95);
+  color: #ffffff;
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+  border-radius: 12px;
+  min-width: 280px;
+}
+
+.popupContent h3 {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.popupContent p {
+  margin: 8px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.popupContent a {
+  color: #00b7b5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.popupContent a:hover {
+  color: #9ec7c5;
+  text-decoration: underline;
+}
+
+/* Custom Vital Ice Marker Styles */
+.vitalIceMarker {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transform: translate(-50%, -100%); /* Center the marker on the point */
+}
+
+.markerPulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(0, 183, 181, 0.3);
+  transform: translate(-50%, -50%);
+  animation: vitalIcePulse 2s infinite;
+}
+
+.markerCore {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #00b7b5, #9ec7c5);
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.markerIcon {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  font-family: var(--font-ui, 'Inter', sans-serif);
+  letter-spacing: -0.5px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover effects for the custom marker */
+.vitalIceMarker:hover .markerCore {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 6px 16px rgba(0, 183, 181, 0.4);
+}
+
+.vitalIceMarker:hover .markerPulse {
+  animation-play-state: paused;
+  background: rgba(0, 183, 181, 0.5);
+}
+
+/* Focus styles for accessibility */
+.vitalIceMarker:focus {
+  outline: none;
+}
+
+.vitalIceMarker:focus .markerCore {
+  outline: 3px solid #00b7b5;
+  outline-offset: 2px;
+}
+
+/* Pulse animation */
+@keyframes vitalIcePulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.7;
+  }
+}
+
+/* Responsive marker sizing */
+@media (max-width: 768px) {
+  .vitalIceMarker {
+    width: 50px;
+    height: 50px;
+  }
+
+  .markerPulse {
+    width: 50px;
+    height: 50px;
+  }
+
+  .markerCore {
+    width: 32px;
+    height: 32px;
+  }
+
+  .markerIcon {
+    font-size: 11px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .markerPulse {
+    animation: none;
+  }
+
+  .vitalIceMarker:hover .markerCore {
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .markerCore {
+    border: 4px solid #ffffff;
+    background: #00b7b5;
+  }
+
+  .vitalIceMarker:focus .markerCore {
+    outline: 4px solid #ffffff;
+  }
+}
+
+/* Accessibility: High contrast mode enhancements */
+@media (prefers-contrast: high) {
+  .mapInstance:focus {
+    outline: 3px solid #ffffff;
+  }
+
+  .retryButton:focus,
+  .directionsButton:focus {
+    outline: 3px solid #ffffff;
+  }
+
+  .mapContainer :global(.custom-mapbox-popup .mapboxgl-popup-close-button:focus) {
+    outline: 3px solid #ffffff;
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .mapContainer :global(.mapboxgl-marker:focus) {
+    outline: 4px solid #ffffff;
+  }
+
+  .mapContainer :global(.custom-mapbox-popup .popup-phone-link:focus) {
+    outline: 3px solid #ffffff;
+    background: rgba(255, 255, 255, 0.1);
+  }
+}

@@ -1,0 +1,100 @@
+/* Ported from migration/Client/Client.css — grid + nav spacer + content column */
+
+.shell {
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+/* Reserves space for fixed site header + fixed ClientNav (same height as migration) */
+.navContainer {
+  height: calc(clamp(80px, 10vh, 100px) * 2);
+  grid-row: 1;
+  background: rgba(5, 37, 51, 0.98);
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.content {
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Fixed sub-nav sits in second “strip”; double header clearance for hash / in-page scroll */
+.section[id] {
+  scroll-margin-top: calc(clamp(80px, 10vh, 100px) * 2 + 12px);
+}
+
+.section {
+  position: relative;
+  min-height: 100px;
+  z-index: 1;
+  margin: 0;
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    contain: content;
+    will-change: transform;
+    isolation: isolate;
+  }
+}
+
+@media (max-width: 1024px) {
+  .shell,
+  .navContainer,
+  .content {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .navContainer {
+    height: calc(clamp(80px, 10vh, 100px) * 2);
+  }
+
+  .section {
+    overflow: visible;
+  }
+}
+
+@media (max-width: 768px) {
+  .navContainer {
+    height: calc(clamp(80px, 10vh, 100px) * 2);
+  }
+}
+
+@media (max-width: 430px) {
+  .shell,
+  .navContainer,
+  .content {
+    max-width: 100vw;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .section {
+    padding: 0;
+  }
+}

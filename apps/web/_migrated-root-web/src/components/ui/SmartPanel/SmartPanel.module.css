@@ -1,0 +1,129 @@
+/* Smart Panel Styles */
+.smartPanel {
+  width: 280px;
+  min-height: 120px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(40px);
+  border: 0.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.4),
+    0 1px 0 rgba(255, 255, 255, 0.05) inset;
+  overflow: hidden;
+  position: relative;
+  transition: opacity 0.15s ease-out;
+}
+
+.smartPanel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--accent-color, #00bcd4) 50%,
+    transparent 100%
+  );
+  opacity: 0.6;
+  z-index: -1;
+  opacity: 0.6;
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+@keyframes borderGlow {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.panelHeader {
+  display: none; /* Hide header for minimal Apple-style design */
+}
+
+.panelStatus {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.panelDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-color, #00bcd4);
+  animation: pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 8px var(--accent-color, #00bcd4);
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+.panelStatusText {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 0.85rem;
+  color: var(--accent-color, #00bcd4);
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 8px var(--accent-color, #00bcd4);
+}
+
+.panelContent {
+  padding: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .smartPanel {
+    width: 280px;
+    min-height: 140px;
+  }
+
+  .panelContent {
+    padding: 14px;
+    font-size: 0.85rem;
+  }
+
+  .panelStatusText {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .smartPanel {
+    width: 260px;
+    min-height: 120px;
+  }
+
+  .panelContent {
+    padding: 12px;
+    font-size: 0.8rem;
+  }
+
+  .panelHeader {
+    padding: 10px 14px;
+  }
+}

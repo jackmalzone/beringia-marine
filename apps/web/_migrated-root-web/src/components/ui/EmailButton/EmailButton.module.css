@@ -1,0 +1,126 @@
+/* EmailButton - No additional styling, inherits existing styles */
+.emailButton {
+  /* Only essential functionality styles, no visual styling */
+  position: relative;
+}
+
+.emailButton.loading {
+  cursor: wait;
+  pointer-events: none;
+}
+
+.emailButton.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.loadingContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loadingText {
+  font-size: 0.875rem;
+}
+
+.errorMessage {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.25rem;
+  padding: 0.5rem;
+  background-color: var(--error-bg-color, #f8d7da);
+  color: var(--error-text-color, #721c24);
+  border: 1px solid var(--error-border-color, #f5c6cb);
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.errorText {
+  margin: 0;
+}
+
+.retryButton {
+  align-self: flex-start;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--error-text-color, #721c24);
+  color: var(--error-bg-color, #f8d7da);
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.retryButton:hover:not(:disabled) {
+  background-color: var(--error-text-color-hover, #5a1a1f);
+}
+
+.retryButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none;
+  }
+}
+
+/* Fallback loader for lazy-loaded components */
+.fallbackLoader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: var(--text-muted, #6c757d);
+  background-color: var(--bg-overlay, rgba(0, 0, 0, 0.5));
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .errorMessage {
+    background-color: var(--error-bg-color-dark, #2d1b1e);
+    color: var(--error-text-color-dark, #f8d7da);
+    border-color: var(--error-border-color-dark, #5a2a2d);
+  }
+
+  .fallbackLoader {
+    color: var(--text-muted-dark, #adb5bd);
+    background-color: var(--bg-overlay-dark, rgba(255, 255, 255, 0.1));
+  }
+}

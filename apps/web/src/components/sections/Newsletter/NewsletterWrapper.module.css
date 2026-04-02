@@ -1,0 +1,472 @@
+.wrapper {
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(
+    180deg,
+    #000000 0%,
+    #001a1a 20%,
+    #003333 40%,
+    #004d4d 60%,
+    #006666 80%,
+    #008080 100%
+  );
+  overflow: hidden;
+}
+
+/* Enhanced Underwater Ambient Background */
+.ambient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(0, 183, 181, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(158, 199, 197, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(0, 183, 181, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 60% 20%, rgba(0, 183, 181, 0.1) 0%, transparent 50%);
+  z-index: 1;
+}
+
+/* Multiple Gradient Layers for Depth */
+.gradientTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 25vh;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 26, 26, 0.6) 50%,
+    transparent 100%
+  );
+  z-index: 2;
+}
+
+.gradientBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 25vh;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 26, 26, 0.6) 50%,
+    transparent 100%
+  );
+  z-index: 2;
+}
+
+.gradientCenter {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 50vh;
+  background: radial-gradient(ellipse at center, rgba(0, 183, 181, 0.05) 0%, transparent 70%);
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+/* Enhanced Blue Particles */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(0, 183, 181, 0.6);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 183, 181, 0.4);
+}
+
+.particle:nth-child(1) {
+  left: 10%;
+  top: 15%;
+}
+.particle:nth-child(2) {
+  left: 25%;
+  top: 45%;
+}
+.particle:nth-child(3) {
+  left: 40%;
+  top: 25%;
+}
+.particle:nth-child(4) {
+  left: 60%;
+  top: 65%;
+}
+.particle:nth-child(5) {
+  left: 75%;
+  top: 35%;
+}
+.particle:nth-child(6) {
+  left: 85%;
+  top: 55%;
+}
+.particle:nth-child(7) {
+  left: 15%;
+  top: 75%;
+}
+.particle:nth-child(8) {
+  left: 35%;
+  top: 85%;
+}
+.particle:nth-child(9) {
+  left: 55%;
+  top: 15%;
+}
+.particle:nth-child(10) {
+  left: 70%;
+  top: 85%;
+}
+.particle:nth-child(11) {
+  left: 90%;
+  top: 25%;
+}
+.particle:nth-child(12) {
+  left: 5%;
+  top: 45%;
+}
+
+/* Floating Bubbles */
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.bubble:nth-child(1) {
+  left: 5%;
+  top: 20%;
+}
+.bubble:nth-child(2) {
+  left: 20%;
+  top: 60%;
+}
+.bubble:nth-child(3) {
+  left: 45%;
+  top: 30%;
+}
+.bubble:nth-child(4) {
+  left: 65%;
+  top: 70%;
+}
+.bubble:nth-child(5) {
+  left: 80%;
+  top: 40%;
+}
+.bubble:nth-child(6) {
+  left: 30%;
+  top: 80%;
+}
+.bubble:nth-child(7) {
+  left: 55%;
+  top: 10%;
+}
+.bubble:nth-child(8) {
+  left: 90%;
+  top: 60%;
+}
+
+/* Glow Effects */
+.glowEffect1 {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0, 183, 181, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 2;
+  animation: glowPulse 8s ease-in-out infinite;
+}
+
+.glowEffect2 {
+  position: absolute;
+  top: 60%;
+  right: 15%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(158, 199, 197, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 2;
+  animation: glowPulse 10s ease-in-out infinite reverse;
+}
+
+.glowEffect3 {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(0, 183, 181, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 2;
+  animation: glowPulse 12s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2);
+  }
+}
+
+/* Newsletter Section */
+.newsletterSection {
+  position: relative;
+  z-index: 4;
+  padding: 8rem 0 4rem;
+}
+
+/* Connect Section */
+.connectSection {
+  position: relative;
+  z-index: 4;
+  padding: 4rem 0 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.connectContent {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.connectTitle {
+  color: #ffffff;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 300;
+  margin-bottom: 2rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.connectText {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  max-width: 60ch;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+.connectButtons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.connectButton {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: rgba(0, 183, 181, 0.1);
+  border: 2px solid rgba(0, 183, 181, 0.3);
+  border-radius: 8px;
+  color: rgba(0, 183, 181, 0.9);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.connectButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 183, 181, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.connectButton:hover::before {
+  left: 100%;
+}
+
+.connectButton:hover {
+  background: rgba(0, 183, 181, 0.2);
+  border-color: rgba(0, 183, 181, 0.5);
+  color: rgba(0, 183, 181, 1);
+  box-shadow: 0 0 20px rgba(0, 183, 181, 0.3);
+}
+
+.connectButtonText {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.connectButtonIcon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.connectButton:hover .connectButtonIcon {
+  transform: translateX(4px);
+}
+
+.connectButtonSecondary {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.connectButtonSecondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.connectButtonSecondary:hover::before {
+  left: 100%;
+}
+
+.connectButtonSecondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.connectButtonSecondary .connectButtonText {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.connectButtonSecondary .connectButtonIcon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.connectButtonSecondary:hover .connectButtonIcon {
+  transform: translateX(4px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .wrapper {
+    min-height: auto;
+  }
+
+  .newsletterSection {
+    padding: 4rem 0 2rem;
+  }
+
+  .connectSection {
+    padding: 2rem 0 4rem;
+  }
+
+  .connectContent {
+    padding: 0 1.5rem;
+  }
+
+  .connectTitle {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .connectText {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin-bottom: 2rem;
+  }
+
+  .connectButtons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .connectButton,
+  .connectButtonSecondary {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 0.875rem 1.5rem;
+  }
+
+  .particle {
+    width: 2px;
+    height: 2px;
+  }
+
+  .bubble {
+    width: 6px;
+    height: 6px;
+  }
+
+  .glowEffect1,
+  .glowEffect2,
+  .glowEffect3 {
+    display: none;
+  }
+}

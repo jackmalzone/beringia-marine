@@ -1,0 +1,289 @@
+.page {
+  position: relative;
+  overflow: clip;
+  background: transparent;
+  color: #e6f9fb;
+  padding-bottom: 0;
+}
+
+/* Darker About palette (#052533 → #050a11) with subtle teal / steel light variation */
+.oceanField {
+  position: relative;
+  isolation: isolate;
+  padding-bottom: 4rem;
+  background:
+    radial-gradient(circle at 16% 18%, rgba(0, 162, 176, 0.2), transparent 44%),
+    radial-gradient(circle at 82% 68%, rgba(17, 57, 88, 0.44), transparent 48%),
+    radial-gradient(circle at 48% 8%, rgba(0, 162, 176, 0.07), transparent 40%),
+    linear-gradient(180deg, #052533 0%, #112c38 32%, #0d2a35 52%, #0a222d 72%, #07151c 88%, #050a11 100%);
+}
+
+.oceanField::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 14% 30%, rgba(0, 162, 176, 0.09), transparent 34%),
+    radial-gradient(circle at 78% 42%, rgba(90, 140, 168, 0.06), transparent 38%);
+  z-index: 0;
+}
+
+.oceanField::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(5, 10, 17, 0) 36%, rgba(5, 10, 17, 0.2) 62%, rgba(3, 8, 14, 0.42) 100%);
+  z-index: 0;
+}
+
+.container {
+  width: min(1100px, calc(100% - 3rem));
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.containerNarrow {
+  width: min(760px, calc(100% - 3rem));
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  padding-top: clamp(9.5rem, 18vh, 14rem);
+  padding-bottom: clamp(4.5rem, 9vh, 7rem);
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.1rem, 5.8vw, 4rem);
+}
+
+.hero p {
+  margin: 1.15rem 0 0;
+  color: #c7dbe4;
+  max-width: 54ch;
+  line-height: 1.75;
+}
+
+.section,
+.sectionAlt {
+  padding: clamp(2.7rem, 5vw, 4rem) 0;
+  background: transparent;
+  color: #e6f9fb;
+  position: relative;
+  z-index: 1;
+}
+
+.section h2,
+.sectionAlt h2 {
+  margin: 0 0 0.9rem;
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+  color: #e6f9fb;
+}
+
+.section p,
+.sectionAlt p {
+  margin: 0 0 1rem;
+  line-height: 1.75;
+  color: #c9dbe4;
+}
+
+.section a,
+.sectionAlt a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.section a:hover,
+.sectionAlt a:hover {
+  text-decoration: underline;
+}
+
+.linkedinBlock {
+  margin: 1.35rem 0 0;
+}
+
+.linkedinButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 1.05rem 0.55rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 162, 176, 0.38);
+  background: rgba(0, 162, 176, 0.1);
+  color: #e6f9fb;
+  text-decoration: none;
+  font-weight: 600;
+  line-height: 1.2;
+  transition:
+    background var(--duration-fast) var(--ease-standard),
+    border-color var(--duration-fast) var(--ease-standard),
+    box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.linkedinButton:hover {
+  text-decoration: none;
+  background: rgba(0, 162, 176, 0.16);
+  border-color: rgba(0, 162, 176, 0.55);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.section a.linkedinButton:hover,
+.sectionAlt a.linkedinButton:hover {
+  text-decoration: none;
+}
+
+.linkedinIcon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  color: #0a66c2;
+}
+
+.linkedinLabel {
+  color: #e6f9fb;
+}
+
+.underlinedTitle {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.8rem;
+}
+
+.underlinedTitle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--gradient-title-underline);
+}
+
+.flipCard {
+  max-width: 720px;
+  margin: 0 auto;
+  perspective: 1200px;
+}
+
+.flipCardInner {
+  position: relative;
+  min-height: 430px;
+  transform-style: preserve-3d;
+  transition: transform var(--duration-slow) var(--ease-out-soft);
+}
+
+.flipCard:hover .flipCardInner {
+  transform: rotateY(180deg);
+}
+
+.flipFaceFront,
+.flipFaceBack {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 162, 176, 0.22);
+  box-shadow: var(--shadow-md);
+}
+
+.flipFaceFront {
+  background: rgba(6, 18, 28, 0.92);
+  padding: 0.9rem;
+}
+
+.flipFaceBack {
+  transform: rotateY(180deg);
+  background: linear-gradient(145deg, rgba(8, 32, 48, 0.97) 0%, rgba(5, 22, 36, 0.98) 100%);
+  color: #d4e8f2;
+  padding: 1.15rem;
+  display: grid;
+  align-content: center;
+  gap: 0.8rem;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: #0b141d;
+}
+
+.caption {
+  margin: 0;
+  font-size: 1rem;
+  color: #c9dbe4;
+  line-height: 1.7;
+  font-style: italic;
+  font-family: var(--font-caption);
+}
+
+.lead {
+  color: #8bc0d0 !important;
+  margin-bottom: 1rem;
+  font-size: 1.08rem;
+}
+
+.assetNote {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #8ba8b6;
+}
+
+.flipHint {
+  margin: 0.8rem 0 0;
+  text-align: center;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8ba8b6;
+}
+
+.socialRow {
+  padding: 0.8rem 0 0;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.socialLead {
+  margin: 0 0 0.5rem;
+  color: #9eb7c6;
+}
+
+.socialRow a:not(.linkedinButton) {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.socialRow a:not(.linkedinButton):hover {
+  text-decoration: underline;
+}
+
+.socialRow a.linkedinButton:hover {
+  text-decoration: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flipCardInner {
+    transition: none;
+  }
+
+  .flipCard:hover .flipCardInner {
+    transform: none;
+  }
+
+  .flipFaceBack {
+    display: none;
+  }
+}

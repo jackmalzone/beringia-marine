@@ -1,0 +1,644 @@
+.partnersPage {
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    #000000 0%,
+    #001a1a 25%,
+    #003333 50%,
+    #004d4d 75%,
+    #006666 100%
+  );
+  position: relative;
+  overflow: hidden;
+  transition: all 0.8s ease-in-out;
+  padding: 4rem 0;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    url('https://media.vitalicesf.com/stone_whitesky.jpg') center 30% / cover,
+    radial-gradient(circle at 20% 30%, rgba(0, 183, 181, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(158, 199, 197, 0.08) 0%, transparent 50%);
+  background-blend-mode: overlay;
+  z-index: 1;
+  transition: transform 0.8s ease-out;
+}
+
+.hero:hover::before {
+  transform: scale(1.01);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 0%,
+    transparent 15%,
+    transparent 85%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+  z-index: 1;
+}
+
+.heroContent {
+  max-width: 800px;
+  text-align: center;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.heroTitle {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 300;
+  margin-bottom: 2rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.heroSubtitle {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  line-height: 1.6;
+  font-weight: 300;
+  opacity: 0.9;
+  max-width: 60ch;
+  margin: 0 auto;
+}
+
+/* Tier Sections */
+.tierSection {
+  padding: 8rem 0 6rem 0;
+  position: relative;
+  transition: all 0.8s ease-in-out;
+}
+
+.tierSection:hover {
+  transform: translateY(-2px);
+}
+
+.tierHeader {
+  text-align: center;
+  margin-bottom: 5rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 3;
+}
+
+.tierTitle {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 300;
+  margin-bottom: 1rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.tierDescription {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  line-height: 1.6;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+/* Gold Tier */
+.goldTier {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d1810 100%);
+  position: relative;
+}
+
+.goldTier::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    url('https://media.vitalicesf.com/ice_golden-reflections.jpg') center/cover,
+    radial-gradient(circle at 30% 20%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 70% 80%, rgba(255, 193, 7, 0.1) 0%, transparent 50%);
+  background-blend-mode: overlay;
+  z-index: 1;
+  transition: transform 0.8s ease-out;
+}
+
+.goldTier:hover::before {
+  transform: scale(1.02);
+}
+
+.goldTier::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4) 0%,
+      transparent 15%,
+      transparent 85%,
+      rgba(0, 0, 0, 0.4) 100%
+    ),
+    linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, transparent 50%), rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.goldTier .tierTitle {
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.goldTier {
+  padding-bottom: 8rem;
+}
+
+.partnersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 3;
+  margin-bottom: 4rem;
+}
+
+.goldPartnerCard {
+  background: rgba(255, 215, 0, 0.08);
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  backdrop-filter: blur(15px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.15);
+}
+
+.goldPartnerCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.goldPartnerCard:hover::before {
+  left: 100%;
+}
+
+.goldPartnerCard:hover {
+  background: rgba(255, 215, 0, 0.08);
+  border-color: rgba(255, 215, 0, 0.4);
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.2);
+}
+
+.partnerLogo {
+  margin-bottom: 1.5rem;
+}
+
+.logoPlaceholder {
+  width: 120px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+.logoPlaceholder svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.partnerName {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.partnerDescription {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+}
+
+.partnerLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #00b7b5;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.partnerLink:hover {
+  color: #9ec7c5;
+  transform: translateX(4px);
+}
+
+/* Silver Tier */
+.silverTier {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  position: relative;
+}
+
+.silverTier::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    url('https://media.vitalicesf.com/ice_silver-texture.jpg') center/cover,
+    radial-gradient(circle at 20% 40%, rgba(192, 192, 192, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 60%, rgba(169, 169, 169, 0.08) 0%, transparent 50%);
+  background-blend-mode: overlay;
+  z-index: 1;
+  transition: transform 0.8s ease-out;
+}
+
+.silverTier:hover::before {
+  transform: scale(1.02);
+}
+
+.silverTier::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4) 0%,
+      transparent 15%,
+      transparent 85%,
+      rgba(0, 0, 0, 0.4) 100%
+    ),
+    linear-gradient(135deg, rgba(192, 192, 192, 0.08) 0%, transparent 50%), rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.silverTier .tierTitle {
+  color: #c0c0c0;
+  text-shadow: 0 0 20px rgba(192, 192, 192, 0.3);
+}
+
+.silverTier {
+  padding-bottom: 8rem;
+}
+
+.silverPartnerCard {
+  background: rgba(192, 192, 192, 0.04);
+  border: 1px solid rgba(192, 192, 192, 0.15);
+  border-radius: 16px;
+  padding: 2.5rem;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(192, 192, 192, 0.1);
+}
+
+.silverPartnerCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(192, 192, 192, 0.05), transparent);
+  transition: left 0.5s ease;
+}
+
+.silverPartnerCard:hover::before {
+  left: 100%;
+}
+
+.silverPartnerCard:hover {
+  background: rgba(192, 192, 192, 0.06);
+  border-color: rgba(192, 192, 192, 0.2);
+  box-shadow: 0 6px 24px rgba(192, 192, 192, 0.1);
+}
+
+/* Bronze Tier */
+.bronzeTier {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d1f0a 100%);
+  position: relative;
+}
+
+.bronzeTier::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    url('https://media.vitalicesf.com/water_golden-wave.jpg') center/cover,
+    radial-gradient(circle at 30% 30%, rgba(205, 127, 50, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(184, 115, 51, 0.08) 0%, transparent 50%);
+  background-blend-mode: overlay;
+  z-index: 1;
+  transition: transform 0.8s ease-out;
+}
+
+.bronzeTier:hover::before {
+  transform: scale(1.02);
+}
+
+.bronzeTier::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4) 0%,
+      transparent 15%,
+      transparent 85%,
+      rgba(0, 0, 0, 0.4) 100%
+    ),
+    linear-gradient(135deg, rgba(205, 127, 50, 0.08) 0%, transparent 50%), rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.bronzeTier .tierTitle {
+  color: #ffffff;
+  text-shadow:
+    0 0 20px rgba(205, 127, 50, 0.5),
+    0 2px 8px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(205, 127, 50, 0.3);
+  font-weight: 400;
+}
+
+.bronzeTier {
+  padding-bottom: 8rem;
+}
+
+.bronzeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 3;
+  margin-bottom: 4rem;
+}
+
+.bronzePartnerCard {
+  background: rgba(205, 127, 50, 0.02);
+  border: 1px solid rgba(205, 127, 50, 0.08);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.bronzePartnerCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(205, 127, 50, 0.05), transparent);
+  transition: left 0.5s ease;
+}
+
+.bronzePartnerCard:hover::before {
+  left: 100%;
+}
+
+.bronzePartnerCard:hover {
+  background: rgba(205, 127, 50, 0.06);
+  border-color: rgba(205, 127, 50, 0.2);
+  box-shadow: 0 6px 24px rgba(205, 127, 50, 0.1);
+}
+
+.bronzeLogo {
+  width: 80px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+.bronzePartnerCard:hover .bronzeLogo {
+  filter: grayscale(0%) brightness(1);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
+}
+
+.bronzePartnerName {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 1rem 0 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.bronzePartnerDescription {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* Carousel Section */
+.carouselSection {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #000000 0%, #001a1a 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.carouselSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    url('https://media.vitalicesf.com/texture_topographic-smooth.jpg') center/cover,
+    radial-gradient(circle at 20% 50%, rgba(0, 183, 181, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(158, 199, 197, 0.05) 0%, transparent 50%);
+  background-blend-mode: overlay;
+  z-index: 1;
+}
+
+.carouselContainer {
+  position: relative;
+  z-index: 3;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.carousel {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+}
+
+.carouselItem {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.carouselItem:hover {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 50vh;
+  }
+
+  .heroTitle {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+  }
+
+  .heroSubtitle {
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+  }
+
+  .tierSection {
+    padding: 4rem 0;
+  }
+
+  .tierTitle {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .tierDescription {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+  }
+
+  .partnersGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1.5rem;
+  }
+
+  .goldPartnerCard,
+  .silverPartnerCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .bronzeGrid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1.5rem;
+  }
+
+  .bronzeLogo {
+    width: 70px;
+    height: 35px;
+    font-size: 0.6rem;
+  }
+
+  .carousel {
+    gap: 3rem;
+  }
+
+  .carouselItem {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent {
+    padding: 0 1rem;
+  }
+
+  .tierHeader {
+    padding: 0 1rem;
+  }
+
+  .partnersGrid {
+    padding: 0 1rem;
+  }
+
+  .bronzeGrid {
+    padding: 0 1rem;
+  }
+
+  .carousel {
+    gap: 2rem;
+  }
+
+  .carouselItem {
+    font-size: 0.9rem;
+  }
+}

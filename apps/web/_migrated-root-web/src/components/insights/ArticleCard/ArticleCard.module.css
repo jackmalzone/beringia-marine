@@ -1,0 +1,320 @@
+/* ArticleCard Component - Glassmorphism Design */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  cursor: pointer;
+  border-radius: 16px;
+  overflow: hidden;
+
+  /* Glassmorphism effect */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+
+  /* Border with subtle glow */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
+  /* Layered shadow system for depth */
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 4px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+  /* Smooth transitions */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* GPU acceleration */
+  transform: translateZ(0);
+  will-change: transform, box-shadow;
+}
+
+/* Hover state - enhanced elevation and glow */
+.card:hover {
+  /* Enhanced layered shadows for lift effect */
+  box-shadow:
+    0 16px 48px rgba(0, 0, 0, 0.4),
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 0 40px rgba(0, 183, 181, 0.15);
+
+  /* Subtle border glow */
+  border-color: rgba(0, 183, 181, 0.3);
+}
+
+/* Focus state for keyboard navigation */
+.card:focus {
+  outline: none;
+  border-color: rgba(0, 183, 181, 0.6);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 4px 16px rgba(0, 0, 0, 0.2),
+    0 0 0 3px rgba(0, 183, 181, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Focus visible for accessibility */
+.card:focus-visible {
+  outline: 3px solid rgba(0, 183, 181, 0.8);
+  outline-offset: 2px;
+}
+
+/* Image Container */
+.card__imageContainer {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Image Placeholder for failed loads */
+.card__imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.6) 100%);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Image zoom on hover */
+.card:hover .card__image {
+  transform: scale(1.05);
+}
+
+/* Gradient overlay for shimmer effect on hover */
+.card__imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 183, 181, 0) 0%,
+    rgba(0, 183, 181, 0.1) 50%,
+    rgba(0, 183, 181, 0) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card:hover .card__imageOverlay {
+  opacity: 1;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Category Badge */
+.card__category {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 6px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  background-color: #00b7b5;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card__category {
+  transform: scale(1.05);
+}
+
+/* Content Section */
+.card__content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 24px;
+  gap: 12px;
+}
+
+/* Title */
+.card__title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.card:hover .card__title {
+  color: #00b7b5;
+}
+
+/* Subtitle */
+.card__subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* Abstract */
+.card__abstract {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  flex: 1;
+
+  /* Clamp to 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Meta Information */
+.card__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 4px;
+}
+
+.card__author {
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.card__separator {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.card__date {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Tags */
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.card__tag {
+  padding: 4px 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.card:hover .card__tag {
+  background: rgba(0, 183, 181, 0.15);
+  border-color: rgba(0, 183, 181, 0.3);
+  color: #00b7b5;
+}
+
+/* Responsive Design */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .card__imageContainer {
+    height: 200px;
+  }
+
+  .card__content {
+    padding: 20px;
+  }
+
+  .card__title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .card__imageContainer {
+    height: 180px;
+  }
+
+  .card__content {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .card__title {
+    font-size: 1.35rem;
+  }
+
+  .card__subtitle {
+    font-size: 0.875rem;
+  }
+
+  .card__abstract {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 2;
+  }
+
+  .card__category {
+    top: 12px;
+    left: 12px;
+    padding: 5px 10px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Reduced motion support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card__image,
+  .card__imageOverlay,
+  .card__category,
+  .card__title,
+  .card__tag {
+    transition: none;
+    animation: none;
+  }
+
+  .card:hover .card__image {
+    transform: none;
+  }
+
+  .card__imageOverlay {
+    display: none;
+  }
+}

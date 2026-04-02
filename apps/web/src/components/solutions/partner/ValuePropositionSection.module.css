@@ -1,0 +1,44 @@
+.section {
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 3vw, 2rem);
+  background: transparent;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.55rem, 3.5vw, 2.1rem);
+  text-align: center;
+  color: #e6f9fb;
+}
+
+.description {
+  margin: 0 auto 1.75rem;
+  text-align: center;
+  color: #c9dbe4;
+  line-height: 1.7;
+}
+
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  color: #c9dbe4;
+  line-height: 1.55;
+  font-size: 0.98rem;
+}
+
+.icon {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  color: var(--color-accent);
+}

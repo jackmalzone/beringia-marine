@@ -1,0 +1,28 @@
+.section {
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1rem, 3vw, 2rem);
+  background: transparent;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.45rem, 3vw, 1.85rem);
+  color: #e6f9fb;
+}
+
+.description {
+  margin: 0 0 1.25rem;
+  color: #c9dbe4;
+  line-height: 1.7;
+}
+
+.video {
+  width: 100%;
+  border-radius: 12px;
+  max-height: 75vh;
+  background: #000;
+}

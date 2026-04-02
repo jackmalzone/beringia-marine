@@ -1,0 +1,245 @@
+.faqPage {
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+  padding: 0;
+  position: relative;
+}
+
+.faqPage::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('https://media.vitalicesf.com/stone_black-shine.jpg') center/cover no-repeat;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 120px 24px 80px 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+.faqItem {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.faqItem:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.faqQuestion {
+  width: 100%;
+  padding: 24px 32px;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  transition: all 0.3s ease;
+}
+
+.faqQuestion:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.faqQuestion.active {
+  background: rgba(0, 183, 181, 0.1);
+  border-bottom: 1px solid rgba(0, 183, 181, 0.3);
+}
+
+.questionText {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.arrow {
+  font-size: 0.8rem;
+  color: #00b7b5;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.faqAnswer {
+  padding: 16px 32px 24px 32px;
+  overflow: hidden;
+}
+
+.faqAnswer p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  text-align: justify;
+}
+
+.contact {
+  margin-top: 60px;
+  padding: 40px;
+  background: rgba(0, 183, 181, 0.1);
+  border: 1px solid rgba(0, 183, 181, 0.3);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.contact h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #00b7b5;
+  margin: 0 0 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 20px 0;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.contactLink {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #00b7b5;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contactLink:hover {
+  color: #00d4d2;
+  text-decoration: underline;
+}
+
+.address {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 100px 16px 60px 16px;
+  }
+
+  .faqQuestion {
+    padding: 20px 24px;
+    font-size: 1rem;
+  }
+
+  .faqAnswer {
+    padding: 12px 24px 20px 24px;
+  }
+
+  .faqAnswer p {
+    font-size: 0.95rem;
+  }
+
+  .contact {
+    padding: 30px 20px;
+  }
+
+  .title {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .subtitle {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 80px 12px 40px 12px;
+  }
+
+  .faqQuestion {
+    padding: 18px 20px;
+    font-size: 0.95rem;
+  }
+
+  .faqAnswer {
+    padding: 10px 20px 18px 20px;
+  }
+
+  .faqAnswer p {
+    font-size: 0.9rem;
+  }
+
+  .contact {
+    padding: 25px 15px;
+  }
+
+  .faqList {
+    gap: 12px;
+  }
+}

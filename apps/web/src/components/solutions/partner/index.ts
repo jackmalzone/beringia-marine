@@ -1,0 +1,1 @@
+export { SolutionPartnerClient } from './SolutionPartnerClient';

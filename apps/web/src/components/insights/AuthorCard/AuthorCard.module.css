@@ -1,0 +1,218 @@
+/**
+ * AuthorCard Component Styles
+ * 
+ * Glassmorphism design with avatar, bio, and social links
+ */
+
+.authorCard {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, rgba(0, 183, 181, 0.08) 0%, rgba(121, 40, 202, 0.08) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 183, 181, 0.2);
+  border-radius: 50px;
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: fit-content;
+}
+
+.authorCard:hover {
+  background: linear-gradient(135deg, rgba(0, 183, 181, 0.15) 0%, rgba(121, 40, 202, 0.15) 100%);
+  border-color: rgba(0, 183, 181, 0.4);
+  box-shadow:
+    0 6px 20px rgba(0, 183, 181, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Simple version (string author) */
+.authorCard--simple {
+  padding: 0.625rem 1.25rem;
+  background: linear-gradient(135deg, rgba(0, 183, 181, 0.1) 0%, rgba(121, 40, 202, 0.1) 100%);
+  border: 1px solid rgba(0, 183, 181, 0.25);
+  border-radius: 50px;
+}
+
+.authorCard--simple:hover {
+  background: linear-gradient(135deg, rgba(0, 183, 181, 0.18) 0%, rgba(121, 40, 202, 0.18) 100%);
+  border-color: rgba(0, 183, 181, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Avatar */
+.authorCard__avatarContainer {
+  flex-shrink: 0;
+}
+
+.authorCard__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(0, 183, 181, 0.4);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.authorCard__avatarPlaceholder {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(0, 183, 181, 0.4);
+  color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.authorCard:hover .authorCard__avatar {
+  border-color: rgba(0, 183, 181, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 183, 181, 0.2);
+}
+
+.authorCard:hover .authorCard__avatarPlaceholder {
+  border-color: rgba(0, 183, 181, 0.5);
+  box-shadow: 0 4px 12px rgba(0, 183, 181, 0.2);
+}
+
+/* Content */
+.authorCard__content {
+  flex: 1;
+  min-width: 0;
+}
+
+.authorCard__header {
+  margin-bottom: 0.5rem;
+}
+
+.authorCard__name {
+  font-family: var(--font-heading, 'Bebas Neue', sans-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+.authorCard--simple .authorCard__name {
+  font-size: 1rem;
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+  font-weight: 500;
+}
+
+.authorCard__role {
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+  font-size: 0.875rem;
+  color: rgba(0, 183, 181, 0.9);
+  margin: 0.25rem 0 0;
+  font-weight: 500;
+}
+
+.authorCard__bio {
+  font-family: var(--font-body, 'Montserrat', sans-serif);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0.75rem 0 0;
+}
+
+/* Social Links */
+.authorCard__social {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.authorCard__socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.authorCard__socialLink:hover {
+  background: rgba(0, 183, 181, 0.15);
+  border-color: rgba(0, 183, 181, 0.3);
+  color: #00b7b5;
+  transform: translateY(-2px);
+}
+
+.authorCard__socialLink:focus-visible {
+  outline: 2px solid #00b7b5;
+  outline-offset: 2px;
+}
+
+.authorCard__socialIcon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .authorCard {
+    flex-direction: column;
+    padding: 1.25rem;
+  }
+
+  .authorCard__avatar,
+  .authorCard__avatarPlaceholder {
+    width: 56px;
+    height: 56px;
+  }
+
+  .authorCard__name {
+    font-size: 1.125rem;
+  }
+
+  .authorCard__bio {
+    font-size: 0.875rem;
+  }
+
+  .authorCard__social {
+    margin-top: 0.75rem;
+  }
+
+  .authorCard__socialLink {
+    width: 32px;
+    height: 32px;
+  }
+
+  .authorCard__socialIcon {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .authorCard,
+  .authorCard__avatar,
+  .authorCard__socialLink {
+    transition: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .authorCard {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .authorCard__socialLink {
+    border: 2px solid rgba(255, 255, 255, 0.3);
+  }
+}

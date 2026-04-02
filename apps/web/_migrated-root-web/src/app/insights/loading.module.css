@@ -1,0 +1,176 @@
+/**
+ * Insights Loading State Styles
+ * 
+ * Route-level loading UI with skeleton elements matching the page layout.
+ */
+
+.loading {
+  min-height: 100vh;
+  background: #000000;
+  color: #ffffff;
+}
+
+/* Hero Skeleton */
+.loading__hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px 60px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(231, 76, 60, 0.15) 0%,
+    rgba(0, 64, 255, 0.1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.loading__title {
+  width: 400px;
+  max-width: 90%;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  margin-bottom: 24px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loading__subtitle {
+  width: 500px;
+  max-width: 90%;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  margin-bottom: 48px;
+  animation: pulse 1.5s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+.loading__filters {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.loading__filter {
+  width: 120px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 22px;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.loading__filter:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.loading__filter:nth-child(2) {
+  animation-delay: 0.4s;
+  width: 140px;
+}
+
+.loading__filter:nth-child(3) {
+  animation-delay: 0.5s;
+  width: 130px;
+}
+
+.loading__filter:nth-child(4) {
+  animation-delay: 0.6s;
+  width: 150px;
+}
+
+.loading__filter:nth-child(5) {
+  animation-delay: 0.7s;
+  width: 135px;
+}
+
+/* Articles Grid Skeleton */
+.loading__grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 24px 120px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* Pulsing Animation */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .loading__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .loading__title {
+    height: 64px;
+  }
+
+  .loading__subtitle {
+    height: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .loading__hero {
+    min-height: 50vh;
+    padding: 60px 20px 40px;
+  }
+
+  .loading__title {
+    height: 48px;
+    width: 280px;
+  }
+
+  .loading__subtitle {
+    height: 24px;
+    width: 320px;
+  }
+
+  .loading__filters {
+    gap: 8px;
+  }
+
+  .loading__filter {
+    width: 100px;
+    height: 40px;
+  }
+
+  .loading__filter:nth-child(2),
+  .loading__filter:nth-child(3),
+  .loading__filter:nth-child(4),
+  .loading__filter:nth-child(5) {
+    width: 100px;
+  }
+
+  .loading__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 40px 20px 80px;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .loading__title,
+  .loading__subtitle,
+  .loading__filter {
+    animation: none;
+    opacity: 0.7;
+  }
+}

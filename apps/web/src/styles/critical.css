@@ -1,0 +1,102 @@
+/* Critical CSS - MINIMAL VERSION for fastest FCP */
+/* Only the most essential styles for above-the-fold content */
+
+/* Essential Variables */
+:root {
+  --font-heading: 'Domitian', 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  --font-heading-compact: 'Inter', system-ui, sans-serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-ui: 'Inter', system-ui, sans-serif;
+  --color-primary: #00b7b5;
+  --color-background: #000000;
+  --color-text: #ffffff;
+}
+
+:root[data-font-preset='legacy'] {
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-heading-compact: 'Montserrat', sans-serif;
+  --font-body: 'Montserrat', sans-serif;
+  --font-ui: 'Montserrat', sans-serif;
+}
+
+/* Base Reset - Essential only */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-background);
+  overflow-x: hidden;
+}
+
+/* Typography - Essential */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: 0.014em;
+  line-height: 1.14;
+}
+
+/* Header - Essential layout */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  height: 64px;
+}
+
+/* Hero - Essential layout */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+}
+
+.hero__content {
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.heroLogo {
+  width: clamp(300px, 22vw, 420px);
+  height: auto;
+}
+
+/* Loading states */
+.sectionLoading {
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Mobile - essential only */
+@media (max-width: 768px) {
+  .header {
+    padding: 0 1rem;
+  }
+  .hero__content {
+    padding: 0 1rem;
+  }
+  .heroLogo {
+    width: clamp(260px, 32vw, 300px);
+  }
+}
