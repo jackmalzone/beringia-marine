@@ -1,0 +1,2013 @@
+{
+  "timestamp": "2025-11-16T02:47:21.526Z",
+  "summary": {
+    "totalFiles": 198,
+    "filesWithIssues": 25,
+    "totalIssues": 29,
+    "totalRecommendations": 414,
+    "complianceRate": 87
+  },
+  "results": [
+    {
+      "filePath": "src/__tests__/setup/crossPlatform.setup.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/about/AboutPageClient.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)"
+      ],
+      "recommendations": [
+        "Add visible focus indicators for interactive elements"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/app/about/page.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/app/about/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/api/sentry-example-api/route.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/api/submit-application/route.ts",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)"
+      ],
+      "recommendations": [],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/app/book/BookPageClient.tsx",
+      "issues": [
+        "Heading hierarchy skip from H2 to H4 at line 169",
+        "div with onClick may not be keyboard accessible (missing tabIndex or role)"
+      ],
+      "recommendations": [
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 3
+    },
+    {
+      "filePath": "src/app/book/__tests__/BookPageClient.integration.test.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/book/page.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add prefers-reduced-motion support for animations",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/app/book/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/careers/CareersPageClient.tsx",
+      "issues": [],
+      "recommendations": [
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/careers/page.module.css",
+      "issues": [],
+      "recommendations": [
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/app/careers/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/client-policy/ClientPolicyPageClient.tsx",
+      "issues": [],
+      "recommendations": [
+        "Modal/dialog components should manage focus",
+        "Add visible focus indicators for interactive elements",
+        "Implement focus trapping for modal components"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/client-policy/page.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/app/client-policy/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/contact/ContactPageClient.tsx",
+      "issues": [],
+      "recommendations": [
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/contact/page.module.css",
+      "issues": [],
+      "recommendations": [
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/app/contact/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/experience/ExperiencePageClient.tsx",
+      "issues": [
+        "Heading hierarchy skip from H1 to H3 at line 226"
+      ],
+      "recommendations": [
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/app/experience/page.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Add prefers-reduced-motion support for animations",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/app/experience/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/faq/FAQPageClient.tsx",
+      "issues": [
+        "Heading hierarchy skip from H1 to H3 at line 173"
+      ],
+      "recommendations": [
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/app/faq/page.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/app/faq/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/fonts.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/app/global-error.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/globals.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/app/home/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/layout.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Consider adding skip links for keyboard navigation",
+        "Add visible focus indicators for interactive elements",
+        "Implement focus trapping for modal components",
+        "Use semantic HTML landmarks (main, nav, header, footer)",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/page.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/app/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/partners/PartnersPageClient.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)"
+      ],
+      "recommendations": [
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/app/partners/page.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/app/partners/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/performance-demo/PerformanceDemoPageClient.tsx",
+      "issues": [],
+      "recommendations": [
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/performance-demo/page.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/app/performance-demo/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/robots.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/services/ServicesPageClient.tsx",
+      "issues": [
+        "Heading hierarchy skip from H1 to H3 at line 106"
+      ],
+      "recommendations": [
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/app/services/cold-plunge/ColdPlungePageClient.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/services/cold-plunge/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/services/compression-boots/CompressionBootsPageClient.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/services/compression-boots/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/services/infrared-sauna/InfraredSaunaPageClient.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/services/infrared-sauna/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/services/page.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/app/services/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/services/percussion-massage/PercussionMassagePageClient.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/services/percussion-massage/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/services/red-light-therapy/RedLightTherapyPageClient.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/services/red-light-therapy/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/services/traditional-sauna/TraditionalSaunaPageClient.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/services/traditional-sauna/page.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/app/sitemap.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/layout/Footer/Footer.module.css",
+      "issues": [],
+      "recommendations": [
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/layout/Footer/Footer.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)"
+      ],
+      "recommendations": [
+        "Consider adding skip links for keyboard navigation",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/components/layout/Header/Header.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add prefers-reduced-motion support for animations",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/layout/Header/Header.tsx",
+      "issues": [
+        "div with onClick may not be keyboard accessible (missing tabIndex or role)"
+      ],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Consider adding skip links for keyboard navigation",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/components/layout/Navigation/Navigation.module.css",
+      "issues": [],
+      "recommendations": [
+        "Use relative units (rem, em, %) for better zoom support",
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/layout/Navigation/Navigation.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Consider adding skip links for keyboard navigation",
+        "Use semantic HTML landmarks (main, nav, header, footer)"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/pages/HomePage/HomePage.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Add prefers-reduced-motion support for animations",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/pages/HomePage/HomePage.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/providers/EmailErrorBoundary.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)"
+      ],
+      "recommendations": [
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/components/providers/ErrorBoundary.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/providers/ErrorBoundary.tsx",
+      "issues": [
+        "Heading hierarchy skip from H1 to H3 at line 176"
+      ],
+      "recommendations": [
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/components/providers/ErrorSuppressionProvider.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/providers/MindbodyErrorBoundary.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/providers/ModalProvider.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Implement focus trapping for modal components",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/providers/NavigationLoadingProvider.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/providers/PageErrorBoundary.tsx",
+      "issues": [],
+      "recommendations": [
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/providers/PerformanceProvider.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/providers/SentryErrorBoundary.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)"
+      ],
+      "recommendations": [
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/components/providers/SmoothScrollProvider.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/providers/WidgetErrorBoundary.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/sections/About/About.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Add prefers-reduced-motion support for animations",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/sections/About/About.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/sections/Benefits/Benefits.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Add prefers-reduced-motion support for animations",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/sections/Benefits/Benefits.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)",
+        "Heading hierarchy skip from H2 to H4 at line 481"
+      ],
+      "recommendations": [
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 3
+    },
+    {
+      "filePath": "src/components/sections/Hero/Hero.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Add prefers-reduced-motion support for animations",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/sections/Hero/Hero.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/sections/MeetFounders/MeetFounders.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/sections/MeetFounders/MeetFounders.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)"
+      ],
+      "recommendations": [
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/components/sections/MissionStatement/MissionStatement.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Add prefers-reduced-motion support for animations",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/sections/MissionStatement/MissionStatement.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/sections/Newsletter/Newsletter.module.css",
+      "issues": [],
+      "recommendations": [
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/sections/Newsletter/Newsletter.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/sections/Newsletter/NewsletterWrapper.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Add prefers-reduced-motion support for animations",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/sections/Newsletter/NewsletterWrapper.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/sections/OurPurpose/OurPurpose.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/sections/OurPurpose/OurPurpose.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)"
+      ],
+      "recommendations": [],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/components/sections/Testimonials/Testimonials.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/sections/Testimonials/Testimonials.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/seo/CriticalCSS.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/seo/PageSchema.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/seo/StructuredData.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/shared/Button/Button.module.css",
+      "issues": [],
+      "recommendations": [
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/shared/Button/Button.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/shared/Card/Card.module.css",
+      "issues": [],
+      "recommendations": [
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/shared/Card/Card.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/shared/ServiceTemplate/ServiceTemplate.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/shared/ServiceTemplate/ServiceTemplate.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)"
+      ],
+      "recommendations": [
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/components/ui/AdaptiveMedia/AdaptiveMedia.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/ui/AdaptiveMedia/AdaptiveMedia.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/AnimatedSection.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/BusinessContact/BusinessContact.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/ui/BusinessContact/BusinessContact.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)"
+      ],
+      "recommendations": [
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/components/ui/BusinessContact/index.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/EmailButton/EmailButton.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/ui/EmailButton/EmailButton.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/EmailButton/NoScriptFallback.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/EmailButton/index.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/FallbackUI/FallbackUI.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add prefers-reduced-motion support for animations",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/ui/FallbackUI/FallbackUI.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)",
+        "List items found without proper list containers"
+      ],
+      "recommendations": [
+        "Modal/dialog components should manage focus",
+        "Add visible focus indicators for interactive elements",
+        "Implement focus trapping for modal components",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 3
+    },
+    {
+      "filePath": "src/components/ui/FallbackUI/index.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/FoundingBanner/FoundingBanner.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/FoundingMembershipBanner/FoundingMembershipBanner.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/ui/FoundingMembershipBanner/FoundingMembershipBanner.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/LoadingScreen/LoadingScreen.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Add prefers-reduced-motion support for animations",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/ui/LoadingScreen/LoadingScreen.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/Logo/Logo.module.css",
+      "issues": [],
+      "recommendations": [
+        "Use relative units (rem, em, %) for better zoom support",
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/ui/Logo/Logo.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/Logo/VILogo.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/MapboxMap/MapboxErrorBoundary.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)"
+      ],
+      "recommendations": [
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/components/ui/MapboxMap/MapboxMap.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)"
+      ],
+      "recommendations": [
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/components/ui/MapboxMap/MapboxMapComponent.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)"
+      ],
+      "recommendations": [
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/components/ui/MapboxMap/MapboxPerformanceMonitor.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/MapboxMap/__tests__/MapboxMap.basic.test.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/MapboxMap/__tests__/MapboxMap.integration.test.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/MapboxMap/__tests__/MapboxMap.test.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/MapboxMap/__tests__/MapboxMapAccessibility.test.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/MapboxMap/__tests__/MapboxMapComponent.test.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/MapboxMap/__tests__/MapboxMapIntegration.test.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/MapboxMap/__tests__/MapboxMapPerformance.test.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/MapboxMap/__tests__/MapboxMapResponsive.test.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/MapboxMap/__tests__/MapboxMapTask9.test.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)"
+      ],
+      "recommendations": [
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/components/ui/MapboxMap/__tests__/MapboxPerformanceMonitor.test.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/MapboxMap/index.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/MindbodyModal/MindbodyModal.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/ui/MindbodyWidget/MindbodyWidget.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add prefers-reduced-motion support for animations",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/ui/MindbodyWidget/MindbodyWidget.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)"
+      ],
+      "recommendations": [
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/components/ui/MindbodyWidget/index.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/OptimizedImage/OptimizedImage.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/OptimizedImage/index.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/PanelZone/PanelZone.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Add prefers-reduced-motion support for animations",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/ui/PanelZone/PanelZone.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/PerformanceDemo/PerformanceDemo.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/ui/PerformanceDemo/PerformanceDemo.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)"
+      ],
+      "recommendations": [],
+      "totalChecks": 5,
+      "passedChecks": 4
+    },
+    {
+      "filePath": "src/components/ui/PhotoGallery/PhotoGallery.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/ui/PhotoGallery/PhotoGallery.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/RollingBookButton/RollingBookButton.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/ui/RollingBookButton/RollingBookButton.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/ServiceNavigation/ServiceNavigation.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/ui/ServiceNavigation/ServiceNavigation.tsx",
+      "issues": [
+        "Missing H1 heading (WCAG 2.4.6 violation)",
+        "div with onClick may not be keyboard accessible (missing tabIndex or role)"
+      ],
+      "recommendations": [
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 3
+    },
+    {
+      "filePath": "src/components/ui/SimpleBanner/SimpleBanner.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/SmartPanel/SmartPanel.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Add prefers-reduced-motion support for animations",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/ui/SmartPanel/SmartPanel.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/VideoBackground/VideoBackground.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/ui/VideoBackground/VideoBackground.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/components/ui/Widget/Widget.module.css",
+      "issues": [],
+      "recommendations": [
+        "Add prefers-reduced-motion support for animations",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/components/ui/Widget/Widget.tsx",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/hooks/useGTM.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/instrumentation.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/analytics/seo-performance-monitor.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/analytics/seo-tracking.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/analytics.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/config/__tests__/business-info.test.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/config/business-info.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/config/mapbox.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/data/services.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/email.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/hooks/useScrollPosition.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/hooks/useServiceColor.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Consider ARIA live regions for dynamic content updates"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/hooks/useWindowSize.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/motion.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/performance/PerformanceManager.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/performance/criticalCSS.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/seo/__tests__/image-optimization.test.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/seo/image-optimization.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/seo/metadata.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/seo/structured-data.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/store/AppStore.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/utils/EmailUtils.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/utils/MailtoHandler.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/utils/analytics.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/utils/animations.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Modal/dialog components should manage focus",
+        "Add visible focus indicators for interactive elements",
+        "Implement focus trapping for modal components"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/utils/errorReporting.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/utils/gtm.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/utils/logger.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/utils/mindbodyErrorSuppression.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/utils/sentryTracking.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/utils/videoFormat.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/lib/widgets/WidgetManager.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/middleware.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/styles/critical.css",
+      "issues": [],
+      "recommendations": [
+        "Add focus styles for keyboard navigation",
+        "Consider high contrast mode support"
+      ]
+    },
+    {
+      "filePath": "src/types/email.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure",
+        "Add visible focus indicators for interactive elements",
+        "Ensure custom components have appropriate ARIA roles"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/types/index.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    },
+    {
+      "filePath": "src/types/sentry.d.ts",
+      "issues": [],
+      "recommendations": [
+        "Consider adding headings for better content structure"
+      ],
+      "totalChecks": 5,
+      "passedChecks": 5
+    }
+  ],
+  "wcagVersion": "2.1 AA",
+  "criteria": {
+    "1.1.1": {
+      "name": "Non-text Content",
+      "level": "A",
+      "description": "All non-text content has text alternatives"
+    },
+    "1.3.1": {
+      "name": "Info and Relationships",
+      "level": "A",
+      "description": "Information and relationships are programmatically determinable"
+    },
+    "1.4.3": {
+      "name": "Contrast (Minimum)",
+      "level": "AA",
+      "description": "Text has contrast ratio of at least 4.5:1"
+    },
+    "1.4.10": {
+      "name": "Reflow",
+      "level": "AA",
+      "description": "Content can be presented without horizontal scrolling at 320px width"
+    },
+    "2.1.1": {
+      "name": "Keyboard",
+      "level": "A",
+      "description": "All functionality is available from keyboard"
+    },
+    "2.4.1": {
+      "name": "Bypass Blocks",
+      "level": "A",
+      "description": "Skip links or other bypass mechanisms are available"
+    },
+    "2.4.6": {
+      "name": "Headings and Labels",
+      "level": "AA",
+      "description": "Headings and labels describe topic or purpose"
+    },
+    "3.2.3": {
+      "name": "Consistent Navigation",
+      "level": "AA",
+      "description": "Navigation is consistent across pages"
+    },
+    "4.1.2": {
+      "name": "Name, Role, Value",
+      "level": "A",
+      "description": "UI components have accessible names and roles"
+    }
+  }
+}

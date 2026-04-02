@@ -1,0 +1,395 @@
+{
+  "timestamp": "2025-11-21T06:46:42.898Z",
+  "checks": [
+    {
+      "category": "File Structure",
+      "name": "src/app/insights/page.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "File Structure",
+      "name": "src/app/insights/InsightsPageClient.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "File Structure",
+      "name": "src/app/insights/page.module.css",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "File Structure",
+      "name": "src/app/insights/[slug]/page.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "File Structure",
+      "name": "src/app/insights/[slug]/ArticlePageClient.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "File Structure",
+      "name": "src/app/insights/layout.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "File Structure",
+      "name": "src/app/insights/loading.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "File Structure",
+      "name": "src/types/insights.ts",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "File Structure",
+      "name": "src/lib/data/insights.ts",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Components",
+      "name": "src/components/insights/ArticleCard/ArticleCard.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Components",
+      "name": "src/components/insights/CategoryFilter/CategoryFilter.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Components",
+      "name": "src/components/insights/ArticleHero/ArticleHero.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Components",
+      "name": "src/components/insights/ArticleContent/ArticleContent.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Components",
+      "name": "src/components/insights/InsightsHero/InsightsHero.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Components",
+      "name": "src/components/insights/FloatingIcons/FloatingIcons.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Components",
+      "name": "src/components/insights/SearchBar/SearchBar.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Components",
+      "name": "src/components/insights/AuthorCard/AuthorCard.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Components",
+      "name": "src/components/insights/ArticleCardSkeleton/ArticleCardSkeleton.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Test Files",
+      "name": "src/lib/data/__tests__/insights.test.ts",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Test Files",
+      "name": "src/components/insights/ArticleCard/__tests__/ArticleCard.test.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Test Files",
+      "name": "src/components/insights/CategoryFilter/__tests__/CategoryFilter.test.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Test Files",
+      "name": "src/components/insights/SearchBar/__tests__/SearchBar.test.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Test Files",
+      "name": "src/components/insights/__tests__/accessibility.test.tsx",
+      "passed": false,
+      "details": ""
+    },
+    {
+      "category": "Test Files",
+      "name": "src/components/insights/__tests__/error-handling.test.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Test Files",
+      "name": "src/components/insights/__tests__/integration.test.tsx",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Category Filtering",
+      "name": "CategoryFilter component exists",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Category Filtering",
+      "name": "Category filtering logic in data layer",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Category Filtering",
+      "name": "Active categories helper function",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Search Functionality",
+      "name": "SearchBar component exists",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Search Functionality",
+      "name": "Search function in data layer",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Search Functionality",
+      "name": "Debouncing implemented",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Keyboard Navigation",
+      "name": "Tab role on category filters",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Keyboard Navigation",
+      "name": "Keyboard event handlers on ArticleCard",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Keyboard Navigation",
+      "name": "Enter and Space key support",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Accessibility",
+      "name": "ARIA labels on interactive elements",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Accessibility",
+      "name": "ARIA selected on category filters",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Accessibility",
+      "name": "Focus indicators in CSS",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Accessibility",
+      "name": "Alt text on images",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Responsive Design",
+      "name": "Mobile breakpoints in listing page CSS",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Responsive Design",
+      "name": "Tablet breakpoints in listing page CSS",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Responsive Design",
+      "name": "Grid layout implementation",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "SEO",
+      "name": "Metadata export in listing page",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "SEO",
+      "name": "generateMetadata in article page",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "SEO",
+      "name": "Open Graph tags",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "SEO",
+      "name": "Structured data helper",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Error Handling",
+      "name": "notFound() for missing articles",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Error Handling",
+      "name": "not-found.tsx exists",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Error Handling",
+      "name": "Error boundary component",
+      "passed": false,
+      "details": ""
+    },
+    {
+      "category": "Error Handling",
+      "name": "Empty state handling",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Performance",
+      "name": "Lazy loading on images",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Performance",
+      "name": "ISR revalidation configured",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Performance",
+      "name": "Loading states implemented",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Performance",
+      "name": "Skeleton loaders",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Animations",
+      "name": "Framer Motion integration",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Animations",
+      "name": "Lenis smooth scrolling",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Animations",
+      "name": "Parallax effects",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Animations",
+      "name": "Reduced motion support",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Visual Design",
+      "name": "Glassmorphism on ArticleCard",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Visual Design",
+      "name": "Radial gradient in hero",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Visual Design",
+      "name": "Floating icons component",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Visual Design",
+      "name": "Category colors defined",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Documentation",
+      "name": "docs/insights/SANITY_MIGRATION.md",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Documentation",
+      "name": "docs/insights/CONTENT_FORMATTING_GUIDE.md",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Documentation",
+      "name": "src/app/insights/PERFORMANCE_OPTIMIZATION.md",
+      "passed": true,
+      "details": ""
+    },
+    {
+      "category": "Documentation",
+      "name": "src/app/insights/SEO_IMPLEMENTATION.md",
+      "passed": true,
+      "details": ""
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+---
+description: Homepage scroll-driven ocean depth system conventions
+globs: apps/web/src/app/page.tsx,apps/web/src/app/page.module.css,apps/web/src/app/globals.css,apps/web/src/components/home/**,apps/web/src/components/DepthBackground/**,apps/web/src/lib/depth-zones.ts
+alwaysApply: false
+---
+
+# Homepage Depth System Rules
+
+## Zone Model
+- Five zones defined in `apps/web/src/lib/depth-zones.ts`: epipelagic, mesopelagic, bathypelagic, abyssal, hadal.
+- Sections declare their zone via `data-depth` attribute: `<section data-depth="mesopelagic">`.
+- `HomepageDepthObserver` uses `IntersectionObserver` with hysteresis to set `html[data-home-depth]`.
+
+## CSS Variable Architecture
+- All depth-driven styling uses `--depth-*` variables defined in `globals.css` under `html[data-home-depth='<zone>']` blocks.
+- Header: `--depth-header-bg`, `--depth-header-text`, `--depth-header-border`, `--depth-header-shadow`, `--depth-accent`.
+- Surfaces: `--depth-surface`, `--depth-surface-strong`, `--depth-surface-border`, `--depth-surface-shadow`.
+- Text: `--depth-text`, `--depth-text-muted`, `--depth-text-meta`.
+- Interactive: `--depth-link`, `--depth-link-hover`, `--depth-button-bg`, `--depth-button-text`, `--depth-button-border`.
+- Environment: `--depth-divider`, `--depth-glow`.
+- Timing: `--depth-transition` (0.8s) and `--depth-ease` (cubic-bezier) for unified transitions.
+
+## Design Principles
+- Environment changes first, UI follows second.
+- Transitions must be smooth and continuous — never abrupt zone snaps.
+- Header backgrounds use flat `rgba()` colors (not gradients) so `background-color` can transition smoothly.
+- `DepthBackground` layers (surface glow, light beams) attenuate with depth via opacity.
+- A gradient dimmer overlay (`__gradient::after`) darkens the fixed gradient's upper viewport as depth increases.
+- The footer must remain transparent and share the page's environmental background.
+- Accent colors shift from warm teal (shallow) toward bioluminescent blue (deep).
+- Lower-priority UI (dividers, metadata, eyebrow labels) transitions slightly slower than primary elements.
+
+## Performance
+- `IntersectionObserver` updates are batched via `requestAnimationFrame`.
+- Hysteresis constant prevents rapid oscillation at section boundaries.
+- `ScrollReveal` component uses `IntersectionObserver` with `unobserve` after reveal — no ongoing observation.
+- Prefer CSS transitions over JavaScript animation for depth-linked visual changes.

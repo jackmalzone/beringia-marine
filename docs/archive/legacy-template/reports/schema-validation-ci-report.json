@@ -1,0 +1,71 @@
+{
+  "timestamp": "2025-11-16T02:56:08.457Z",
+  "summary": {
+    "totalSchemas": 5,
+    "validSchemas": 5,
+    "validationRate": 100,
+    "totalErrors": 0,
+    "totalWarnings": 0,
+    "averageScore": 100
+  },
+  "results": [
+    {
+      "name": "vitalIceBusiness",
+      "isValid": true,
+      "errors": [],
+      "warnings": [],
+      "recommendations": [],
+      "score": 100,
+      "schemaType": "LocalBusiness"
+    },
+    {
+      "name": "coldPlungeService",
+      "isValid": true,
+      "errors": [],
+      "warnings": [],
+      "recommendations": [],
+      "score": 100,
+      "schemaType": "Service"
+    },
+    {
+      "name": "faqPage",
+      "isValid": true,
+      "errors": [],
+      "warnings": [],
+      "recommendations": [],
+      "score": 100,
+      "schemaType": "FAQPage"
+    },
+    {
+      "name": "organizationSchema",
+      "isValid": true,
+      "errors": [],
+      "warnings": [],
+      "recommendations": [],
+      "score": 100,
+      "schemaType": "Organization"
+    },
+    {
+      "name": "breadcrumbHome",
+      "isValid": true,
+      "errors": [],
+      "warnings": [],
+      "recommendations": [],
+      "score": 100,
+      "schemaType": "BreadcrumbList"
+    }
+  ],
+  "ciConfig": {
+    "failOnErrors": true,
+    "failOnWarnings": false,
+    "minScore": 80,
+    "maxErrors": 0,
+    "maxWarnings": 10,
+    "outputFormat": "console",
+    "reportPath": "./schema-validation-ci-report.json"
+  },
+  "buildStatus": {
+    "passed": true,
+    "reasons": []
+  }
+}

@@ -1,12 +1,44 @@
-## Beringia Marine Migration Rules
+## Beringia Marine — Project Rules
 
-- Treat `apps/web` as the active web app surface; do not add new root-level web code in `src/` or `lib/`.
-- Keep newsletter flow patterns intact unless explicitly asked to remove them.
-- Use one canonical source for Insights content and consume it from both `/insights` and `/insights/:slug`.
-- Avoid duplicate article registries, duplicated fetch logic, or hardcoded insight route strings.
+### Architecture
+- **Monorepo**: pnpm workspaces + Turborepo. Apps in `apps/`, shared packages in `packages/`.
+- **Active web surface**: `apps/web` is the production Next.js app. Do not add new web code at the repo root.
+- **CMS**: Sanity Studio lives in `apps/studio`. Web-side Sanity runtime code is in `apps/web/src/sanity/`.
+- **Shared config**: Site identity, shell navigation, and business defaults live in `packages/config`.
+
+### Styling
+- CSS Modules co-located with components. No Tailwind.
+- BEM-inspired class naming within modules.
+- Use CSS custom properties (`--depth-*`, `--color-*`, `--font-*`) for theming and depth-zone adaptation.
+- Depth-driven variables are defined in `apps/web/src/app/globals.css` under `html[data-home-depth]` selectors.
+- Transitions between depth zones use `--depth-transition` and `--depth-ease` for unified timing.
+
+### Homepage Depth System
+- Five oceanic zones: `epipelagic`, `mesopelagic`, `bathypelagic`, `abyssal`, `hadal`.
+- Zone definitions in `apps/web/src/lib/depth-zones.ts`.
+- `HomepageDepthObserver` sets `html[data-home-depth]` based on scroll position.
+- `DepthBackground` (fixed, layered gradient) provides the environmental field.
+- Header, cards, buttons, links, footer all inherit depth state via CSS variables.
+- Hierarchy of adaptation: Environment > Header > Cards > Buttons/Links/Dividers > Metadata.
+
+### Content
+- Static marketing content in `apps/web/src/lib/content/beringia-static.ts`.
+- Solutions registry in `apps/web/src/lib/content/solutions.ts`.
+- Insights use a canonical registry consumed by both listing and detail routes.
 - Prefer shared helpers for insight URLs and SEO image resolution.
-- Keep Insights structured data aligned with route slugs and canonical URLs.
-- Use `updatedAt` and reading-time fields when available for article metadata and JSON-LD.
-- Maintain a staged migration approach: keep currently-required web-side Sanity runtime code until a dedicated migration pass is requested.
-- Remove legacy Vital Ice branding/assets when encountered; replace with neutral Beringia usage.
-- After edits, run lint/type checks scoped to changed areas and avoid unrelated refactors.
+
+### Code Conventions
+- TypeScript throughout. Strict mode.
+- Next.js App Router patterns: server components by default, `'use client'` only when needed.
+- Keep components focused. Prefer composition over deep prop drilling.
+- After edits, run lint/type checks scoped to changed areas. Avoid unrelated refactors.
+
+### Content & Branding
+- Remove legacy Vital Ice branding/assets when encountered; replace with Beringia usage.
+- Package names still reference `@vital-ice/*` in some places — rename incrementally.
+- Keep newsletter flow patterns intact unless explicitly asked to remove them.
+
+### Documentation
+- Active docs in `docs/`. Legacy template docs archived in `docs/archive/`.
+- Planning documents archived in `docs/archive/planning/`.
+- Prior migration reference in `migration-legacy/`.

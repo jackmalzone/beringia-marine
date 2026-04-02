@@ -1,0 +1,297 @@
+{
+  "timestamp": "2025-11-16T02:50:50.456Z",
+  "summary": {
+    "totalSchemas": 4,
+    "validSchemas": 4,
+    "richResultsEligible": 3,
+    "averageScore": 100,
+    "criticalIssues": 0
+  },
+  "validationResults": [
+    {
+      "name": "vitalIceBusiness",
+      "schema": {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Vital Ice",
+        "description": "Premier wellness and recovery center in San Francisco",
+        "url": "https://www.vitalicesf.com",
+        "telephone": "+1-415-555-0123",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "123 Marina Blvd",
+          "addressLocality": "San Francisco",
+          "addressRegion": "CA",
+          "postalCode": "94123",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 37.7999,
+          "longitude": -122.434
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Monday",
+            "opens": "06:00",
+            "closes": "22:00"
+          }
+        ],
+        "image": [
+          "https://media.vitalicesf.com/logo-dark.png"
+        ],
+        "priceRange": "$",
+        "areaServed": {
+          "@type": "City",
+          "name": "San Francisco"
+        }
+      },
+      "issues": [],
+      "warnings": [],
+      "recommendations": [
+        "Schema type is eligible for Google Rich Results"
+      ],
+      "score": 100,
+      "isRichResultsEligible": true
+    },
+    {
+      "name": "coldPlungeService",
+      "schema": {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Cold Plunge Therapy",
+        "description": "40-50°F immersion therapy for reduced inflammation",
+        "provider": {
+          "@type": "LocalBusiness",
+          "name": "Vital Ice"
+        },
+        "serviceType": "Cold Therapy",
+        "areaServed": {
+          "@type": "City",
+          "name": "San Francisco"
+        }
+      },
+      "issues": [],
+      "warnings": [],
+      "recommendations": [
+        "Consider adding Offer schema for pricing information",
+        "Add category for better service classification"
+      ],
+      "score": 100,
+      "isRichResultsEligible": false
+    },
+    {
+      "name": "faqPage",
+      "schema": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is cold plunge therapy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Cold plunge therapy involves immersing your body in cold water (40-50°F) for 2-5 minutes to activate the vagus nerve, reduce inflammation, and enhance mental clarity."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long should I stay in the cold plunge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We recommend 2-5 minutes for cold plunge therapy. Start with shorter durations and gradually increase as your body adapts."
+            }
+          }
+        ]
+      },
+      "issues": [],
+      "warnings": [],
+      "recommendations": [
+        "Schema type is eligible for Google Rich Results"
+      ],
+      "score": 100,
+      "isRichResultsEligible": true
+    },
+    {
+      "name": "homeBreadcrumb",
+      "schema": {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.vitalicesf.com"
+          }
+        ]
+      },
+      "issues": [],
+      "warnings": [],
+      "recommendations": [
+        "Schema type is eligible for Google Rich Results"
+      ],
+      "score": 100,
+      "isRichResultsEligible": true
+    }
+  ],
+  "schemaValidationRules": {
+    "LocalBusiness": {
+      "required": [
+        "@context",
+        "@type",
+        "name",
+        "address",
+        "telephone"
+      ],
+      "recommended": [
+        "description",
+        "url",
+        "geo",
+        "openingHoursSpecification",
+        "image",
+        "priceRange"
+      ],
+      "optional": [
+        "sameAs",
+        "areaServed",
+        "paymentAccepted",
+        "amenityFeature"
+      ]
+    },
+    "Service": {
+      "required": [
+        "@context",
+        "@type",
+        "name",
+        "provider"
+      ],
+      "recommended": [
+        "description",
+        "serviceType",
+        "areaServed"
+      ],
+      "optional": [
+        "image",
+        "offers",
+        "category"
+      ]
+    },
+    "Organization": {
+      "required": [
+        "@context",
+        "@type",
+        "name",
+        "url"
+      ],
+      "recommended": [
+        "description",
+        "logo",
+        "contactPoint"
+      ],
+      "optional": [
+        "sameAs",
+        "address",
+        "telephone"
+      ]
+    },
+    "FAQPage": {
+      "required": [
+        "@context",
+        "@type",
+        "mainEntity"
+      ],
+      "recommended": [],
+      "optional": [
+        "name",
+        "description"
+      ]
+    },
+    "Review": {
+      "required": [
+        "@context",
+        "@type",
+        "itemReviewed",
+        "author",
+        "reviewRating"
+      ],
+      "recommended": [
+        "reviewBody",
+        "datePublished"
+      ],
+      "optional": [
+        "name",
+        "publisher"
+      ]
+    },
+    "BreadcrumbList": {
+      "required": [
+        "@context",
+        "@type",
+        "itemListElement"
+      ],
+      "recommended": [],
+      "optional": [
+        "name",
+        "description"
+      ]
+    },
+    "ContactPage": {
+      "required": [
+        "@context",
+        "@type",
+        "name",
+        "mainEntity"
+      ],
+      "recommended": [
+        "description",
+        "url"
+      ],
+      "optional": [
+        "breadcrumb",
+        "potentialAction"
+      ]
+    },
+    "Place": {
+      "required": [
+        "@context",
+        "@type",
+        "name",
+        "address"
+      ],
+      "recommended": [
+        "geo",
+        "description"
+      ],
+      "optional": [
+        "containedInPlace",
+        "amenityFeature",
+        "image"
+      ]
+    },
+    "WebSite": {
+      "required": [
+        "@context",
+        "@type",
+        "name",
+        "url"
+      ],
+      "recommended": [
+        "potentialAction"
+      ],
+      "optional": [
+        "description",
+        "publisher",
+        "inLanguage"
+      ]
+    }
+  },
+  "richResultsEligible": [
+    "LocalBusiness",
+    "FAQPage",
+    "Review",
+    "BreadcrumbList",
+    "Organization"
+  ]
+}

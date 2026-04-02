@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-11-16T02:44:12.967Z",
+  "summary": {
+    "totalImages": 4,
+    "criticalIssues": 0,
+    "optimizationOpportunities": 0,
+    "complianceRate": 100
+  },
+  "issues": [],
+  "recommendations": [],
+  "allImages": [
+    {
+      "filePath": "src/components/sections/About/About.tsx",
+      "src": "https://media.vitalicesf.com/vision-forest.jpg",
+      "alt": "Serene forest landscape representing natural wellness and recovery philosophy at Vital Ice San Francisco",
+      "filename": "vision-forest.jpg",
+      "line": 13,
+      "fullMatch": "<Image\n          src=\"https://media.vitalicesf.com/vision-forest.jpg\"\n          alt=\"Serene forest landscape representing natural wellness and recovery philosophy at Vital Ice San Francisco\"\n          fill\n          className={styles.about__backgroundImage}\n          loading=\"lazy\"\n          sizes=\"100vw\"\n        />"
+    },
+    {
+      "filePath": "src/components/sections/Benefits/Benefits.tsx",
+      "src": "https://media.vitalicesf.com/texture_blacksand.jpg",
+      "alt": "Black volcanic sand texture background for wellness center ambiance at Vital Ice San Francisco",
+      "filename": "texture_blacksand.jpg",
+      "line": 327,
+      "fullMatch": "<Image\n          src=\"https://media.vitalicesf.com/texture_blacksand.jpg\"\n          alt=\"Black volcanic sand texture background for wellness center ambiance at Vital Ice San Francisco\"\n          fill\n          className={styles.benefits__backgroundImage}\n          loading=\"lazy\"\n          sizes=\"100vw\"\n        />"
+    },
+    {
+      "filePath": "src/components/sections/Testimonials/Testimonials.tsx",
+      "src": "https://media.vitalicesf.com/texture_blacksand.jpg",
+      "alt": "Black volcanic sand texture background for wellness testimonials at Vital Ice San Francisco",
+      "filename": "texture_blacksand.jpg",
+      "line": 155,
+      "fullMatch": "<Image\n          src=\"https://media.vitalicesf.com/texture_blacksand.jpg\"\n          alt=\"Black volcanic sand texture background for wellness testimonials at Vital Ice San Francisco\"\n          fill\n          className={styles.testimonials__backgroundImage}\n          loading=\"lazy\"\n          sizes=\"100vw\"\n        />"
+    },
+    {
+      "filePath": "src/components/ui/Logo/Logo.tsx",
+      "src": "https://media.vitalicesf.com/logo-dark.png",
+      "alt": "Vital Ice logo - Premier wellness and recovery center in San Francisco Marina District",
+      "filename": "logo-dark.png",
+      "line": 17,
+      "fullMatch": "<Image\n        src=\"https://media.vitalicesf.com/logo-dark.png\"\n        alt=\"Vital Ice logo - Premier wellness and recovery center in San Francisco Marina District\"\n        width={width || 300}\n        height={height || 150}\n        style={{ objectFit: 'contain', width: '100%', height: 'auto' }}\n        priority={priority}\n      />"
+    }
+  ]
+}

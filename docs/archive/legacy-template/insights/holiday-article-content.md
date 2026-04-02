@@ -1,0 +1,166 @@
+# Holiday Article Content for Sanity Studio
+
+## Instructions
+
+Copy the content below and paste it into the Sanity Studio article editor. The content is formatted with:
+
+- **Bold text** for key terms like "red light therapy"
+- Internal links to `/` (homepage) and `/services/red-light-therapy`
+- Proper H2 headings for sections
+
+---
+
+## Article Content
+
+December brings a very particular kind of tired.
+
+It's not solved by one good night of sleep. It creeps in slowly. Shorter daylight hours. Cold air outside, dry heat inside. Calendars are filling up. More mirrors than usual because dinners, photos, and events suddenly feel closer together.
+
+Even people who rarely think about skincare start noticing small things. Skin feels tighter. Drier. Makeup doesn't sit the same way it did a few weeks ago. That rested look seems harder to hold onto.
+
+This is usually when people start talking about **red light therapy** for skin. Not because it's a trend, but because it offers support without adding recovery time, discomfort, or another complicated step during an already crowded season.
+
+## What Red Light Therapy Is, in Simple Terms
+
+**Red light therapy** uses specific wavelengths of red and near-infrared light to support how skin cells function.
+
+Unlike surface-level treatments, this light reaches deeper layers of the skin. These are the layers responsible for repair, circulation, and collagen activity. Instead of forcing the skin to change, red light therapy supports processes that already exist but tend to slow down when stress builds up.
+
+The sessions themselves are simple. You lie down. The light does its work. There's no heat, no irritation, and nothing you need to recover from afterward. That ease is part of why it fits naturally into the holiday season.
+
+## How Red Light Therapy Supports Skin Health
+
+Healthy skin depends less on products and more on how well cells are able to recover.
+
+When skin cells have enough energy, they repair damage more efficiently and handle inflammation with less reactivity. **Red light therapy** supports this by improving cellular energy production, which can influence elasticity, hydration, and tone over time.
+
+**Collagen** is part of this picture as well. Stress, disrupted sleep, and seasonal changes all affect how collagen is produced. Research shows that red light exposure can support collagen synthesis gradually, which is why results tend to look natural rather than dramatic.
+
+Most people don't say their skin looks "different." They describe it as calmer. More even. Less sensitive.
+
+During a busy season, that kind of change matters.
+
+## Why Red Light Therapy Makes Sense Before Christmas
+
+December puts quiet pressure on the skin.
+
+Cold air dries it out. Indoor heating does the same. Sleep becomes inconsistent. Stress stays present, even during good moments. Skin reflects all of it.
+
+**Red light therapy** helps by supporting circulation and cellular repair when the body is already managing more than usual. Because sessions are short and non-invasive, they don't add strain to an already full schedule.
+
+There's also a mental element. Lying down in a calm space, even briefly, allows the nervous system to settle. When the body slows down, skin often responds.
+
+## Skin Changes People Tend to Notice
+
+**Red light therapy** doesn't promise instant results.
+
+What people usually notice instead is gradual improvement. Skin looks brighter. Hydration holds longer through the day. Fine lines don't disappear, but they soften. Makeup applies more smoothly. Photos feel a little more forgiving.
+
+It's the kind of glow others notice without being able to explain exactly why.
+
+## When to Start for Holiday Events
+
+Earlier tends to work better, but it doesn't need to be complicated.
+
+Many people begin a few weeks before their first Christmas event. Two to three sessions per week are common. Not because more is better, but because consistency gives skin time to respond naturally.
+
+Simple habits help support results. Staying hydrated. Keeping routines steady. Avoiding last-minute skincare experiments right before events.
+
+**Red light therapy** works best when it reinforces what you're already doing, not when it's asked to fix everything at once.
+
+## How Red Light Therapy Fits Into Holiday Skincare
+
+**Red light therapy** doesn't replace skincare. It supports it.
+
+Gentle cleansing, moisturizing, and hydration still matter. **Red light therapy** helps those basics work more effectively by improving how skin functions beneath the surface.
+
+Some people also pair sessions with other recovery practices during stressful weeks. When the body gets a chance to slow down, skin recovery often improves along with it.
+
+Less effort. More support.
+
+## Why People Choose Red Light Therapy at Vital Ice SF
+
+At [Vital Ice](/), **red light therapy** is part of a broader recovery approach rather than a cosmetic add-on.
+
+The space is intentionally calm. Sessions aren't rushed. People come in to slow down during a season that rarely allows much pause.
+
+Many clients combine **red light therapy** with other recovery services, turning skincare into part of a full reset instead of a single task. It's also more social than people expect. Familiar faces. Quiet conversations. A shared understanding that taking care of yourself doesn't need to feel performative.
+
+That atmosphere matters, especially around the holidays.
+
+## Frequently Asked Questions
+
+**How often should I use red light therapy before Christmas?**
+
+Most people use **red light therapy** four to five times per week in the weeks leading up to Christmas. Starting earlier allows results to build gradually instead of relying on last-minute sessions.
+
+**Is red light therapy safe for all skin types?**
+
+**Red light therapy** is generally safe for most skin types because it is gentle and non-invasive. Anyone with specific medical concerns should consult a healthcare professional first.
+
+**Can red light therapy reduce wrinkles and fine lines?**
+
+**Red light therapy** supports collagen production, which can help soften the appearance of fine lines over time. Results develop gradually with consistent use.
+
+**How soon will I see results?**
+
+Some people notice brighter, more hydrated skin after a few sessions. More visible changes usually appear over several weeks of regular use.
+
+## A Calmer Way to Glow This Christmas
+
+Holiday skincare doesn't need to feel urgent or extreme.
+
+**Red light therapy** offers steady support when schedules are full and stress runs high. It works quietly, builds over time, and fits into real life.
+
+If you're heading into Christmas events and want your skin to look rested rather than rushed, booking a [red light therapy session](/services/red-light-therapy) at Vital Ice SF gives your skin the breathing room it needs.
+
+---
+
+## Formatting Notes for Sanity Studio
+
+When pasting this into Sanity Studio:
+
+1. **Bold text** - Select the text and use the Bold button (or Cmd+B)
+   - "red light therapy" (appears multiple times)
+   - "Collagen"
+   - FAQ questions
+   - "red light therapy session" (in the final paragraph)
+
+2. **Headings** - Use H2 style for section headings:
+   - "What Red Light Therapy Is, in Simple Terms"
+   - "How Red Light Therapy Supports Skin Health"
+   - "Why Red Light Therapy Makes Sense Before Christmas"
+   - "Skin Changes People Tend to Notice"
+   - "When to Start for Holiday Events"
+   - "How Red Light Therapy Fits Into Holiday Skincare"
+   - "Why People Choose Red Light Therapy at Vital Ice SF"
+   - "Frequently Asked Questions"
+   - "A Calmer Way to Glow This Christmas"
+
+3. **Internal Links** - How to create links in Sanity Studio:
+
+   **Step-by-step instructions:**
+
+   a. **Select the text** you want to turn into a link (e.g., "Vital Ice" or "red light therapy session")
+
+   b. **Click the link icon** in the toolbar (looks like a chain link 🔗) or use keyboard shortcut
+
+   c. **In the link dialog that appears:**
+   - For **internal links** (pages on your site), enter the relative path:
+     - Homepage: `/`
+     - Red Light Therapy service: `/services/red-light-therapy`
+     - Other services: `/services/[service-name]`
+     - Other pages: `/insights`, `/experience`, etc.
+   - For **external links**, enter the full URL (e.g., `https://example.com`)
+
+   d. **Optional:** Check "Open in new tab" if you want the link to open in a new window (usually leave unchecked for internal links)
+
+   e. **Click Save/Apply** to create the link
+
+   **Links to create in this article:**
+   - "Vital Ice" → Link to `/` (homepage) - appears in "Why People Choose Red Light Therapy at Vital Ice SF" section
+   - "red light therapy session" → Link to `/services/red-light-therapy` - appears in final paragraph
+
+4. **Cover Image** - Upload the image from:
+   - URL: `https://media.vitalicesf.com/smiley-woman-with-santa-hat-posing.jpg`
+   - Alt text: "Smiley woman with Santa hat posing for holiday photo"

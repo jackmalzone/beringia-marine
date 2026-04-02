@@ -1,0 +1,35 @@
+---
+description: Web app code conventions and patterns
+globs: apps/web/src/**
+alwaysApply: false
+---
+
+# Web App Conventions
+
+## Component Patterns
+- Server components by default. Use `'use client'` only when React hooks or browser APIs are needed.
+- CSS Modules co-located with components (e.g., `Header.module.css` next to `Header.tsx`).
+- BEM-inspired naming within CSS modules. No Tailwind utility classes.
+- Prefer CSS custom properties for theming over component-level style props.
+
+## File Organization
+- Pages: `apps/web/src/app/<route>/page.tsx`
+- Components: `apps/web/src/components/<domain>/` (e.g., `home/`, `layout/`, `shared/`)
+- Content data: `apps/web/src/lib/content/` (static registries, copy)
+- Sanity integration: `apps/web/src/sanity/` (client, queries, types)
+- SEO utilities: `apps/web/src/lib/seo/`
+- Hooks: `apps/web/src/hooks/`
+- Types: `apps/web/src/types/`
+
+## Styling Rules
+- All colors, spacing tokens, and font stacks defined as CSS custom properties in `globals.css`.
+- Depth-zone-specific overrides use `html[data-home-depth]` attribute selectors.
+- Use `clamp()` for responsive values. Avoid magic breakpoint numbers when possible.
+- Transitions should use shared timing variables (`--depth-transition`, `--depth-ease`) on the homepage.
+- `@media (prefers-reduced-motion: reduce)` — disable non-essential animations.
+
+## Content & SEO
+- Static marketing content in `lib/content/beringia-static.ts` — single source of truth for homepage copy.
+- Solutions registry in `lib/content/solutions.ts` — drives `/solutions` and `/solutions/[slug]`.
+- Insights have a canonical registry — no duplicate mock arrays.
+- Use shared route helpers for URLs; keep JSON-LD aligned with route slugs and canonical URLs.

@@ -1,0 +1,134 @@
+{
+  "timestamp": "2025-11-16T02:44:08.205Z",
+  "summary": {
+    "totalImages": 4,
+    "compliantImages": 4,
+    "criticalIssues": 0,
+    "averageScore": 97.5,
+    "complianceRate": 100
+  },
+  "validationResults": [
+    {
+      "image": {
+        "filePath": "src/components/sections/About/About.tsx",
+        "line": 13,
+        "src": "https://media.vitalicesf.com/vision-forest.jpg",
+        "alt": "Serene forest landscape representing natural wellness and recovery philosophy at Vital Ice San Francisco",
+        "title": "",
+        "ariaLabel": "",
+        "ariaHidden": false,
+        "role": "",
+        "loading": "lazy",
+        "priority": false,
+        "imageTag": "<Image\n          src=\"https://media.vitalicesf.com/vision-forest.jpg\"\n          alt=\"Serene forest landscape representing natural wellness and recovery philosophy at Vital Ice San Francisco\"\n          fill\n          className={styles.about__backgroundImage}\n          loading=\"lazy\"\n          sizes=\"100vw\"\n        />",
+        "filename": "vision-forest.jpg"
+      },
+      "score": 100,
+      "issues": [],
+      "warnings": [],
+      "recommendations": [],
+      "isCompliant": true,
+      "grade": "A+"
+    },
+    {
+      "image": {
+        "filePath": "src/components/sections/Benefits/Benefits.tsx",
+        "line": 327,
+        "src": "https://media.vitalicesf.com/texture_blacksand.jpg",
+        "alt": "Black volcanic sand texture background for wellness center ambiance at Vital Ice San Francisco",
+        "title": "",
+        "ariaLabel": "",
+        "ariaHidden": false,
+        "role": "",
+        "loading": "lazy",
+        "priority": false,
+        "imageTag": "<Image\n          src=\"https://media.vitalicesf.com/texture_blacksand.jpg\"\n          alt=\"Black volcanic sand texture background for wellness center ambiance at Vital Ice San Francisco\"\n          fill\n          className={styles.benefits__backgroundImage}\n          loading=\"lazy\"\n          sizes=\"100vw\"\n        />",
+        "filename": "texture_blacksand.jpg"
+      },
+      "score": 95,
+      "issues": [],
+      "warnings": [],
+      "recommendations": [
+        "Consider using empty alt=\"\" or aria-hidden=\"true\" for decorative images"
+      ],
+      "isCompliant": true,
+      "grade": "A+"
+    },
+    {
+      "image": {
+        "filePath": "src/components/sections/Testimonials/Testimonials.tsx",
+        "line": 155,
+        "src": "https://media.vitalicesf.com/texture_blacksand.jpg",
+        "alt": "Black volcanic sand texture background for wellness testimonials at Vital Ice San Francisco",
+        "title": "",
+        "ariaLabel": "",
+        "ariaHidden": false,
+        "role": "",
+        "loading": "lazy",
+        "priority": false,
+        "imageTag": "<Image\n          src=\"https://media.vitalicesf.com/texture_blacksand.jpg\"\n          alt=\"Black volcanic sand texture background for wellness testimonials at Vital Ice San Francisco\"\n          fill\n          className={styles.testimonials__backgroundImage}\n          loading=\"lazy\"\n          sizes=\"100vw\"\n        />",
+        "filename": "texture_blacksand.jpg"
+      },
+      "score": 95,
+      "issues": [],
+      "warnings": [],
+      "recommendations": [
+        "Consider using empty alt=\"\" or aria-hidden=\"true\" for decorative images"
+      ],
+      "isCompliant": true,
+      "grade": "A+"
+    },
+    {
+      "image": {
+        "filePath": "src/components/ui/Logo/Logo.tsx",
+        "line": 17,
+        "src": "https://media.vitalicesf.com/logo-dark.png",
+        "alt": "Vital Ice logo - Premier wellness and recovery center in San Francisco Marina District",
+        "title": "",
+        "ariaLabel": "",
+        "ariaHidden": false,
+        "role": "",
+        "loading": "eager",
+        "priority": true,
+        "imageTag": "<Image\n        src=\"https://media.vitalicesf.com/logo-dark.png\"\n        alt=\"Vital Ice logo - Premier wellness and recovery center in San Francisco Marina District\"\n        width={width || 300}\n        height={height || 150}\n        style={{ objectFit: 'contain', width: '100%', height: 'auto' }}\n        priority={priority}\n      />",
+        "filename": "logo-dark.png"
+      },
+      "score": 100,
+      "issues": [],
+      "warnings": [],
+      "recommendations": [],
+      "isCompliant": true,
+      "grade": "A+"
+    }
+  ],
+  "wcagVersion": "2.1 AA",
+  "guidelines": {
+    "altText": {
+      "required": true,
+      "minLength": 5,
+      "maxLength": 125,
+      "shouldNotContain": [
+        "image",
+        "photo",
+        "picture",
+        "graphic",
+        "img"
+      ],
+      "shouldContain": [
+        "descriptive content about the image purpose"
+      ]
+    },
+    "decorativeImages": {
+      "altText": "",
+      "ariaHidden": true
+    },
+    "informativeImages": {
+      "altText": "descriptive",
+      "context": "must provide equivalent information"
+    },
+    "functionalImages": {
+      "altText": "action",
+      "context": "must describe what happens when activated"
+    }
+  }
+}
