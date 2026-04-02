@@ -1,5 +1,6 @@
 'use client';
 import { FC, useRef, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { motion } from '@/lib/motion';
@@ -52,9 +53,19 @@ const Header: FC = () => {
       <Link
         href="/"
         className={`${styles.logoLink} ${isMenuOpen ? styles.logoLinkOpen : ''}`}
-        aria-label="Home"
+        aria-label="Beringia Marine home"
       >
-        <span className={styles.brandWordmark}>BERINGIA</span>
+        <span className={styles.logoRow}>
+          <Image
+            src="/assets/beringia/logo-white-transparent.png"
+            alt=""
+            width={44}
+            height={44}
+            className={styles.logoMark}
+            priority
+          />
+          <span className={styles.brandWordmark}>BERINGIA MARINE</span>
+        </span>
       </Link>
 
       <nav className={styles.desktopNav}>

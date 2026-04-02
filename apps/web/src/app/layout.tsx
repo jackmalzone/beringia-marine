@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from 'next/font/google';
+import { Bebas_Neue, Geist, Geist_Mono } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider';
 import NavigationLoadingProvider from '@/components/providers/NavigationLoadingProvider';
@@ -22,9 +22,18 @@ import { mergeMetadata } from '@/lib/seo/metadata';
 import { SITE_CONFIG } from '@/lib/config/site-config';
 import { headers } from 'next/headers';
 import FontPresetToggle from '@/components/dev/FontPresetToggle';
+import LoadingScreen from '@/components/shared/LoadingScreen/LoadingScreen';
 import './globals.css';
 
 const FONT_PRESET_BOOT_SCRIPT = `(function(){try{var k='beringia-font-preset';if(localStorage.getItem(k)==='legacy')document.documentElement.setAttribute('data-font-preset','legacy');}catch(e){}})();`;
+
+/** Home hero H1 — guaranteed load even if self-hosted `/fonts/BebasNeue*` is missing */
+const bebasNeue = Bebas_Neue({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-home-hero-bebas',
+});
 
 const geistSans = Geist({
   subsets: ['latin'],
@@ -123,7 +132,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         {/* Structured Data */}
         <StructuredData data={getPageSchema('home')} />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${bebasNeue.variable} ${geistSans.variable} ${geistMono.variable}`}>
+        <LoadingScreen />
         {/* Crawler-visible SSR block (literal HTML) for fetch-based SEO checks */}
         <SSRBodyBlock />
         <FontPresetToggle />

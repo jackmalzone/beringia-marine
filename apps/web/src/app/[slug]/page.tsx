@@ -33,6 +33,11 @@ function normalizeSlug(slug: string): string | null {
   if (decoded.includes('%') || decoded.includes('?')) {
     return null;
   }
+
+  // Filter out static asset / browser-generated requests
+  if (/\.(js|json|css|ico|png|jpg|svg|map|txt|xml|woff2?)$/i.test(decoded)) {
+    return null;
+  }
   
   return decoded;
 }

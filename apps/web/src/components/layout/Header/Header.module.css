@@ -63,6 +63,21 @@
   align-items: center;
   text-decoration: none;
   z-index: 101;
+  flex-shrink: 0;
+}
+
+.logoRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.logoMark {
+  width: auto !important;
+  height: clamp(34px, 4.2vw, 44px) !important;
+  max-width: min(120px, 28vw);
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .logoLinkOpen {
@@ -72,9 +87,10 @@
 .brandWordmark {
   color: var(--depth-header-text, #e6f9fb);
   font-family: var(--font-display);
-  letter-spacing: var(--depth-header-wordmark-tracking, 0.14em);
-  font-size: 0.95rem;
+  letter-spacing: var(--depth-header-wordmark-tracking, 0.1em);
+  font-size: clamp(0.78rem, 1.35vw, 0.95rem);
   font-weight: 600;
+  white-space: nowrap;
   transition:
     color var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1)),
     letter-spacing var(--depth-transition, 0.8s) var(--depth-ease, cubic-bezier(0.35, 0, 0.15, 1));

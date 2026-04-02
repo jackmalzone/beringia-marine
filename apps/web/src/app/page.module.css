@@ -90,10 +90,13 @@
 .heroTitle {
   position: relative;
   z-index: 2;
+  font-family: var(--font-home-hero-bebas), 'Bebas Neue', system-ui, sans-serif;
+  font-weight: 400;
   font-size: clamp(2.5rem, 6.2vw, 4.9rem);
+  letter-spacing: 0.04em;
   margin: 0;
   line-height: 1.02;
-  max-width: 14ch;
+  max-width: min(100%, 22ch);
 }
 
 .heroSubtitle {
