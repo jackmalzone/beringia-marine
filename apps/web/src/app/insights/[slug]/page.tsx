@@ -88,34 +88,34 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
           />
           <div className={styles.heroCoverScrim} aria-hidden />
           <span className={styles.heroCoverBadge}>{insight.category}</span>
-        </div>
 
-        <div className={styles.heroText}>
-          <div className={styles.containerNarrow}>
-            <p className={styles.meta}>
-              {insight.category} • {insight.contentType} • {insight.displayDate}
-              {insight.readingTime ? ` • ${insight.readingTime} min read` : ''}
-            </p>
-            <h1>{insight.title}</h1>
-            {insight.deck ? <p className={styles.deck}>{insight.deck}</p> : null}
-            <p className={styles.leadAbstract}>{insight.excerpt}</p>
-            {insight.author ? <p className={styles.author}>By {insight.author}</p> : null}
-            {insight.tags && insight.tags.length > 0 ? (
-              <ul className={styles.tagList} aria-label="Topics">
-                {insight.tags.map((tag) => (
-                  <li key={tag} className={styles.tagPill}>
-                    {tag}
-                  </li>
-                ))}
-              </ul>
-            ) : null}
-            {insight.pdfUrl ? (
-              <p className={styles.heroPdf}>
-                <a href={insight.pdfUrl} target="_blank" rel="noopener noreferrer" className={styles.heroPdfLink}>
-                  Download PDF
-                </a>
+          <div className={styles.heroText}>
+            <div className={styles.containerNarrow}>
+              <p className={styles.meta}>
+                {insight.category} • {insight.contentType} • {insight.displayDate}
+                {insight.readingTime ? ` • ${insight.readingTime} min read` : ''}
               </p>
-            ) : null}
+              <h1>{insight.title}</h1>
+              {insight.deck ? <p className={styles.deck}>{insight.deck}</p> : null}
+              <p className={styles.leadAbstract}>{insight.excerpt}</p>
+              {insight.author ? <p className={styles.author}>By {insight.author}</p> : null}
+              {insight.tags && insight.tags.length > 0 ? (
+                <ul className={styles.tagList} aria-label="Topics">
+                  {insight.tags.map((tag) => (
+                    <li key={tag} className={styles.tagPill}>
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
+              {insight.pdfUrl ? (
+                <p className={styles.heroPdf}>
+                  <a href={insight.pdfUrl} target="_blank" rel="noopener noreferrer" className={styles.heroPdfLink}>
+                    Download PDF
+                  </a>
+                </p>
+              ) : null}
+            </div>
           </div>
         </div>
       </header>

@@ -25,6 +25,28 @@ export const INSIGHT_ARTICLE_MEDIA = {
     /** Detail HTML has no inline figures; body is text-only. */
     embeddedInBody: [] as const,
   },
+  'unified-marine-vehicle-operating-architecture': {
+    heroCover: '/assets/insights/unified-marine-architecture/hero-sunken-ship-116m.png',
+    ogImage: '/assets/insights/unified-marine-architecture/hero-sunken-ship-116m.png',
+    embeddedInBody: [
+      '/assets/insights/unified-marine-architecture/figure-1-mission-dock.png',
+      '/assets/insights/unified-marine-architecture/figure-2-navx.png',
+    ],
+  },
+  'anchorbot-teamer-pull-strength-report': {
+    heroCover: '/assets/insights/anchorbot-teamer-pull-strength-report/hero-coastal-panorama.png',
+    ogImage: '/assets/insights/anchorbot-teamer-pull-strength-report/hero-coastal-panorama.png',
+    embeddedInBody: [
+      '/assets/insights/anchorbot-teamer-pull-strength-report/beringia-anchorbot-logos.png',
+      '/assets/insights/anchorbot-teamer-pull-strength-report/figure-1-normalized-torque-pull-site1.png',
+      '/assets/insights/anchorbot-teamer-pull-strength-report/figure-2-sequential-pulls-site1.png',
+      '/assets/insights/anchorbot-teamer-pull-strength-report/figure-3-single-pull-anchor4.png',
+      '/assets/insights/anchorbot-teamer-pull-strength-report/figure-4-sustained-dwell-anchor7.png',
+      '/assets/insights/anchorbot-teamer-pull-strength-report/figure-5-geometry-6inch-site1.png',
+      '/assets/insights/anchorbot-teamer-pull-strength-report/figure-6-channel-site2-sequential.png',
+      '/assets/insights/anchorbot-teamer-pull-strength-report/figure-7-bay-vs-channel.png',
+    ],
+  },
 } as const;
 
 export type InsightArticleSlug = keyof typeof INSIGHT_ARTICLE_MEDIA;

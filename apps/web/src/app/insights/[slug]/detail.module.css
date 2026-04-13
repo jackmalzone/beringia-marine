@@ -12,7 +12,7 @@
   margin: 0 auto;
 }
 
-/* Cover hero + title stack (listing uses same coverImage; body keeps inline figures per insight-media.ts) */
+/* Hero fills header; title/meta/tags sit over the image (all insight articles) */
 .articleHeader {
   padding-top: clamp(4.5rem, 10vh, 6rem);
 }
@@ -20,7 +20,10 @@
 .heroCover {
   position: relative;
   width: 100%;
-  height: clamp(240px, 42vw, 460px);
+  min-height: clamp(420px, 82vh, 900px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   overflow: hidden;
   background: #0b141d;
 }
@@ -34,11 +37,14 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
+  z-index: 1;
   background: linear-gradient(
     180deg,
-    rgba(4, 14, 22, 0.05) 0%,
-    rgba(4, 14, 22, 0.45) 70%,
-    rgba(4, 14, 22, 0.75) 100%
+    rgba(2, 12, 22, 0.35) 0%,
+    rgba(2, 12, 22, 0.2) 35%,
+    rgba(2, 12, 22, 0.55) 58%,
+    rgba(2, 10, 18, 0.88) 78%,
+    rgba(3, 15, 24, 0.94) 100%
   );
 }
 
@@ -46,7 +52,7 @@
   position: absolute;
   top: clamp(0.85rem, 2.5vw, 1.25rem);
   left: clamp(1rem, 4vw, 2rem);
-  z-index: 1;
+  z-index: 3;
   padding: 0.35rem 0.85rem;
   border-radius: 999px;
   font-size: 0.72rem;
@@ -59,24 +65,28 @@
 }
 
 .heroText {
-  padding: clamp(1.75rem, 4vw, 2.5rem) 0 clamp(1.25rem, 3vw, 2rem);
-  background:
-    radial-gradient(circle at 20% 0%, rgba(19, 74, 104, 0.22), transparent 45%),
-    linear-gradient(180deg, #08202c 0%, #062530 55%, #052a38 100%);
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: clamp(1rem, 3vw, 1.5rem) 0 clamp(1.75rem, 4vw, 2.75rem);
+  background: linear-gradient(180deg, transparent 0%, rgba(3, 18, 28, 0.25) 40%, rgba(3, 18, 28, 0.72) 100%);
 }
 
 .meta {
   margin: 0;
-  color: #8ea8b8;
+  color: rgba(220, 234, 242, 0.88);
   font-size: 0.88rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
 }
 
 .heroText h1 {
   margin: 0.8rem 0 0;
   line-height: 1.2;
   font-size: clamp(1.8rem, 4vw, 2.9rem);
+  color: #f2f9fc;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
 }
 
 .heroText .deck {
@@ -85,18 +95,21 @@
 
 .leadAbstract {
   margin: 1rem 0 0;
-  color: #b7c8d3;
+  color: rgba(230, 242, 248, 0.92);
   line-height: 1.75;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
 }
 
 .deck {
-  color: #b6f3f7 !important;
+  color: #c8fafc !important;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
 }
 
 .author {
-  color: #8ea8b8 !important;
+  color: rgba(200, 218, 230, 0.95) !important;
   font-size: 0.9rem;
   margin: 1rem 0 0 !important;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 
 .tagList {
@@ -113,8 +126,10 @@
   border-radius: 999px;
   font-size: 0.75rem;
   font-weight: 600;
-  background: rgba(10, 236, 249, 0.14);
-  color: var(--color-accent-insights);
+  background: rgba(6, 28, 38, 0.65);
+  border: 1px solid rgba(10, 236, 249, 0.35);
+  color: #d8f8fb;
+  backdrop-filter: blur(6px);
 }
 
 .heroPdf {

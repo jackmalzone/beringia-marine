@@ -56,6 +56,77 @@ export const INSIGHTS_LANDING = {
  */
 export const INSIGHTS: InsightEntry[] = [
   {
+    title:
+      'AnchorBot TEAMER Helical Anchors Install & Pull Strength Test Report',
+    slug: 'anchorbot-teamer-pull-strength-report',
+    category: 'Field Report',
+    excerpt:
+      'Offshore field trials near Sequim, Washington (December 2025) demonstrate AnchorBot helical installation and characterize pull resistance using normalized installation torque and pull-test data at Bay and Channel sites. Progressive mobilization, sequential pulls, sustained-load dwell, and cross-site behavior are summarized for TEAMER-relevant marine conditions.',
+    deck:
+      'TEAMER facility trials: normalized torque and pull analysis, sequential and sustained loading, Bay vs Channel — AnchorBot LLC & Beringia Marine',
+    publishedAt: '2026-04-06',
+    updatedAt: '2026-04-06',
+    displayDate: 'April 6, 2026',
+    author: 'Chris Malzone, Principal Consultant / Beringia Marine, Inc',
+    coverImage: '/assets/insights/anchorbot-teamer-pull-strength-report/hero-coastal-panorama.png',
+    tags: [
+      'AnchorBot',
+      'TEAMER',
+      'Helical anchors',
+      'Pull testing',
+      'Sequim',
+      'Marine mooring',
+      'Field operations',
+      'PNNL',
+    ],
+    readingTime: 35,
+    featured: true,
+    contentType: 'article',
+    sections: [],
+    seo: {
+      title:
+        'AnchorBot TEAMER Helical Anchors Install & Pull Strength Test Report | Beringia Marine',
+      description:
+        'Field operations report: AnchorBot and Beringia Marine helical anchor install and pull tests at TEAMER Sequim sites, with normalized torque and pull figures and cross-site interpretation.',
+      ogImage: '/assets/insights/anchorbot-teamer-pull-strength-report/hero-coastal-panorama.png',
+    },
+  },
+  {
+    title:
+      'From Fragmented Integration to Operational Reliability: A Unified Marine Vehicle Operating Architecture',
+    slug: 'unified-marine-vehicle-operating-architecture',
+    category: 'White Paper',
+    excerpt:
+      'Marine robotics has advanced at the component level, yet integration complexity—not hardware—is the primary constraint on commercial deployment. This paper presents Mission Robotics’ NadirOS and Mission Dock: an integrated vehicle operating system and a fault-observable, domain-isolated electrical and communications backbone built on open standards.',
+    deck: 'Mission Dock, NadirOS, NavX, DDS, and why operational reliability beats acquisition cost for marine platforms',
+    publishedAt: '2026-04-01',
+    updatedAt: '2026-04-01',
+    displayDate: 'April 1, 2026',
+    author: 'Chris Malzone, Beringia Marine Inc / Mission Robotics Inc.',
+    coverImage: '/assets/insights/unified-marine-architecture/hero-sunken-ship-116m.png',
+    tags: [
+      'Marine robotics',
+      'ROV architecture',
+      'NadirOS',
+      'Mission Robotics',
+      'Mission Dock',
+      'DDS',
+      'Operational reliability',
+      'Vehicle operating systems',
+    ],
+    readingTime: 28,
+    featured: true,
+    contentType: 'white-paper',
+    sections: [],
+    seo: {
+      title:
+        'Unified Marine Vehicle Operating Architecture | NadirOS & Mission Dock | Beringia Marine',
+      description:
+        'From fragmented stacks to operational reliability: NadirOS, Mission Dock, NavX, DDS-based messaging, and fault-isolated subsea integration—by Chris Malzone (Beringia Marine / Mission Robotics).',
+      ogImage: '/assets/insights/unified-marine-architecture/hero-sunken-ship-116m.png',
+    },
+  },
+  {
     title: 'Justification Report: Deploying AnchorBot™ Helical Anchors for Alaska Mariculture',
     slug: 'anchorbot-helical-anchors-alaska-mariculture',
     category: 'White Paper',

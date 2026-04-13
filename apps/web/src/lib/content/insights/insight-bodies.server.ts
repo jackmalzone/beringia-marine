@@ -11,6 +11,9 @@ const BODY_FILES: Record<string, string> = {
     'anchorbot-helical-anchors-alaska-mariculture.content.html',
   'evaluating-hydrus-microauv-benthic-survey':
     'evaluating-hydrus-microauv-benthic-survey.content.detail.html',
+  'unified-marine-vehicle-operating-architecture':
+    'unified-marine-vehicle-operating-architecture.content.html',
+  'anchorbot-teamer-pull-strength-report': 'anchorbot-teamer-pull-strength-report.content.html',
 };
 
 function resolveBodyPath(file: string): string | null {
