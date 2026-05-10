@@ -29,13 +29,10 @@ export function resolveAssetUrl(raw: string | undefined | null): string | null {
   if (s.startsWith('http://') || s.startsWith('https://')) return s;
   if (s.startsWith('/')) return normalizePublicPath(s);
   const bundled = s.match(/^bundled:\s*(.+)$/i);
-  if (bundled) {
-    const rest = bundled[1].trim();
-    const fromSrc = rest.match(/^src\/assets\/(.+)$/i);
-    if (fromSrc) return `/assets/${fromSrc[1]}`;
-    return rest.startsWith('/') ? rest : `/${rest}`;
-  }
-  return normalizePublicPath(s.startsWith('/') ? s : `/${s}`);
+  const rest = bundled ? bundled[1].trim() : s;
+  const fromSrc = rest.match(/^src\/assets\/(.+)$/i);
+  if (fromSrc) return `/assets/${fromSrc[1]}`;
+  return normalizePublicPath(rest.startsWith('/') ? rest : `/${rest}`);
 }
 
 export function getPartnerBySlug(slug: string): PartnerJson | undefined {
