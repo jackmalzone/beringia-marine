@@ -1,80 +1,36 @@
-# Vital Ice Sanity Studio
+# Beringia Marine Studio
 
-Standalone Sanity Studio application for managing content for the Vital Ice website.
+Sanity Studio for the Beringia Marine site, mounted as a Next.js app and deployed to its own Vercel project at `studio.beringia-marine.com`.
 
-## Quick Start
-
-```bash
-# Development
-npm run dev
-
-# Build
-npm run build
-
-# Deploy
-npm run deploy
-```
-
-The studio will be available at `http://localhost:3000` (or the port shown in the terminal)
-
-⚠️ **Note:** This is a Next.js app with embedded Sanity Studio. Use `npm run dev`, not `sanity dev`.
-
----
-
-## 📚 Documentation
-
-- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Complete deployment guide (Vercel + Cloudflare)
-- **[ENV_SECURITY.md](./ENV_SECURITY.md)** - Environment variables security guide
-- **[SECURITY.md](./SECURITY.md)** - Basic Auth and security configuration
-
----
-
-## Environment Variables
-
-### Required (All Environments)
+## Local dev
 
 ```bash
-NEXT_PUBLIC_SANITY_PROJECT_ID=your-project-id
-NEXT_PUBLIC_SANITY_DATASET=production
-SANITY_API_TOKEN=your-api-token
+pnpm install
+cp .env.example .env.local         # fill in SANITY_API_AGENT_TOKEN
+pnpm --filter @beringia/studio dev # serves at http://localhost:3333
 ```
 
-### Production Only
+## Schemas
+
+- `insight` — articles, white papers, case studies, field reports (Portable Text body)
+- `partner` — solution partner pages (Anchorbot, Mission Robotics, Advanced Navigation, etc.)
+- `siteSettings` (singleton) — business info, social links, SEO defaults
+
+## Migration seed
+
+Idempotent script that imports the existing static content under `apps/web/src/lib/content/` (insights + partners) into the dataset. HTML article bodies are converted to Portable Text.
 
 ```bash
-STUDIO_USERNAME=your-username
-STUDIO_PASSWORD=your-secure-password
+pnpm --filter @beringia/studio seed:dry   # preview without writing
+pnpm --filter @beringia/studio seed       # write to dataset
 ```
 
-See [ENV_SECURITY.md](./ENV_SECURITY.md) for security details.
+Requires `SANITY_API_AGENT_TOKEN` (Editor scope) in `.env.local`.
 
----
+## Deploy
 
-## Deployment
+Separate Vercel project rooted at `apps/studio`. See `vercel.json`.
 
-Deployed to `studio.vitalicesf.com` via Vercel.
-
-**Quick Setup:**
-
-1. Create separate Vercel project
-2. Set root directory: `apps/studio`
-3. Configure build settings (see [DEPLOYMENT.md](./DEPLOYMENT.md))
-4. Add environment variables
-5. Add custom domain: `studio.vitalicesf.com`
-6. Configure Cloudflare CNAME
-
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for complete instructions.
-
----
-
-## Security
-
-The studio is protected by Basic Auth middleware in production. See [SECURITY.md](./SECURITY.md) for details.
-
----
-
-## Current Status
-
-✅ **Standalone** - Has its own schemas and configuration  
-✅ **Ready to Deploy** - No monorepo dependencies  
-✅ **Secure** - Basic Auth protection configured
+CORS allowlist (manage.sanity.io → Project → API → CORS origins) must include:
+- `https://studio.beringia-marine.com` (Allow credentials: yes)
+- `https://beringia-marine.com` and any preview branch domains (Allow credentials: no)

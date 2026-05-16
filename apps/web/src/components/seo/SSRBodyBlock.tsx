@@ -7,7 +7,8 @@
 import { headers } from 'next/headers';
 import { getSSRContent } from '@/components/seo/ServerSideSEO';
 import { getPageKeyFromPathname, buildSSRHtmlBlock } from '@/lib/seo/ssr-html';
-import { getArticleBySlug } from '@/lib/data/insights';
+import { getInsightBySlug } from '@/lib/content/insights';
+import { getInsightBodyHtml } from '@/lib/content/insights/insight-bodies.server';
 
 function escapeHtml(s: string): string {
   return s
@@ -24,13 +25,6 @@ function buildCrawlerBodyHtml(h1: string, bodyHtml: string): string {
   return `<article class="sr-only" style="${hiddenStyle}" data-seo-block="crawler"><h1>${escapeHtml(h1)}</h1>${bodyHtml}</article>`;
 }
 
-function textParagraph(value: string | null | undefined): string {
-  if (!value) return '';
-  const normalized = value.trim();
-  if (!normalized) return '';
-  return `<p>${escapeHtml(normalized)}</p>`;
-}
-
 export default async function SSRBodyBlock() {
   const headersList = await headers();
   const pathname = headersList.get('x-pathname') ?? '';
@@ -38,12 +32,14 @@ export default async function SSRBodyBlock() {
 
   const insightsMatch = normalized.match(/^\/insights\/([^/]+)$/);
   if (insightsMatch) {
+    const slug = insightsMatch[1];
     try {
-      const article = await getArticleBySlug(insightsMatch[1]);
-      if (article) {
-        const bodyHtml = article.content?.trim() || textParagraph(article.abstract);
+      // Static Beringia insights (content/insights registry + verbatim HTML) — avoid Sanity/mock path
+      const staticEntry = getInsightBySlug(slug);
+      if (staticEntry) {
+        const bodyHtml = getInsightBodyHtml(slug)?.trim();
         if (bodyHtml) {
-          const html = buildCrawlerBodyHtml(article.title, bodyHtml);
+          const html = buildCrawlerBodyHtml(staticEntry.title, bodyHtml);
           return (
             <div
               suppressHydrationWarning

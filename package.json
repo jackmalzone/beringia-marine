@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm --filter web dev",
-    "dev:studio": "pnpm --filter studio dev",
+    "dev": "pnpm --filter ./apps/web dev",
+    "dev:studio": "pnpm --filter ./apps/studio dev",
+    "seed": "pnpm --filter ./apps/studio seed",
+    "seed:dry": "pnpm --filter ./apps/studio seed:dry",
     "build": "pnpm build -r",
-    "start": "pnpm --filter web start",
+    "start": "pnpm --filter ./apps/web start",
     "lint": "pnpm lint -r",
     "lint:all": "pnpm lint -r",
     "type-check": "pnpm type-check -r",
@@ -16,7 +18,7 @@
     "format:staged": "prettier --write $(git diff --cached --name-only --diff-filter=ACMR | grep -E \"\\.(ts|tsx|js|jsx|json|css|scss|md)\" | xargs)",
     "clean": "pnpm clean -r && rm -rf node_modules",
     "test": "pnpm test -r",
-    "test:watch": "pnpm --filter web test:watch",
+    "test:watch": "pnpm --filter ./apps/web test:watch",
     "test:coverage": "pnpm test:coverage -r",
     "ssr:guardrails": "pnpm --filter @vital-ice/web test:compliance",
     "check:perf": "pnpm --filter @vital-ice/performance-budget check",
@@ -33,6 +35,7 @@
   "pnpm": {
     "overrides": {
       "glob": "^10.3.10",
+      "import-in-the-middle": "2.0.0",
       "jsdom": "^26.1.0"
     },
     "allowedDeprecatedVersions": {

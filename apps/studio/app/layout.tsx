@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Vital Ice CMS',
-  description: 'Content Management System for Vital Ice',
+  title: 'Beringia Marine CMS',
+  description: 'Content management for Beringia Marine — insights, partners, and site settings.',
   robots: {
     index: false,
     follow: false,

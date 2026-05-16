@@ -15,7 +15,6 @@ import AnalyticsBoot from '@/components/providers/AnalyticsBoot';
 import { PerformanceProvider } from '@/components/providers/PerformanceProvider';
 import DeferredAnalytics from '@/components/providers/DeferredAnalytics';
 import { getAnalyticsConfig } from '@/lib/analytics/config';
-import { getGlobalSettings } from '@/lib/sanity/queries';
 import { getCriticalCSSContent } from '@/lib/performance/criticalCSS';
 import { getPageSchema } from '@/lib/seo/structured-data';
 import { mergeMetadata } from '@/lib/seo/metadata';
@@ -62,8 +61,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   // Generate critical CSS for server-side rendering only
   // This uses fs.readFileSync which only works on the server
   const criticalCSS = typeof window === 'undefined' ? getCriticalCSSContent() : '';
-  const globalSettings = await getGlobalSettings();
-  const analyticsConfig = getAnalyticsConfig(globalSettings);
+  const analyticsConfig = getAnalyticsConfig(null);
   const headersList = await headers();
   const pathname = headersList.get('x-pathname') ?? '';
   const normalizedPath = pathname.replace(/\/$/, '') || '/';

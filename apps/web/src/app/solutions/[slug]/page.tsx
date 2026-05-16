@@ -2,8 +2,9 @@ import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 import { mergeMetadata } from '@/lib/seo/metadata';
 import { absoluteUrl } from '@/lib/config/site-config';
-import { getPartnerBySlug, getPartnerOgImage } from '@/lib/content/partner-content';
+import { getPartnerOgImage } from '@/lib/content/partner-content';
 import { SOLUTIONS } from '@/lib/content/solutions';
+import { resolvePartnerBySlug } from '@/sanity/lib/content-resolvers';
 import { SolutionPartnerClient } from '@/components/solutions/partner/SolutionPartnerClient';
 import styles from './page.module.css';
 
@@ -17,7 +18,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const partner = getPartnerBySlug(slug);
+  const partner = await resolvePartnerBySlug(slug);
 
   if (!partner) {
     return mergeMetadata('solutions', {
@@ -51,7 +52,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function SolutionDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const partner = getPartnerBySlug(slug);
+  const partner = await resolvePartnerBySlug(slug);
 
   if (!partner) notFound();
 

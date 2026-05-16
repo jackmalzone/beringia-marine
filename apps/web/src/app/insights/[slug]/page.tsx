@@ -5,8 +5,8 @@ import { notFound } from 'next/navigation';
 import { mergeMetadata } from '@/lib/seo/metadata';
 import { generateStructuredData } from '@/lib/seo/structured-data';
 import { buildInsightArticleSchema } from '@/lib/seo/insights-structured-data';
-import { getInsightBySlug, getInsightOgImage, getInsightPath, INSIGHTS } from '@/lib/content/insights';
-import { getInsightBodyHtml } from '@/lib/content/insights/insight-bodies.server';
+import { getInsightOgImage, getInsightPath, INSIGHTS } from '@/lib/content/insights';
+import { resolveInsightBySlug } from '@/sanity/lib/content-resolvers';
 import styles from './detail.module.css';
 
 // Generate metadata for SEO
@@ -16,7 +16,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const insight = getInsightBySlug(slug);
+  const insight = await resolveInsightBySlug(slug);
 
   if (!insight) {
     return mergeMetadata('insights');
@@ -58,13 +58,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function ArticlePage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const insight = getInsightBySlug(slug);
+  const insight = await resolveInsightBySlug(slug);
 
   if (!insight) {
     notFound();
   }
 
-  const bodyHtml = getInsightBodyHtml(slug);
+  const bodyHtml = insight.bodyHtml || null;
   const articleSchema = buildInsightArticleSchema(insight);
 
   return (
@@ -110,8 +110,14 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
               ) : null}
               {insight.pdfUrl ? (
                 <p className={styles.heroPdf}>
-                  <a href={insight.pdfUrl} target="_blank" rel="noopener noreferrer" className={styles.heroPdfLink}>
-                    Download PDF
+                  <a
+                    href={insight.pdfUrl}
+                    className={styles.heroPdfLink}
+                    {...(insight.pdfUrl.startsWith('/')
+                      ? { download: '' }
+                      : { target: '_blank', rel: 'noopener noreferrer' })}
+                  >
+                    Download full report (PDF)
                   </a>
                 </p>
               ) : null}
@@ -147,10 +153,16 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
           {insight.pdfUrl ? (
             <article className={styles.downloadCard}>
-              <h3>Download Companion Document</h3>
-              <p>This insight includes a full downloadable report for deeper technical review.</p>
-              <a href={insight.pdfUrl} target="_blank" rel="noopener noreferrer" className={styles.downloadLink}>
-                Download PDF
+              <h3>Download full report</h3>
+              <p>Get the complete PDF for offline reading, sharing, or archival.</p>
+              <a
+                href={insight.pdfUrl}
+                className={styles.downloadLink}
+                {...(insight.pdfUrl.startsWith('/')
+                  ? { download: '' }
+                  : { target: '_blank', rel: 'noopener noreferrer' })}
+              >
+                Download full report (PDF)
               </a>
             </article>
           ) : null}

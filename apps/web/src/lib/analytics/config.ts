@@ -1,4 +1,13 @@
-import type { GlobalSettings } from '@/lib/sanity/types';
+/** Subset of Sanity siteSettings.analytics relevant to analytics ID resolution. */
+export interface AnalyticsSettingsLike {
+  googleTagManagerId?: string;
+  googleAnalyticsId?: string;
+  facebookPixelId?: string;
+}
+
+export interface AnalyticsGlobalSettingsLike {
+  analyticsSettings?: AnalyticsSettingsLike;
+}
 
 export interface AnalyticsConfig {
   metaPixelId?: string;
@@ -51,7 +60,7 @@ function validateIds(config: AnalyticsConfig): void {
 }
 
 /** Resolves GTM / Meta IDs from Sanity or env only — no hardcoded production IDs in the template. */
-export function getAnalyticsConfig(globalSettings: GlobalSettings | null): AnalyticsConfig {
+export function getAnalyticsConfig(globalSettings: AnalyticsGlobalSettingsLike | null): AnalyticsConfig {
   const mode = getMode();
   const enabledByDefault = mode === 'prod';
 
