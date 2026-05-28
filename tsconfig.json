@@ -11,9 +11,9 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": ".",
     "paths": {
-      "@vital-ice/ui": ["./packages/ui/src"],
-      "@vital-ice/config": ["./packages/config/src"],
-      "@vital-ice/test-utils": ["./packages/test-utils/src"]
+      "@beringia/ui": ["./packages/ui/src"],
+      "@beringia/config": ["./packages/config/src"],
+      "@beringia/test-utils": ["./packages/test-utils/src"]
     }
   },
   "include": [],

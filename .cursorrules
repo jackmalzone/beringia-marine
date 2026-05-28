@@ -35,7 +35,7 @@
 
 ### Content & Branding
 - Remove legacy Vital Ice branding/assets when encountered; replace with Beringia usage.
-- Package names still reference `@vital-ice/*` in some places — rename incrementally.
+- Package names still reference `@beringia/*` in some places — rename incrementally.
 - Keep newsletter flow patterns intact unless explicitly asked to remove them.
 
 ### Documentation

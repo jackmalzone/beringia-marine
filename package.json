@@ -1,5 +1,5 @@
 {
-  "name": "vital-ice-monorepo",
+  "name": "beringia-marine",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -20,9 +20,9 @@
     "test": "pnpm test -r",
     "test:watch": "pnpm --filter ./apps/web test:watch",
     "test:coverage": "pnpm test:coverage -r",
-    "ssr:guardrails": "pnpm --filter @vital-ice/web test:compliance",
-    "check:perf": "pnpm --filter @vital-ice/performance-budget check",
-    "check:perf:prod": "pnpm --filter @vital-ice/performance-budget check:prod"
+    "ssr:guardrails": "pnpm --filter @beringia/web test:compliance",
+    "check:perf": "pnpm --filter @beringia/performance-budget check",
+    "check:perf:prod": "pnpm --filter @beringia/performance-budget check:prod"
   },
   "devDependencies": {
     "@sanity/client": "^7.13.1",

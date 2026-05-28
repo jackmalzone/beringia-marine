@@ -1,5 +1,5 @@
 /**
- * @vital-ice/config
+ * @beringia/config
  * Shared configuration package
  */
 

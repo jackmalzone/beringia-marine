@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { FaLinkedin } from 'react-icons/fa';
 import { mergeMetadata } from '@/lib/seo/metadata';
 import ServerSideSEO from '@/components/seo/ServerSideSEO';
-import { TEMPLATE_BUSINESS } from '@vital-ice/config';
+import { TEMPLATE_BUSINESS } from '@beringia/config';
 import { BERINGIA_ABOUT } from '@/lib/content/beringia-static';
 import styles from './page.module.css';
 

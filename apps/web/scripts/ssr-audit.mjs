@@ -1,7 +1,7 @@
 /**
  * Layer 2 SSR audit: fetch HTML via HTTP and assert SEO-critical markers.
  * Run: node apps/web/scripts/ssr-audit.mjs
- * Or: pnpm --filter @vital-ice/web ssr:audit
+ * Or: pnpm --filter @beringia/web ssr:audit
  *
  * Env: SSR_AUDIT_BASE_URL or BASE_URL (default http://localhost:3000) - URL to fetch
  *      SSR_CANONICAL_BASE_URL - base for canonical assertions (defaults to baseUrl)

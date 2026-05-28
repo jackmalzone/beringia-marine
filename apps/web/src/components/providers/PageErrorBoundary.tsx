@@ -3,7 +3,7 @@
 import React from 'react';
 import { ErrorBoundary } from './ErrorBoundary';
 import { createLogger } from '@/lib/utils/logger';
-import { SITE_CONFIG } from '@vital-ice/config';
+import { SITE_CONFIG } from '@beringia/config';
 
 const logger = createLogger('PageErrorBoundary');
 

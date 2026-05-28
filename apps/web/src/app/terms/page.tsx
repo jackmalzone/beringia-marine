@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { mergeMetadata } from '@/lib/seo/metadata';
-import { SHELL_LEGAL } from '@vital-ice/config';
+import { SHELL_LEGAL } from '@beringia/config';
 import { BERINGIA_TERMS_FOOTER, BERINGIA_TERMS_SECTIONS } from '@/lib/content/beringia-static';
 import styles from './page.module.css';
 

@@ -1,4 +1,4 @@
-# @vital-ice/transactional
+# @beringia/transactional
 
 Email templates and sending utilities for Vital Ice form submissions.
 
@@ -42,7 +42,7 @@ Sent when a user submits the contact form.
 ### Sending Emails
 
 ```typescript
-import { sendMembershipInquiryEmail, sendContactFormEmail } from '@vital-ice/transactional';
+import { sendMembershipInquiryEmail, sendContactFormEmail } from '@beringia/transactional';
 
 // Send membership inquiry email
 await sendMembershipInquiryEmail({
@@ -95,5 +95,5 @@ RESEND_API_KEY=re_...
 
 - `@react-email/components` - React Email components
 - `@react-email/render` - Render React components to HTML
-- `@vital-ice/config` - Environment configuration
+- `@beringia/config` - Environment configuration
 - `react` & `react-dom` - React runtime

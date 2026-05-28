@@ -1,9 +1,9 @@
 /**
  * Compatibility layer - will be removed in a future cleanup.
- * Canonical identity defaults now live in @vital-ice/config.
+ * Canonical identity defaults now live in @beringia/config.
  */
 
-import { TEMPLATE_BUSINESS, type BusinessInfo } from '@vital-ice/config';
+import { TEMPLATE_BUSINESS, type BusinessInfo } from '@beringia/config';
 
 export { TEMPLATE_BUSINESS,
   BusinessInfoHelpers,
@@ -11,9 +11,9 @@ export { TEMPLATE_BUSINESS,
   type BusinessAddress,
   type BusinessCoordinates,
   type BusinessHours,
-} from '@vital-ice/config';
+} from '@beringia/config';
 
-/** @deprecated Use TEMPLATE_BUSINESS directly from @vital-ice/config. */
+/** @deprecated Use TEMPLATE_BUSINESS directly from @beringia/config. */
 export function getBusinessInfoForEnvironment() {
   return TEMPLATE_BUSINESS;
 }

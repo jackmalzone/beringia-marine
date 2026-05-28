@@ -3,7 +3,7 @@
  */
 
 import { Resend } from 'resend';
-import { env } from '@vital-ice/config';
+import { env } from '@beringia/config';
 import type {
   MembershipInquiryNotificationProps,
   ContactFormNotificationProps,

@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ContactForm } from '@vital-ice/ui';
-import { TEMPLATE_BUSINESS, BusinessInfoHelpers } from '@vital-ice/config';
+import { ContactForm } from '@beringia/ui';
+import { TEMPLATE_BUSINESS, BusinessInfoHelpers } from '@beringia/config';
 import { absoluteUrl, SITE_CONFIG } from '@/lib/config/site-config';
 import PageSchema from '@/components/seo/PageSchema';
 import ServerSideSEO from '@/components/seo/ServerSideSEO';

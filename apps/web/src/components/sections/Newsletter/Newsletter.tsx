@@ -1,6 +1,6 @@
 'use client';
 import { motion } from '@/lib/motion';
-import { NewsletterForm } from '@vital-ice/ui';
+import { NewsletterForm } from '@beringia/ui';
 import { trackEvent } from '@/lib/utils/analytics';
 import styles from './Newsletter.module.css';
 

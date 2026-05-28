@@ -1,7 +1,7 @@
 /**
  * Asserts that audited dynamic routes show as ƒ (Dynamic) in Next.js build output.
- * Run after build: pnpm --filter @vital-ice/web ssr:build-check
- * Or run build+check: pnpm --filter @vital-ice/web build && pnpm --filter @vital-ice/web ssr:build-check
+ * Run after build: pnpm --filter @beringia/web ssr:build-check
+ * Or run build+check: pnpm --filter @beringia/web build && pnpm --filter @beringia/web ssr:build-check
  */
 
 const path = require('path');

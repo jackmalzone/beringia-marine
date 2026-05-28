@@ -16,7 +16,7 @@
     "noImplicitAny": false,
     "noEmit": true,
     "paths": {
-      "@vital-ice/config": ["../config/src"]
+      "@beringia/config": ["../config/src"]
     }
   },
   "include": ["src/**/*", "emails/**/*"],

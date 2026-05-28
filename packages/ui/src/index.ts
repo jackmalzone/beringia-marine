@@ -1,5 +1,5 @@
 /**
- * @vital-ice/ui
+ * @beringia/ui
  * Shared UI components and forms
  */
 

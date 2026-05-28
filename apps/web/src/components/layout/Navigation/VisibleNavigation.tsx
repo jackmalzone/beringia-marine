@@ -4,7 +4,7 @@
  * Styled to be unobtrusive but accessible to crawlers
  */
 import Link from 'next/link';
-import { SHELL_CRAWLER_NAV_LINKS, SHELL_CTA } from '@vital-ice/config';
+import { SHELL_CRAWLER_NAV_LINKS, SHELL_CTA } from '@beringia/config';
 import { SOLUTIONS } from '@/lib/content/solutions';
 
 const NAV_LINKS = [

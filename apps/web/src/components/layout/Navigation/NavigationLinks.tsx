@@ -3,7 +3,7 @@
  * These links are visible to search engine crawlers in the HTML source
  */
 import Link from 'next/link';
-import { SHELL_CRAWLER_NAV_LINKS, SHELL_CTA } from '@vital-ice/config';
+import { SHELL_CRAWLER_NAV_LINKS, SHELL_CTA } from '@beringia/config';
 import { SOLUTIONS } from '@/lib/content/solutions';
 
 const NAV_LINKS = [

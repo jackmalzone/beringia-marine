@@ -1,5 +1,5 @@
 {
-  "name": "@vital-ice/performance-budget",
+  "name": "@beringia/performance-budget",
   "version": "1.0.0",
   "private": true,
   "description": "Performance budget check using Lighthouse (local-first)",

@@ -1,5 +1,5 @@
 /**
- * @vital-ice/test-utils
+ * @beringia/test-utils
  * Shared testing utilities
  */
 

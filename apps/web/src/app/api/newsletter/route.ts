@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import * as Sentry from '@sentry/nextjs';
-import { sendNewsletterSignupEmail } from '@vital-ice/transactional';
-import type { NewsletterFormData } from '@vital-ice/ui';
-import { EMAIL_SUBMIT_STUB_ID } from '@vital-ice/ui';
+import { sendNewsletterSignupEmail } from '@beringia/transactional';
+import type { NewsletterFormData } from '@beringia/ui';
+import { EMAIL_SUBMIT_STUB_ID } from '@beringia/ui';
 import { getInvalidRequestMessage, getApiErrorMessage } from '@/lib/utils/apiErrorMessages';
 
 export async function POST(request: NextRequest) {

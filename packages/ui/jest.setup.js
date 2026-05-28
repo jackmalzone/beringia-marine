@@ -1,4 +1,4 @@
-// Jest setup file for @vital-ice/ui package
+// Jest setup file for @beringia/ui package
 
 require('@testing-library/jest-dom');
 

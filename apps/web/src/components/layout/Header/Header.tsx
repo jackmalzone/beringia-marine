@@ -6,7 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { motion } from '@/lib/motion';
 import { springConfigs } from '@/lib/utils/animations';
 import { useNavigation } from '@/lib/store/AppStore';
-import { SHELL_PRIMARY_NAV, SHELL_CTA } from '@vital-ice/config';
+import { SHELL_PRIMARY_NAV, SHELL_CTA } from '@beringia/config';
 import { SOLUTIONS } from '@/lib/content/solutions';
 
 import styles from './Header.module.css';

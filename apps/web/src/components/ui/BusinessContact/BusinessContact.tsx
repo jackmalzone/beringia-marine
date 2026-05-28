@@ -6,7 +6,7 @@
  */
 
 import React from 'react';
-import { TEMPLATE_BUSINESS, BusinessInfoHelpers } from '@vital-ice/config';
+import { TEMPLATE_BUSINESS, BusinessInfoHelpers } from '@beringia/config';
 import styles from './BusinessContact.module.css';
 
 interface BusinessContactProps {

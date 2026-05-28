@@ -46,7 +46,7 @@ The project is configured for automatic deployment on Vercel.
    - Set to: **`apps/web`**
 
 2. **Leave "Include source files outside of the Root Directory in the Build Step" ON (required):**
-   - The web app depends on workspace packages (`@vital-ice/ui`, `@vital-ice/mindbody-sdk`, etc.) and `lib/` at build and runtime. If this is off, the build context is only `apps/web` and the build will fail.
+   - The web app depends on workspace packages (`@beringia/ui`, `@beringia/mindbody-sdk`, etc.) and `lib/` at build and runtime. If this is off, the build context is only `apps/web` and the build will fail.
    - To stay under the 300 MB serverless limit we rely on `outputFileTracingExcludes` in `next.config.ts` (e.g. excluding `.next/cache`, monorepo siblings). If you still hit the limit, add more exclusions or contact the team.
 
 3. **vercel.json Configuration:**

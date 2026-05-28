@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import * as Sentry from '@sentry/nextjs';
-import type { ContactFormData } from '@vital-ice/ui';
-import { EMAIL_SUBMIT_STUB_ID } from '@vital-ice/ui';
+import type { ContactFormData } from '@beringia/ui';
+import { EMAIL_SUBMIT_STUB_ID } from '@beringia/ui';
 import { deliverContactForm } from '@/lib/email/contact-delivery';
 import { getInvalidRequestMessage, getApiErrorMessage } from '@/lib/utils/apiErrorMessages';
 

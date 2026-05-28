@@ -5,10 +5,10 @@
 ```
 vital-ice/
 ├── packages/
-│   ├── config/          # @vital-ice/config - Environment vars & constants
-│   ├── mindbody-sdk/    # @vital-ice/mindbody-sdk - Mindbody API client
-│   ├── ui/              # @vital-ice/ui - Form components & validation
-│   └── test-utils/      # @vital-ice/test-utils - Testing utilities
+│   ├── config/          # @beringia/config - Environment vars & constants
+│   ├── mindbody-sdk/    # @beringia/mindbody-sdk - Mindbody API client
+│   ├── ui/              # @beringia/ui - Form components & validation
+│   └── test-utils/      # @beringia/test-utils - Testing utilities
 ├── apps/
 │   └── web/             # Next.js application
 └── .vital-ice/         # Shared linting/formatting configs
@@ -65,25 +65,25 @@ pnpm --filter web build
 
 ## Package Details
 
-### @vital-ice/config
+### @beringia/config
 
 - Environment variable validation (Zod)
 - Business constants (VITAL_ICE_BUSINESS)
 - Shared types
 
-### @vital-ice/mindbody-sdk
+### @beringia/mindbody-sdk
 
 - Mindbody API client
 - Retry logic, caching, error handling
 - All Mindbody API types
 
-### @vital-ice/ui
+### @beringia/ui
 
 - Form components (ContactForm, WaitlistForm, MembershipInquiryForm)
 - React Hook Form + Zod validation
 - Form submission utilities
 
-### @vital-ice/test-utils
+### @beringia/test-utils
 
 - Testing utilities
 - Mock data for Mindbody API
@@ -94,10 +94,10 @@ pnpm --filter web build
 In `apps/web`, use:
 
 - `@/*` - App-specific code (components, lib, etc.)
-- `@vital-ice/mindbody-sdk` - Mindbody SDK
-- `@vital-ice/ui` - UI components
-- `@vital-ice/config` - Config & constants
-- `@vital-ice/test-utils` - Test utilities
+- `@beringia/mindbody-sdk` - Mindbody SDK
+- `@beringia/ui` - UI components
+- `@beringia/config` - Config & constants
+- `@beringia/test-utils` - Test utilities
 
 ## Troubleshooting
 

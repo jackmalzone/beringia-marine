@@ -27,16 +27,16 @@
       "@/*": [
         "./src/*"
       ],
-      "@vital-ice/lib/*": [
+      "@beringia/lib/*": [
         "../../lib/*"
       ],
-      "@vital-ice/ui": [
+      "@beringia/ui": [
         "../../packages/ui/src"
       ],
-      "@vital-ice/config": [
+      "@beringia/config": [
         "../../packages/config/src"
       ],
-      "@vital-ice/test-utils": [
+      "@beringia/test-utils": [
         "../../packages/test-utils/src"
       ]
     },

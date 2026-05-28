@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
-import { TEMPLATE_BUSINESS } from '@vital-ice/config';
-import type { ContactFormData } from '@vital-ice/ui';
+import { TEMPLATE_BUSINESS } from '@beringia/config';
+import type { ContactFormData } from '@beringia/ui';
 
 export type ContactDeliveryResult = { success: true } | { success: false; error: string };
 

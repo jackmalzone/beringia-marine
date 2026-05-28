@@ -1,5 +1,5 @@
 // Email utility for handling form submissions
-import { SITE_CONFIG } from '@vital-ice/config';
+import { SITE_CONFIG } from '@beringia/config';
 
 export interface JobApplication {
   jobTitle: string;

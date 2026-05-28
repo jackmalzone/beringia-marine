@@ -1,7 +1,7 @@
 /**
  * Dynamic SSR / No-ISR compliance assertions.
  * Run: node apps/web/scripts/assert-dynamic-ssr-compliance.cjs
- * Or: pnpm --filter @vital-ice/web test:compliance
+ * Or: pnpm --filter @beringia/web test:compliance
  *
  * Asserts (per docs/seo/DYNAMIC_SSR_NO_ISR_IMPLEMENTATION.md):
  * - No generateStaticParams in services/[slug], insights/[slug], [slug].

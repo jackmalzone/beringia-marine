@@ -1,6 +1,6 @@
 /**
  * Compatibility layer - will be removed in a future cleanup.
- * Canonical source is @vital-ice/config.
+ * Canonical source is @beringia/config.
  */
 
 export {
@@ -9,10 +9,10 @@ export {
   absoluteUrl,
   getTwitterCreator,
   getSiteVerificationPayload,
-} from '@vital-ice/config';
+} from '@beringia/config';
 
 import type { Metadata } from 'next';
-import { getSiteVerificationPayload } from '@vital-ice/config';
+import { getSiteVerificationPayload } from '@beringia/config';
 
 export type SiteVerification = NonNullable<Metadata['verification']>;
 

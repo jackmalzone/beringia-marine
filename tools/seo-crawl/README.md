@@ -28,7 +28,7 @@ npx playwright install chromium
 Or from repo root with pnpm:
 
 ```bash
-pnpm --filter @vital-ice/seo-crawl install
+pnpm --filter @beringia/seo-crawl install
 cd tools/seo-crawl && npx playwright install chromium
 ```
 

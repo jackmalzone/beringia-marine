@@ -3,9 +3,9 @@
 import React, { useEffect } from 'react';
 import { motion } from '@/lib/motion';
 import PageSchema from '@/components/seo/PageSchema';
-import { ContactForm } from '@vital-ice/ui';
+import { ContactForm } from '@beringia/ui';
 
-import { TEMPLATE_BUSINESS, BusinessInfoHelpers } from '@vital-ice/config';
+import { TEMPLATE_BUSINESS, BusinessInfoHelpers } from '@beringia/config';
 import { seoTracker } from '@/lib/analytics/seo-tracking';
 import { seoPerformanceMonitor } from '@/lib/analytics/seo-performance-monitor';
 import {

@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { motion } from '@/lib/motion';
 import { FaLinkedin, FaPhone } from 'react-icons/fa';
 import { springConfigs } from '@/lib/utils/animations';
-import { TEMPLATE_BUSINESS, BusinessInfoHelpers, SHELL_FOOTER, SHELL_CREDITS } from '@vital-ice/config';
+import { TEMPLATE_BUSINESS, BusinessInfoHelpers, SHELL_FOOTER, SHELL_CREDITS } from '@beringia/config';
 import { SOLUTIONS } from '@/lib/content/solutions';
 import styles from './Footer.module.css';
 

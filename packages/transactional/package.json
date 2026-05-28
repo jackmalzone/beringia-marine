@@ -1,5 +1,5 @@
 {
-  "name": "@vital-ice/transactional",
+  "name": "@beringia/transactional",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -12,7 +12,7 @@
   "dependencies": {
     "@react-email/components": "^0.0.20",
     "@react-email/render": "^0.0.3",
-    "@vital-ice/config": "workspace:*",
+    "@beringia/config": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "resend": "^4.0.0"

@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
 
   // Transpile packages from monorepo
   // Works with both Webpack and Turbopack
-  transpilePackages: ['@vital-ice/ui', '@vital-ice/config', '@vital-ice/transactional'],
+  transpilePackages: ['@beringia/ui', '@beringia/config', '@beringia/transactional'],
 
   // TypeScript configuration
   // Ignore build errors from transactional package (uses React 18, main app uses React 19)
@@ -159,11 +159,11 @@ const nextConfig: NextConfig = {
   // Note: This config is ignored when using Turbopack (--turbo flag)
   // Turbopack has its own optimization and doesn't use webpack
   webpack: (config, { dev, isServer }) => {
-    // Resolve @ and @vital-ice/lib so webpack (stricter than Turbopack) finds modules
+    // Resolve @ and @beringia/lib so webpack (stricter than Turbopack) finds modules
     config.resolve.alias = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname, 'src'),
-      '@vital-ice/lib': path.resolve(__dirname, '../../lib'),
+      '@beringia/lib': path.resolve(__dirname, '../../lib'),
     };
 
     if (dev) {

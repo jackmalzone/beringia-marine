@@ -2,7 +2,7 @@
  * Server-side rendered content for contact page
  */
 import Link from 'next/link';
-import { TEMPLATE_BUSINESS, BusinessInfoHelpers } from '@vital-ice/config';
+import { TEMPLATE_BUSINESS, BusinessInfoHelpers } from '@beringia/config';
 
 export default function ContactPageContent() {
   const address = BusinessInfoHelpers.getFullAddress();
