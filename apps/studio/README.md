@@ -20,7 +20,8 @@ pnpm --filter @beringia/studio dev # serves at http://localhost:3333
 ## Schemas
 
 - `insight` — articles, white papers, case studies, field reports (Portable Text body)
-- `partner` — solution partner pages (Anchorbot, Mission Robotics, Advanced Navigation, etc.)
+- `partner` — solution partner pages (Anchorbot, Mission Robotics, Advanced Navigation, etc.) incl. logo, media links, gallery, demo video, Sketchfab 3D model
+- `teamMember` — Beringia team (About page + optional insight authors)
 - `siteSettings` (singleton) — business info, social links, SEO defaults
 
 ## Migration seed

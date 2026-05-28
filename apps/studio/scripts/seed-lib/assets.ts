@@ -3,6 +3,7 @@ import { basename, resolve } from 'node:path';
 import { lookup as lookupMime } from 'mime-types';
 
 import { sanity } from './client';
+import { withRetry } from './retry';
 
 const REPO_ROOT = resolve(__dirname, '..', '..', '..', '..');
 const WEB_PUBLIC = resolve(REPO_ROOT, 'apps/web/public');
@@ -69,10 +70,14 @@ export async function uploadImageAsset(
   const file = await readSource(source);
   if (!file) return null;
 
-  const uploaded = await sanity.assets.upload('image', file.data, {
-    filename: options.filename || file.filename,
-    contentType: options.contentType || file.contentType,
-  });
+  const uploaded = await withRetry(
+    () =>
+      sanity.assets.upload('image', file.data, {
+        filename: options.filename || file.filename,
+        contentType: options.contentType || file.contentType,
+      }),
+    `upload image ${options.filename || file.filename}`
+  );
   const asset: UploadedAsset = { _id: uploaded._id, url: uploaded.url };
   memo.set(cacheKey, asset);
   return asset;
@@ -90,10 +95,14 @@ export async function uploadFileAsset(
   const file = await readSource(source);
   if (!file) return null;
 
-  const uploaded = await sanity.assets.upload('file', file.data, {
-    filename: options.filename || file.filename,
-    contentType: options.contentType || file.contentType,
-  });
+  const uploaded = await withRetry(
+    () =>
+      sanity.assets.upload('file', file.data, {
+        filename: options.filename || file.filename,
+        contentType: options.contentType || file.contentType,
+      }),
+    `upload file ${options.filename || file.filename}`
+  );
   const asset: UploadedAsset = { _id: uploaded._id, url: uploaded.url };
   memo.set(cacheKey, asset);
   return asset;

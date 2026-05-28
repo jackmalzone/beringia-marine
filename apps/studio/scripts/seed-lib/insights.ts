@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 import { sanity } from './client';
 import { uploadImageAsset, imageRef } from './assets';
 import { htmlToPortableText } from './html-to-pt';
+import { withRetry } from './retry';
 import type { InsightEntry } from '../../../web/src/lib/content/insights-data';
 import { INSIGHTS } from '../../../web/src/lib/content/insights-data';
 
@@ -84,7 +85,7 @@ export async function seedInsights(opts: { dryRun: boolean }): Promise<number> {
       if (opts.dryRun) {
         console.log(`  · ${doc._id}  (body blocks: ${doc.body.length})  — dry run, not written`);
       } else {
-        await sanity.createOrReplace(doc);
+        await withRetry(() => sanity.createOrReplace(doc), doc._id);
         console.log(`  · ${doc._id}  ✓`);
       }
       count++;

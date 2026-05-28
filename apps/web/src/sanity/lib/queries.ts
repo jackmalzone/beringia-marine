@@ -24,6 +24,7 @@ const insightProjection = groq`
   excerpt,
   deck,
   author,
+  authorRef->{ name, role, photo { ..., asset->{ _id, url } } },
   coverImage { ..., asset->{ _id, url } },
   body,
   tags,

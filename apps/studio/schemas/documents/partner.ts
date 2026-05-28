@@ -273,7 +273,7 @@ export const partner = defineType({
             }),
             defineField({
               name: 'href',
-              type: 'string',
+              type: 'url',
               description: 'Either a local /assets/... path or an external URL.',
               validation: (Rule) =>
                 Rule.uri({ scheme: ['http', 'https'], allowRelative: true }),

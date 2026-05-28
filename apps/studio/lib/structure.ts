@@ -1,7 +1,7 @@
 import type { StructureResolver } from 'sanity/structure';
 import { orderableDocumentListDeskItem } from '@sanity/orderable-document-list';
 
-const HIDDEN_FROM_DEFAULT_LIST = ['siteSettings', 'insight', 'partner', 'media.tag'];
+const HIDDEN_FROM_DEFAULT_LIST = ['siteSettings', 'insight', 'partner', 'teamMember', 'media.tag'];
 
 export const structure: StructureResolver = (S, context) =>
   S.list()
@@ -26,6 +26,12 @@ export const structure: StructureResolver = (S, context) =>
       orderableDocumentListDeskItem({
         type: 'partner',
         title: 'Partners',
+        S,
+        context,
+      }),
+      orderableDocumentListDeskItem({
+        type: 'teamMember',
+        title: 'Team',
         S,
         context,
       }),

@@ -68,7 +68,14 @@ export const insight = defineType({
     defineField({
       name: 'author',
       type: 'string',
-      description: 'Free-text author line (e.g. "Chris Malzone, Principal Consultant / Beringia Marine, Inc").',
+      description: 'Free-text author line (e.g. "Chris Malzone, Principal Consultant / Beringia Marine, Inc"). Used when no Team member is linked below.',
+    }),
+    defineField({
+      name: 'authorRef',
+      title: 'Author (team member)',
+      type: 'reference',
+      to: [{ type: 'teamMember' }],
+      description: 'Optional. Link a team member to use their name/role/photo as the byline. Takes precedence over the free-text author above.',
     }),
     defineField({
       name: 'coverImage',
@@ -117,7 +124,7 @@ export const insight = defineType({
                 fields: [
                   defineField({
                     name: 'href',
-                    type: 'string',
+                    type: 'url',
                     validation: (Rule) =>
                       Rule.uri({
                         scheme: ['http', 'https', 'mailto', 'tel'],

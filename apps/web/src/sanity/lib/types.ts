@@ -38,6 +38,11 @@ export interface SanityInsight {
   excerpt: string;
   deck?: string;
   author?: string;
+  authorRef?: {
+    name?: string;
+    role?: string;
+    photo?: SanityImageWithAlt;
+  };
   coverImage: SanityImageWithAlt;
   body: PortableTextBlock[];
   tags?: string[];

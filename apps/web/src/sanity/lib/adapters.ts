@@ -64,6 +64,10 @@ export function adaptInsight(insight: SanityInsight): InsightEntry & { bodyHtml:
   const publishedAt = insight.publishedAt;
   const displayDate = formatDisplayDate(publishedAt);
 
+  const authorLine = insight.authorRef?.name
+    ? [insight.authorRef.name, insight.authorRef.role].filter(Boolean).join(', ')
+    : insight.author;
+
   return {
     title: insight.title,
     slug: insight.slug.current,
@@ -73,7 +77,7 @@ export function adaptInsight(insight: SanityInsight): InsightEntry & { bodyHtml:
     publishedAt,
     updatedAt: insight.updatedAt,
     displayDate,
-    author: insight.author,
+    author: authorLine,
     coverImage: coverUrl,
     tags: insight.tags || [],
     readingTime: insight.readingTime,

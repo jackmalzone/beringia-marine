@@ -32,6 +32,7 @@ When the studio opens, the left sidebar is the **Content desk**. Three pinned en
 | **Site settings** | One-of-a-kind document. Business info, social links, default SEO. The site reads this everywhere a fallback is needed. |
 | **Insights**     | Articles, white papers, case studies, field reports. Each maps to a `/insights/<slug>` page on the site. Drag to reorder. |
 | **Partners**     | Solution partner pages (Anchorbot, Mission Robotics, etc.). Each maps to `/solutions/<slug>`. Drag to reorder. |
+| **Team**         | People on the Beringia team. Used on the About page and as optional insight authors. Drag to reorder. |
 
 Below the divider you'll see any other document types Sanity exposes — for phase 1 there shouldn't be anything else.
 
@@ -116,6 +117,7 @@ The site renders figures with the image at full width and the caption below in m
 | ------------------ | ----------------------------------------------------------------------------------------- |
 | **Deck**           | Subhead/dek shown beneath the title on the hero. One sentence elaborating the title.      |
 | **Author**         | Free-text byline, e.g. "Chris Malzone, Principal Consultant / Beringia Marine, Inc".      |
+| **Author (team member)** | Optional. Link a [Team member](#52-team-members) instead of typing the byline. When set, their name + role become the byline (and the site can show their photo/bio). Takes precedence over the free-text Author. |
 | **Tags**           | Free-form taxonomy. Type and press Enter. Surfaced as pills under the article hero.       |
 | **Reading time**   | Number, in minutes. If you leave this blank, set it later — there's no auto-calc yet.     |
 | **Last updated**   | Date. Set this when you republish an existing article with edits.                         |
@@ -148,17 +150,44 @@ Almost identical workflow to Insights, but the shape is a partner profile (sales
 | **Slug** *(required)* | URL slug: `/solutions/<slug>`. Generated from the name; edit if needed.                     |
 | **Tagline**          | One-sentence elevator pitch shown on `/solutions` cards.                                    |
 | **Header image**     | Hero image for the partner detail page. Drop a 16:9 or 3:2 photograph; add alt text.        |
+| **Logo**             | Partner wordmark/logo, shown in the overview header next to the hero. Transparent PNG/SVG works best. |
 | **Overview**         | `title` (usually the partner name) + `description` (2–4 sentences explaining who they are). |
-| **Selling points**   | A list. Each point has its own `title`, `description`, `features[]`, and optional `icon`. Think of these as the "Core Technology" cards. Drag to reorder within the list. |
+| **Selling points**   | The "Core Technology" cards. Each point has `title`, `description`, `features[]`, optional `icon`, optional `link` (the title becomes clickable), and optional `documentation` (Specs / Manual / Evaluation buttons — paste a URL or `/assets/...` path for each). Drag to reorder. |
 | **Use cases**        | A list of applications. Each `case` has `title`, `description`, `keyPoints[]`. These are the industry/scenario cards. |
 | **Value proposition** | `title` (e.g. "Why choose X"), `description`, and `highlights[]` — short pithy bullets ("Cost-effective", "Reduced env. impact", …). |
-| **Documents**        | Datasheets, spec sheets, PDFs. Each has a `label` and `href` (local path or URL).           |
-| **External links**   | Outbound links: company website, LinkedIn, contact email (as `mailto:` URL).                |
+| **Media links**      | The "Connect with us" buttons: website, email, LinkedIn, YouTube, Sketchfab. Fill what exists; blanks are skipped. |
+| **Sketchfab model ID** | The bare model ID (e.g. `11c4619c…`) for the interactive 3D section. Only the partners with a public 3D model need this. |
+| **Interactive 3D copy** | `title` + `description` shown above the 3D embed. Only relevant when a Sketchfab model ID is set. |
+| **Demo video**       | `title`, `description`, and `videoUrl` (external URL or `/assets/...` path). Renders a `<video>` player section. |
+| **Gallery**          | A reorderable list of **Image** items (upload + alt text) and/or **Sketchfab model** items (model ID + label). Renders as a lightbox grid. |
+| **Documents**        | Datasheets / PDFs shown in the partner sidebar. Each has a `label` and `href` (URL or `/assets/...` path). |
+| **External links**   | Generic outbound links: `label` + `href`.                                                  |
 | **Status**           | Active / Draft / Archived. Only `Active` partners show on `/solutions`.                     |
 | **Featured**         | Toggle to surface prominently. (UI surfacing of "featured partners" can come in phase 2.)   |
 | **SEO**              | Per-partner overrides for the page's social/search preview.                                 |
 
 Publish when done. Same workflow as insights.
+
+### 5.2 Team members
+
+People on the Beringia team. Used on the About page and available as insight authors.
+
+1. **Team** → **+ Create new**.
+2. Fill the fields:
+
+| Field        | Notes                                                                          |
+| ------------ | ------------------------------------------------------------------------------ |
+| **Name** *(required)* | Full name.                                                            |
+| **Role / title** | e.g. "Principal Consultant".                                              |
+| **Slug**     | Generated from the name. Reserved for future individual profile pages.         |
+| **Photo**    | Headshot. Add alt text (e.g. "Chris Malzone, Principal Consultant").           |
+| **Short bio** | One or two sentences for cards and bylines.                                   |
+| **Full bio** | Longer biography (supports paragraphs, bold/italic, and links).                |
+| **Email / LinkedIn / Website** | Optional contact + social links.                             |
+
+To use a team member as an article byline: open the insight → **Author (team member)** → select the person. Their name + role replace the free-text Author line.
+
+Publish when done.
 
 ---
 

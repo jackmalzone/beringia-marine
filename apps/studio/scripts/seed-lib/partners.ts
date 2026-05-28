@@ -1,5 +1,6 @@
 import { sanity } from './client';
 import { uploadImageAsset, imageRef } from './assets';
+import { withRetry } from './retry';
 import {
   resolveAssetUrl,
   type PartnerJson,
@@ -209,7 +210,7 @@ export async function seedPartners(opts: { dryRun: boolean }): Promise<number> {
       if (opts.dryRun) {
         console.log(`  · ${doc._id}  (gallery: ${galleryCount})  — dry run, not written`);
       } else {
-        await sanity.createOrReplace(doc);
+        await withRetry(() => sanity.createOrReplace(doc), doc._id);
         console.log(`  · ${doc._id}  ✓  (gallery: ${galleryCount})`);
       }
       count++;
