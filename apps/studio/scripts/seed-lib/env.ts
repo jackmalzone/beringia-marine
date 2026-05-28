@@ -24,7 +24,20 @@ function required(key: string): string {
   return value;
 }
 
+function requiredOneOf(keys: string[]): string {
+  for (const key of keys) {
+    const value = process.env[key];
+    if (value) return value;
+  }
+  throw new Error(
+    `Missing required Sanity token. Set one of: ${keys.join(', ')} in .env.local. Checked:\n  ${candidates.join('\n  ')}`
+  );
+}
+
 export const SANITY_PROJECT_ID = required('NEXT_PUBLIC_SANITY_PROJECT_ID');
 export const SANITY_DATASET = required('NEXT_PUBLIC_SANITY_DATASET');
 export const SANITY_API_VERSION = process.env.NEXT_PUBLIC_SANITY_API_VERSION || '2025-02-19';
-export const SANITY_WRITE_TOKEN = required('SANITY_API_WRITE_TOKEN');
+export const SANITY_WRITE_TOKEN = requiredOneOf([
+  'SANITY_API_AGENT_TOKEN',
+  'SANITY_API_WRITE_TOKEN',
+]);

@@ -2,6 +2,13 @@
 
 Sanity Studio for the Beringia Marine site, mounted as a Next.js app and deployed to its own Vercel project at `studio.beringia-marine.com`.
 
+## I want to…
+
+- **…learn how to use the studio to publish content** → [AUTHORING.md](./AUTHORING.md)
+- **…deploy the studio to Vercel for the first time** → [DEPLOY.md](./DEPLOY.md)
+- **…run the studio locally to edit content** → [§ Local dev](#local-dev) below
+- **…re-import the static TS/JSON content into Sanity** → `pnpm seed` from the repo root
+
 ## Local dev
 
 ```bash

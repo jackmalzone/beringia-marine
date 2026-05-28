@@ -44,7 +44,8 @@ manage.sanity.io → project `l183gjut` → Members → invite teammates. Sanity
 ```bash
 # From repo root
 pnpm install
-# Make sure SANITY_API_WRITE_TOKEN is set in the repo-root .env.local
+# Make sure SANITY_API_AGENT_TOKEN (or SANITY_API_WRITE_TOKEN) is set in
+# apps/studio/.env.local or the repo-root .env.local
 pnpm seed:dry   # preview
 pnpm seed       # write
 ```
