@@ -75,6 +75,7 @@ function buildGalleryItems(partner: PartnerJson): GalleryRenderable[] {
 export function SolutionPartnerClient({ partner }: { partner: PartnerJson }) {
   const headerSrc = resolveAssetUrl(partner.headerImage as string);
   const logoSrc = resolveAssetUrl(partner.logo as string);
+  const logoWhite = (partner as { logoTreatment?: string }).logoTreatment === 'white';
   const sellingBlock = extractSellingPoints(partner);
   const useCasesBlock = mapUseCases(partner);
   const valueProp = 'valueProposition' in partner ? partner.valueProposition : null;
@@ -165,6 +166,7 @@ export function SolutionPartnerClient({ partner }: { partner: PartnerJson }) {
               description={partner.overview?.description || ''}
               headerImage={headerSrc}
               logo={logoSrc}
+              logoWhite={logoWhite}
               website={mediaLinks?.website}
             />
           ) : null}

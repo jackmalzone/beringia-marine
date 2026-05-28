@@ -124,5 +124,6 @@
     { "id": "sunken-ship", "alt": "Sunken Ship", "type": "image", "bundledAsset": "src/assets/clients/mission-robotics/sunken-ship1.png" }
   ],
   "headerImage": "bundled: src/assets/clients/mission-robotics/header.jpeg",
-  "logo": "bundled: src/assets/clients/mission-robotics/logo-title.webp"
+  "logo": "bundled: src/assets/clients/mission-robotics/logo-title.webp",
+  "logoTreatment": "white"
 }

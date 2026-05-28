@@ -151,6 +151,7 @@ Almost identical workflow to Insights, but the shape is a partner profile (sales
 | **Tagline**          | One-sentence elevator pitch shown on `/solutions` cards.                                    |
 | **Header image**     | Hero image for the partner detail page. Drop a 16:9 or 3:2 photograph; add alt text.        |
 | **Logo**             | Partner wordmark/logo, shown in the overview header next to the hero. Transparent PNG/SVG works best. |
+| **Logo color treatment** | The header is dark navy. If the logo is dark or a single colour (e.g. a blue wordmark) that doesn't read on it, choose **Force white** to render it as a clean white version. Otherwise leave on **Use uploaded colours**. |
 | **Overview**         | `title` (usually the partner name) + `description` (2–4 sentences explaining who they are). |
 | **Selling points**   | The "Core Technology" cards. Each point has `title`, `description`, `features[]`, optional `icon`, optional `link` (the title becomes clickable), and optional `documentation` (Specs / Manual / Evaluation buttons — paste a URL or `/assets/...` path for each). Drag to reorder. |
 | **Use cases**        | A list of applications. Each `case` has `title`, `description`, `keyPoints[]`. These are the industry/scenario cards. |

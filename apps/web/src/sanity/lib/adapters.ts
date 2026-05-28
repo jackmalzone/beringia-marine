@@ -152,6 +152,7 @@ export function adaptPartner(partner: SanityPartner): PartnerJson {
       : undefined,
     headerImage: headerImageUrl,
     logo: resolveImageUrl(partner.logo, 600) || undefined,
+    logoTreatment: partner.logoTreatment,
     mediaLinks: partner.mediaLinks,
     modelId: partner.sketchfabModelId,
     clientPageInteractiveCopy: partner.interactiveCopy,

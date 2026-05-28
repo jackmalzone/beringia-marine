@@ -8,10 +8,13 @@ export interface OverviewSectionProps {
   description: string;
   headerImage: string;
   logo?: string | null;
+  /** Render the logo as a white silhouette (for dark/coloured logos on the dark header). */
+  logoWhite?: boolean;
   website?: string | null;
 }
 
-export function OverviewSection({ title, description, headerImage, logo, website }: OverviewSectionProps) {
+export function OverviewSection({ title, description, headerImage, logo, logoWhite, website }: OverviewSectionProps) {
+  const logoClass = logoWhite ? `${styles.logo} ${styles.logoWhite}` : styles.logo;
   return (
     <div className={styles.wrapper}>
       <section className={styles.header} style={{ backgroundImage: `url(${headerImage})` }}>
@@ -30,7 +33,7 @@ export function OverviewSection({ title, description, headerImage, logo, website
                     alt={`${title} logo`}
                     width={400}
                     height={120}
-                    className={styles.logo}
+                    className={logoClass}
                     unoptimized={logo.endsWith('.webp')}
                   />
                 </a>
@@ -40,7 +43,7 @@ export function OverviewSection({ title, description, headerImage, logo, website
                   alt={`${title} logo`}
                   width={400}
                   height={120}
-                  className={styles.logo}
+                  className={logoClass}
                   unoptimized={logo.endsWith('.webp')}
                 />
               )}

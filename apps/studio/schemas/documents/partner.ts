@@ -68,6 +68,22 @@ export const partner = defineType({
       ],
     }),
     defineField({
+      name: 'logoTreatment',
+      title: 'Logo color treatment',
+      type: 'string',
+      group: 'overview',
+      description:
+        'The partner page header is dark navy. If the logo is a dark or single-colour mark that does not read well on it (e.g. a blue wordmark), choose "Force white" to render the logo as a clean white version. Leave on "Use uploaded colours" for logos that already look right on a dark background.',
+      options: {
+        list: [
+          { title: 'Use uploaded colours', value: 'default' },
+          { title: 'Force white (for dark/coloured logos on the dark header)', value: 'white' },
+        ],
+        layout: 'radio',
+      },
+      initialValue: 'default',
+    }),
+    defineField({
       name: 'overview',
       title: 'Overview section',
       type: 'object',

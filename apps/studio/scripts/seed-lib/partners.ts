@@ -14,6 +14,7 @@ const PARTNERS: PartnerJson[] = [advancedNavigation, anchorBot, missionRobotics]
 /** Loose view of the partner JSON — captures optional fields that only some partners have. */
 type LoosePartner = {
   logo?: string;
+  logoTreatment?: string;
   modelId?: string;
   clientPageInteractiveCopy?: { title?: string; description?: string };
   demo?: { title?: string; description?: string; videoUrl?: string };
@@ -134,6 +135,7 @@ export async function buildPartnerDocument(partner: PartnerJson) {
     tagline: tagline(partner),
     ...(header ? { headerImage: imageRef(header._id, partner.name) } : {}),
     ...(logo ? { logo: imageRef(logo._id, `${partner.name} logo`) } : {}),
+    ...(loose.logoTreatment ? { logoTreatment: loose.logoTreatment } : {}),
     overview: partner.overview
       ? {
           title: partner.overview.title || partner.name,

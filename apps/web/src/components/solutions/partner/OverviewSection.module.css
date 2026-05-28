@@ -57,6 +57,12 @@
   object-fit: contain;
 }
 
+/* Render a dark/coloured (e.g. blue) transparent logo as a clean white silhouette
+   so it reads on the dark header. Toggled per-partner via the "Logo color treatment" field. */
+.logoWhite {
+  filter: brightness(0) invert(1);
+}
+
 .title {
   margin: 0;
   font-size: clamp(2rem, 5vw, 3rem);

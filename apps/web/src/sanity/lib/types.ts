@@ -82,6 +82,7 @@ export interface SanityPartner {
   tagline?: string;
   headerImage?: SanityImageWithAlt;
   logo?: SanityImageWithAlt;
+  logoTreatment?: 'default' | 'white';
   overview?: { title?: string; description?: string };
   sellingPoints?: { title?: string; points?: SanityPartnerSellingPoint[] };
   useCases?: { title?: string; description?: string; cases?: SanityPartnerUseCase[] };

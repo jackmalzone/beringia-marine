@@ -47,6 +47,7 @@ const partnerProjection = groq`
   tagline,
   headerImage { ..., asset->{ _id, url } },
   logo { ..., asset->{ _id, url } },
+  logoTreatment,
   overview,
   sellingPoints {
     title,
