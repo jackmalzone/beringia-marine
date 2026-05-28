@@ -8,12 +8,23 @@ import { structure } from './lib/structure';
 const SINGLETON_TYPES = new Set(['siteSettings']);
 const SINGLETON_ACTIONS = new Set(['publish', 'discardChanges', 'restore']);
 
+/**
+ * Normalize env values: NEXT_PUBLIC_* vars are inlined at build time, and
+ * dashboard-pasted values often pick up surrounding quotes or whitespace —
+ * which fail Sanity's `projectId` validation. Strip both defensively.
+ */
+const readEnv = (value: string | undefined): string =>
+  (value ?? '').trim().replace(/^['"]+|['"]+$/g, '');
+
+const projectId = readEnv(process.env.NEXT_PUBLIC_SANITY_PROJECT_ID);
+const dataset = readEnv(process.env.NEXT_PUBLIC_SANITY_DATASET);
+
 export default defineConfig({
   name: 'beringia-studio',
   title: 'Beringia Marine CMS',
 
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET!,
+  projectId,
+  dataset,
 
   plugins: [
     structureTool({ structure }),
