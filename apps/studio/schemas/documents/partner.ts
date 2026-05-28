@@ -37,6 +37,15 @@ export const partner = defineType({
       ],
     }),
     defineField({
+      name: 'logo',
+      type: 'image',
+      description: 'Partner wordmark / logo (shown in the overview header, separate from the hero image).',
+      options: { hotspot: true },
+      fields: [
+        defineField({ name: 'alt', type: 'string' }),
+      ],
+    }),
+    defineField({
       name: 'overview',
       type: 'object',
       fields: [
@@ -78,6 +87,33 @@ export const partner = defineType({
                   name: 'icon',
                   type: 'image',
                   options: { hotspot: true },
+                }),
+                defineField({
+                  name: 'link',
+                  type: 'url',
+                  description: 'Optional product/spec page. The selling-point title links here.',
+                }),
+                defineField({
+                  name: 'documentation',
+                  type: 'object',
+                  description: 'Optional document buttons shown on the selling-point card.',
+                  fields: [
+                    defineField({
+                      name: 'specs',
+                      type: 'string',
+                      title: 'Specs (URL or /assets path)',
+                    }),
+                    defineField({
+                      name: 'manual',
+                      type: 'url',
+                      title: 'Manual (URL)',
+                    }),
+                    defineField({
+                      name: 'benthicSurvey',
+                      type: 'string',
+                      title: 'Evaluation / reference (URL or /assets path)',
+                    }),
+                  ],
                 }),
               ],
               preview: {
@@ -132,6 +168,91 @@ export const partner = defineType({
           name: 'highlights',
           type: 'array',
           of: [{ type: 'string' }],
+        }),
+      ],
+    }),
+    defineField({
+      name: 'mediaLinks',
+      title: 'Media links',
+      description: 'External links shown in the "Connect with us" section.',
+      type: 'object',
+      fields: [
+        defineField({ name: 'website', type: 'url' }),
+        defineField({ name: 'email', type: 'string', validation: (Rule) => Rule.email() }),
+        defineField({ name: 'linkedin', type: 'url' }),
+        defineField({ name: 'youtube', type: 'url' }),
+        defineField({ name: 'sketchfab', type: 'url' }),
+      ],
+    }),
+    defineField({
+      name: 'sketchfabModelId',
+      title: 'Sketchfab model ID',
+      type: 'string',
+      description: 'ID of the Sketchfab model for the interactive 3D section (e.g. "11c4619cc5e44045b1df5fd4abdcb586").',
+    }),
+    defineField({
+      name: 'interactiveCopy',
+      title: 'Interactive 3D copy',
+      type: 'object',
+      description: 'Heading + blurb shown above the 3D model embed.',
+      fields: [
+        defineField({ name: 'title', type: 'string' }),
+        defineField({ name: 'description', type: 'text', rows: 2 }),
+      ],
+    }),
+    defineField({
+      name: 'demo',
+      title: 'Demo video',
+      type: 'object',
+      fields: [
+        defineField({ name: 'title', type: 'string' }),
+        defineField({ name: 'description', type: 'text', rows: 2 }),
+        defineField({
+          name: 'videoUrl',
+          type: 'string',
+          description: 'Video source — an external URL or a /assets/... path under apps/web/public.',
+        }),
+      ],
+    }),
+    defineField({
+      name: 'gallery',
+      title: 'Gallery',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'object',
+          name: 'galleryImage',
+          title: 'Image',
+          fields: [
+            defineField({
+              name: 'image',
+              type: 'image',
+              options: { hotspot: true },
+              fields: [defineField({ name: 'alt', type: 'string' })],
+              validation: (Rule) => Rule.required(),
+            }),
+          ],
+          preview: {
+            select: { media: 'image', title: 'image.alt' },
+            prepare: ({ media, title }) => ({ media, title: title || 'Image' }),
+          },
+        }),
+        defineArrayMember({
+          type: 'object',
+          name: 'gallerySketchfab',
+          title: 'Sketchfab model',
+          fields: [
+            defineField({
+              name: 'modelId',
+              type: 'string',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({ name: 'alt', type: 'string', title: 'Label' }),
+          ],
+          preview: {
+            select: { title: 'alt', subtitle: 'modelId' },
+            prepare: ({ title, subtitle }) => ({ title: title || '3D model', subtitle }),
+          },
         }),
       ],
     }),

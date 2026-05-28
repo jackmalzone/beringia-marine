@@ -118,6 +118,8 @@ export function adaptPartner(partner: SanityPartner): PartnerJson {
             description: p.description || '',
             features: p.features || [],
             icon: resolveImageUrl(p.icon as SanityImageWithAlt | undefined, 400) || '',
+            ...(p.link ? { link: p.link } : {}),
+            ...(p.documentation ? { documentation: p.documentation } : {}),
           })),
         }
       : undefined,
@@ -141,6 +143,21 @@ export function adaptPartner(partner: SanityPartner): PartnerJson {
         }
       : undefined,
     headerImage: headerImageUrl,
+    logo: resolveImageUrl(partner.logo, 600) || undefined,
+    mediaLinks: partner.mediaLinks,
+    modelId: partner.sketchfabModelId,
+    clientPageInteractiveCopy: partner.interactiveCopy,
+    demo: partner.demo,
+    gallery: (partner.gallery || []).map((item, idx) =>
+      item._type === 'gallerySketchfab'
+        ? { id: item._key || `model-${idx}`, type: 'sketchfab', modelId: item.modelId, alt: item.alt || '' }
+        : {
+            id: item._key || `image-${idx}`,
+            type: 'image',
+            bundledAsset: resolveImageUrl(item.image, 1600) || '',
+            alt: item.image?.alt || '',
+          }
+    ),
     documentation: partner.documents,
     externalLinks: partner.externalLinks,
   } as PartnerJson;

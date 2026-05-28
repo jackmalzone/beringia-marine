@@ -54,6 +54,8 @@ export interface SanityPartnerSellingPoint {
   description?: string;
   features?: string[];
   icon?: SanityImageSource;
+  link?: string;
+  documentation?: { specs?: string; manual?: string; benthicSurvey?: string };
 }
 
 export interface SanityPartnerUseCase {
@@ -61,6 +63,10 @@ export interface SanityPartnerUseCase {
   description?: string;
   keyPoints?: string[];
 }
+
+export type SanityGalleryItem =
+  | { _key: string; _type: 'galleryImage'; image: SanityImageWithAlt }
+  | { _key: string; _type: 'gallerySketchfab'; modelId: string; alt?: string };
 
 export interface SanityPartner {
   _id: string;
@@ -70,6 +76,7 @@ export interface SanityPartner {
   slug: { current: string };
   tagline?: string;
   headerImage?: SanityImageWithAlt;
+  logo?: SanityImageWithAlt;
   overview?: { title?: string; description?: string };
   sellingPoints?: { title?: string; points?: SanityPartnerSellingPoint[] };
   useCases?: { title?: string; description?: string; cases?: SanityPartnerUseCase[] };
@@ -78,6 +85,17 @@ export interface SanityPartner {
     description?: string;
     highlights?: string[];
   };
+  mediaLinks?: {
+    website?: string;
+    email?: string;
+    linkedin?: string;
+    youtube?: string;
+    sketchfab?: string;
+  };
+  sketchfabModelId?: string;
+  interactiveCopy?: { title?: string; description?: string };
+  demo?: { title?: string; description?: string; videoUrl?: string };
+  gallery?: SanityGalleryItem[];
   documents?: Array<{ label: string; href: string }>;
   externalLinks?: Array<{ label: string; href: string }>;
   status?: 'active' | 'draft' | 'archived';

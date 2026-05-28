@@ -41,16 +41,26 @@ const partnerProjection = groq`
   slug,
   tagline,
   headerImage { ..., asset->{ _id, url } },
+  logo { ..., asset->{ _id, url } },
   overview,
   sellingPoints {
     title,
     points[] {
-      title, description, features,
+      title, description, features, link, documentation,
       icon { ..., asset->{ _id, url } }
     }
   },
   useCases,
   valueProposition,
+  mediaLinks,
+  sketchfabModelId,
+  interactiveCopy,
+  demo,
+  gallery[] {
+    _key, _type,
+    modelId, alt,
+    image { ..., asset->{ _id, url } }
+  },
   documents,
   externalLinks,
   status,
