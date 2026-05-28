@@ -15,7 +15,7 @@ const seoProjection = groq`
   }
 `;
 
-const insightProjection = groq`
+const insightSummaryProjection = groq`
   _id, _type, _updatedAt,
   title,
   slug,
@@ -26,7 +26,6 @@ const insightProjection = groq`
   author,
   authorRef->{ name, role, photo { ..., asset->{ _id, url } } },
   coverImage { ..., asset->{ _id, url } },
-  body,
   tags,
   readingTime,
   publishedAt,
@@ -34,6 +33,11 @@ const insightProjection = groq`
   pdfUrl,
   featured,
   ${seoProjection}
+`;
+
+const insightProjection = groq`
+  ${insightSummaryProjection},
+  body
 `;
 
 const partnerProjection = groq`
@@ -71,7 +75,7 @@ const partnerProjection = groq`
 
 export const queries = {
   insightBySlug: groq`*[_type == "insight" && slug.current == $slug][0] { ${insightProjection} }`,
-  allInsights: groq`*[_type == "insight"] | order(publishedAt desc) { ${insightProjection} }`,
+  allInsights: groq`*[_type == "insight"] | order(publishedAt desc) { ${insightSummaryProjection} }`,
   allInsightSlugs: groq`*[_type == "insight"]{ "slug": slug.current, _updatedAt }`,
   partnerBySlug: groq`*[_type == "partner" && slug.current == $slug][0] { ${partnerProjection} }`,
   allPartners: groq`*[_type == "partner" && status == "active"] | order(orderRank asc, name asc) { ${partnerProjection} }`,

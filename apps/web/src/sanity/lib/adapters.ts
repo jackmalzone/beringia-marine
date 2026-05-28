@@ -56,13 +56,10 @@ export function portableTextToHtml(body: PortableTextBlock[] | undefined): strin
   return toHTML(body, { components: portableTextComponents });
 }
 
-/** Adapt a SanityInsight into the InsightEntry shape used by the existing /insights routes. */
-export function adaptInsight(insight: SanityInsight): InsightEntry & { bodyHtml: string } {
+/** Adapt a SanityInsight into the InsightEntry summary shape (no body conversion — for listings). */
+export function adaptInsightSummary(insight: SanityInsight): InsightEntry {
   const coverUrl = resolveImageUrl(insight.coverImage, 1600) || '';
   const ogUrl = resolveImageUrl(insight.seo?.ogImage, 1200) || coverUrl;
-
-  const publishedAt = insight.publishedAt;
-  const displayDate = formatDisplayDate(publishedAt);
 
   const authorLine = insight.authorRef?.name
     ? [insight.authorRef.name, insight.authorRef.role].filter(Boolean).join(', ')
@@ -74,9 +71,9 @@ export function adaptInsight(insight: SanityInsight): InsightEntry & { bodyHtml:
     category: insight.category,
     excerpt: insight.excerpt,
     deck: insight.deck,
-    publishedAt,
+    publishedAt: insight.publishedAt,
     updatedAt: insight.updatedAt,
-    displayDate,
+    displayDate: formatDisplayDate(insight.publishedAt),
     author: authorLine,
     coverImage: coverUrl,
     tags: insight.tags || [],
@@ -90,6 +87,13 @@ export function adaptInsight(insight: SanityInsight): InsightEntry & { bodyHtml:
       description: insight.seo?.description || insight.excerpt,
       ogImage: ogUrl,
     },
+  };
+}
+
+/** Adapt a SanityInsight into the InsightEntry shape used by the /insights detail route (incl. body HTML). */
+export function adaptInsight(insight: SanityInsight): InsightEntry & { bodyHtml: string } {
+  return {
+    ...adaptInsightSummary(insight),
     bodyHtml: portableTextToHtml(insight.body),
   };
 }

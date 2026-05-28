@@ -4,7 +4,7 @@ import type { Metadata } from 'next';
 import ServerSideSEO from '@/components/seo/ServerSideSEO';
 import DepthBackground from '@/components/DepthBackground/DepthBackground';
 import { mergeMetadata } from '@/lib/seo/metadata';
-import { SOLUTIONS } from '@/lib/content/solutions';
+import { resolveAllSolutions } from '@/sanity/lib/content-resolvers';
 import styles from './page.module.css';
 
 export const metadata: Metadata = mergeMetadata('solutions', {
@@ -13,7 +13,9 @@ export const metadata: Metadata = mergeMetadata('solutions', {
     'Explore Beringia solution programs across navigation, anchor installation automation, and marine robotics control systems.',
 });
 
-export default function SolutionsPage() {
+export default async function SolutionsPage() {
+  const solutions = await resolveAllSolutions();
+
   return (
     <main className={styles.page}>
       <DepthBackground />
@@ -50,7 +52,7 @@ export default function SolutionsPage() {
               Overview
             </h2>
             <div className={styles.grid}>
-              {SOLUTIONS.map((solution) => (
+              {solutions.map((solution) => (
                 <article key={solution.slug} className={styles.card}>
                   <Link href={`/solutions/${solution.slug}`} className={styles.cardMediaLink} tabIndex={-1}>
                     <div className={styles.cardMedia}>

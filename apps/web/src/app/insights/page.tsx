@@ -2,7 +2,8 @@ import type { Metadata } from 'next';
 import ServerSideSEO from '@/components/seo/ServerSideSEO';
 import { mergeMetadata } from '@/lib/seo/metadata';
 import { generateStructuredData } from '@/lib/seo/structured-data';
-import { INSIGHTS, INSIGHTS_LANDING } from '@/lib/content/insights';
+import { INSIGHTS_LANDING } from '@/lib/content/insights';
+import { resolveAllInsights } from '@/sanity/lib/content-resolvers';
 import { buildInsightsCollectionSchema } from '@/lib/seo/insights-structured-data';
 import InsightsListingClient from './InsightsListingClient';
 import styles from './index.module.css';
@@ -20,8 +21,9 @@ export const metadata: Metadata = mergeMetadata('insights', {
   },
 });
 
-export default function InsightsPage() {
-  const collectionSchema = buildInsightsCollectionSchema(INSIGHTS);
+export default async function InsightsPage() {
+  const insights = await resolveAllInsights();
+  const collectionSchema = buildInsightsCollectionSchema(insights);
 
   return (
     <main className={styles.page}>
@@ -32,7 +34,7 @@ export default function InsightsPage() {
       />
 
       <div className={styles.insightsField}>
-        <InsightsListingClient entries={INSIGHTS} landing={INSIGHTS_LANDING} />
+        <InsightsListingClient entries={insights} landing={INSIGHTS_LANDING} />
       </div>
     </main>
   );

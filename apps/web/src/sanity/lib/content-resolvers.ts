@@ -12,15 +12,19 @@
 import { getInsightBodyHtml } from '@/lib/content/insights/insight-bodies.server';
 import {
   getInsightBySlug as getStaticInsightBySlug,
+  INSIGHTS as STATIC_INSIGHTS,
   type InsightEntry,
 } from '@/lib/content/insights';
 import {
   getPartnerBySlug as getStaticPartnerBySlug,
+  solutionSummariesFrom,
   type PartnerJson,
 } from '@/lib/content/partner-content';
+import { SOLUTIONS as STATIC_SOLUTIONS } from '@/lib/content/solutions';
+import type { Solution } from '@/lib/content/solution-types';
 
-import { getInsightBySlug, getPartnerBySlug } from './queries';
-import { adaptInsight, adaptPartner } from './adapters';
+import { getInsightBySlug, getAllInsights, getPartnerBySlug, getAllPartners } from './queries';
+import { adaptInsight, adaptInsightSummary, adaptPartner } from './adapters';
 
 export type ResolvedInsight = InsightEntry & { bodyHtml: string };
 
@@ -43,4 +47,22 @@ export async function resolvePartnerBySlug(slug: string): Promise<PartnerJson | 
     return adaptPartner(fromSanity);
   }
   return getStaticPartnerBySlug(slug) ?? null;
+}
+
+/** All insights as summary entries — Sanity first, static registry fallback. */
+export async function resolveAllInsights(): Promise<InsightEntry[]> {
+  const fromSanity = await getAllInsights();
+  if (fromSanity.length > 0) {
+    return fromSanity.map(adaptInsightSummary);
+  }
+  return STATIC_INSIGHTS;
+}
+
+/** All solutions (partner summaries) — Sanity first, static registry fallback. */
+export async function resolveAllSolutions(): Promise<Solution[]> {
+  const fromSanity = await getAllPartners();
+  if (fromSanity.length > 0) {
+    return solutionSummariesFrom(fromSanity.map(adaptPartner));
+  }
+  return STATIC_SOLUTIONS;
 }

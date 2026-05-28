@@ -59,7 +59,12 @@ export function getSolutionSummariesFromPartners(): Solution[] {
   return PARTNERS.map(partnerToSolutionSummary);
 }
 
-function partnerToSolutionSummary(partner: PartnerJson): Solution {
+/** Map an arbitrary list of partners (e.g. Sanity-sourced) to Solution summaries. */
+export function solutionSummariesFrom(partners: PartnerJson[]): Solution[] {
+  return partners.map(partnerToSolutionSummary);
+}
+
+export function partnerToSolutionSummary(partner: PartnerJson): Solution {
   const header = resolveAssetUrl(partner.headerImage as string) || '/assets/beringia/logo-solid.svg';
   const images: SolutionMedia['images'] = [{ src: header, alt: partner.overview?.title || partner.name }];
 
