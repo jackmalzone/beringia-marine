@@ -44,7 +44,7 @@ const SEO_CONTENT: Record<
   },
   solutions: {
     h1: 'Solutions - Beringia marine technology programs',
-    h2: ['Navigation systems', 'Anchor automation', 'Marine robotics control'],
+    h2: ['Navigation systems', 'Anchor automation', 'Marine robotics control', 'Robotics & autonomy'],
     links: [
       { href: '/', text: 'Home' },
       { href: '/about', text: `About ${BRAND}` },
@@ -53,6 +53,7 @@ const SEO_CONTENT: Record<
       { href: '/solutions/advanced-navigation', text: 'Advanced Navigation' },
       { href: '/solutions/anchor-bot', text: 'Anchor Bot Marine' },
       { href: '/solutions/mission-robotics', text: 'Mission Robotics' },
+      { href: '/solutions/independent-robotics', text: 'Independent Robotics' },
     ],
     content:
       'Beringia solution programs align marine technology teams with validated pathways from concept through deployment, including navigation systems, robotic anchor installation, and vehicle control platforms.',

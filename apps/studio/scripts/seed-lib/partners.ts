@@ -8,8 +8,14 @@ import {
 import advancedNavigation from '../../../web/src/lib/content/partners/advanced-navigation.json';
 import anchorBot from '../../../web/src/lib/content/partners/anchor-bot.json';
 import missionRobotics from '../../../web/src/lib/content/partners/mission-robotics.json';
+import independentRobotics from '../../../web/src/lib/content/partners/independent-robotics.json';
 
-const PARTNERS: PartnerJson[] = [advancedNavigation, anchorBot, missionRobotics] as PartnerJson[];
+const PARTNERS: PartnerJson[] = [
+  advancedNavigation,
+  anchorBot,
+  missionRobotics,
+  independentRobotics,
+] as unknown as PartnerJson[];
 
 /** Loose view of the partner JSON — captures optional fields that only some partners have. */
 type LoosePartner = {

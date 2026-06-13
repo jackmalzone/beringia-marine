@@ -1,0 +1,145 @@
+{
+  "sourceFile": "Independent Robotics — IR Product Overview May 8 2026.pdf",
+  "id": "independent-robotics",
+  "name": "Independent Robotics",
+  "slug": "independent-robotics",
+  "seo": {
+    "title": "Independent Robotics | Beringia Marine",
+    "description": "Making robots useful in the real world. Montreal-based Independent Robotics builds natural-language mission planning (IMPAC), AI robotic-data analytics (Insight Engine), and intelligent autonomous underwater vehicles (Aqua2 / AQ3-LH). NATO DIANA Tech Competition winner. Beringia Marine is their US market representative and US Prime / integration partner for US government programs."
+  },
+  "overview": {
+    "title": "Independent Robotics",
+    "description": "Independent Robotics is a Montreal-based robotics and AI company whose mission is to make robots useful in the real world. A 7–10 person team drawing from Samsung, Google, Clearpath, Locus Robotics, and Adept MobileRobots — and a NATO DIANA Tech Competition winner — they build natural-language mission planning (IMPAC), AI-powered robotic-data analytics (Insight Engine), and intelligent autonomous underwater vehicles (Aqua2 and its successor, the AQ3-LH \"Loggerhead\"). Beringia Marine serves as their primary US market representative, technical advisor, and US Prime contractor / integration partner for US government programs."
+  },
+  "sellingPoints": {
+    "title": "Core Technology",
+    "points": [
+      {
+        "id": "impac",
+        "title": "IMPAC — Semantic Mission Planning with Natural Language",
+        "description": "Speak to robots in plain language to tell them what to do. IMPAC provides semantic mission planning and monitoring as a common interface for any autonomous system — a force multiplier that speeds deployment with low operator overhead.",
+        "features": [
+          "Plan and monitor missions in plain natural language",
+          "Common interface for any autonomous system",
+          "Integrates with NATO Command and Control standards",
+          "Force multiplier: faster deployment, conditional planning, low operator overhead",
+          "Example: \"Send all drones above 60% battery to patrol the perimeter, the rest should come home and recharge\"",
+          "Demonstrated controlling a Jackal UGV with natural language"
+        ]
+      },
+      {
+        "id": "insight-engine",
+        "title": "Insight Engine — AI Analytics for Robotic Data",
+        "description": "A SaaS cloud platform: upload data, configure analysis pipelines, and view results. A proprietary AI algorithm identifies related objects with little or no training, and works with any robotic data feed — aerial, underwater, or ground. NATO DIANA Tech Competition winner.",
+        "features": [
+          "Upload data, configure pipelines, view results in the cloud",
+          "Proprietary AI identifies related objects with little or no training",
+          "Works with any robotic data feed: aerial, underwater, ground",
+          "Outputs: PDF, CSV, API, dashboards & alerts",
+          "Reports: object identification + location, damage assessments, heat maps, industry-standard formats",
+          "NATO DIANA Tech Competition Winner",
+          "Demonstrated FGVC accuracy gain from 17% to 77% baseline; 77–83% top-1 and 90%+ top-3 on military-vehicle subtypes"
+        ]
+      },
+      {
+        "id": "aqua2",
+        "title": "Aqua2 — Intelligent Underwater Autonomy",
+        "description": "World-leading autonomy for high-fidelity 3D surveying, monitoring, and inspection. An onboard GPU brings edge AI to the cloud-denied underwater domain, and the vehicle is rapid, single-person deployable. Available for purchase now.",
+        "features": [
+          "World-leading autonomy for high-fidelity 3D surveying, monitoring, inspection",
+          "Onboard GPU for edge AI in the cloud-denied underwater domain",
+          "Rapid single-person deployable (Pelican Air 1607 carry-case)",
+          "Unique quiet acoustic profile — near-silent operation",
+          "Built in Canada for winter / arctic deployment",
+          "Flexible sensor payload with standard protocols",
+          "Available for purchase now"
+        ]
+      },
+      {
+        "id": "aq3-lh-loggerhead",
+        "title": "AQ3-LH (Project Loggerhead) — Next-Generation Aqua2",
+        "description": "The successor to Aqua2, developed with Canada's Ocean Supercluster: improved depth rating, maneuverability, and payload at reduced cost with streamlined deployment. Built for arctic operation. Ready for pilots now; general release scheduled 2027.",
+        "features": [
+          "Developed with Canada's Ocean Supercluster",
+          "Improved depth-rating, maneuverability, and payload",
+          "Reduced cost and streamlined deployment",
+          "Built for arctic deployment",
+          "Ready for pilots now; general release scheduled 2027"
+        ]
+      }
+    ]
+  },
+  "useCases": {
+    "title": "Target Markets",
+    "description": "Independent Robotics' platforms serve US and allied defense, commercial underwater operations, and robotic-data analytics across domains — brought to the US market by Beringia Marine.",
+    "cases": [
+      {
+        "id": "defense",
+        "title": "US Navy, Coast Guard & Allied Defense",
+        "description": "Mission planning and analytics aligned to NATO Command and Control standards for US and allied defense programs.",
+        "keyPoints": [
+          "NATO C2 alignment",
+          "Naval and Coast Guard missions",
+          "Allied / coalition programs"
+        ]
+      },
+      {
+        "id": "underwater-inspection",
+        "title": "Underwater Surveying, Monitoring & Inspection",
+        "description": "High-fidelity 3D survey, monitoring, and inspection for commercial underwater operations.",
+        "keyPoints": [
+          "High-fidelity 3D surveying",
+          "Asset monitoring and inspection",
+          "Commercial subsea operations"
+        ]
+      },
+      {
+        "id": "port-security",
+        "title": "Port, Harbor & Naval-Base Security",
+        "description": "Autonomous monitoring for ports, harbors, and naval-base force protection.",
+        "keyPoints": [
+          "Harbor and port monitoring",
+          "Naval-base force protection",
+          "Critical-infrastructure protection"
+        ]
+      },
+      {
+        "id": "arctic",
+        "title": "Arctic & Cold-Water Operations",
+        "description": "Vehicles built in Canada for winter and arctic deployment in cold-water environments.",
+        "keyPoints": [
+          "Winter / arctic deployment",
+          "Cold-water operations",
+          "Quiet, near-silent operation"
+        ]
+      },
+      {
+        "id": "robotic-analytics",
+        "title": "Robotic Data Analytics",
+        "description": "AI analytics for any aerial, underwater, or ground robotic platform via the Insight Engine cloud.",
+        "keyPoints": [
+          "Aerial, underwater, and ground data",
+          "Little-or-no-training object identification",
+          "PDF, CSV, API, dashboards & alerts"
+        ]
+      }
+    ]
+  },
+  "valueProposition": {
+    "title": "Beringia's Role in the Partnership",
+    "description": "Beringia Marine serves as Independent Robotics' primary US market representative and US Prime contractor / integration partner for US government programs — a structure that enables ITAR-compliant access to US defense end-users and program offices.",
+    "highlights": [
+      "Primary US sales representative",
+      "Strategic advisor",
+      "US Prime contractor & integration partner for US government programs",
+      "Customer development with US defense end-users and program offices",
+      "Technical advisory: sensor evaluation, system architecture, integration planning",
+      "Proposal / RFI / RFP support",
+      "Identification of US technology partners, hardware suppliers, and research institutions",
+      "ITAR-compliant US program access via Beringia-held prime contracts"
+    ]
+  },
+  "mediaLinks": {
+    "website": "https://www.independentrobotics.com"
+  }
+}

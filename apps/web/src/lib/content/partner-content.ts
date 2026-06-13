@@ -6,11 +6,20 @@
 import missionRobotics from './partners/mission-robotics.json';
 import anchorBot from './partners/anchor-bot.json';
 import advancedNavigation from './partners/advanced-navigation.json';
+import independentRobotics from './partners/independent-robotics.json';
 import type { Solution, SolutionDocument, SolutionMedia } from './solution-types';
 
 export type PartnerJson = typeof missionRobotics | typeof anchorBot | typeof advancedNavigation;
 
-const PARTNERS: PartnerJson[] = [advancedNavigation, anchorBot, missionRobotics];
+// Independent Robotics is a consulting / market-representation partnership. Its JSON omits
+// media assets (logo/hero are managed in Sanity Studio), so it is cast to the verbatim
+// PartnerJson shape; consumers read its fields defensively (optional chaining).
+const PARTNERS: PartnerJson[] = [
+  advancedNavigation,
+  anchorBot,
+  missionRobotics,
+  independentRobotics as unknown as PartnerJson,
+];
 
 /** Map legacy /images/clients → /assets/clients when present in verbatim */
 function normalizePublicPath(path: string): string {
