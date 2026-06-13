@@ -70,11 +70,45 @@
   line-height: 1.1;
 }
 
+.eyebrow {
+  margin: 0 0 0.75rem;
+  color: #7fc8e0;
+  font-size: clamp(0.72rem, 1.4vw, 0.82rem);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.headline {
+  margin: 0;
+  font-size: clamp(1.85rem, 4.6vw, 2.85rem);
+  color: #e6f9fb;
+  line-height: 1.12;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin: 1rem auto 0;
+  max-width: 60ch;
+  color: #d4e6ef;
+  line-height: 1.6;
+  font-size: clamp(1.02rem, 1.8vw, 1.2rem);
+}
+
 .description {
   margin: 1.15rem 0 0;
   color: #c7dbe4;
   line-height: 1.75;
   font-size: 1.05rem;
+}
+
+/* When a hero headline/subtitle is present, soften the long overview paragraph
+   so the hierarchy reads headline → subtitle → supporting detail. */
+.subtitle + .description {
+  margin-top: 1rem;
+  font-size: 0.98rem;
+  color: #b8cdd8;
 }
 
 @media (max-width: 1024px) {

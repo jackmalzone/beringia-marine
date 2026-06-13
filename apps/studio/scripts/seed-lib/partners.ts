@@ -21,6 +21,9 @@ const PARTNERS: PartnerJson[] = [
 type LoosePartner = {
   logo?: string;
   logoTreatment?: string;
+  heroEyebrow?: string;
+  heroHeadline?: string;
+  heroSubtitle?: string;
   modelId?: string;
   clientPageInteractiveCopy?: { title?: string; description?: string };
   demo?: { title?: string; description?: string; videoUrl?: string };
@@ -142,6 +145,9 @@ export async function buildPartnerDocument(partner: PartnerJson) {
     ...(header ? { headerImage: imageRef(header._id, partner.name) } : {}),
     ...(logo ? { logo: imageRef(logo._id, `${partner.name} logo`) } : {}),
     ...(loose.logoTreatment ? { logoTreatment: loose.logoTreatment } : {}),
+    ...(loose.heroEyebrow ? { heroEyebrow: loose.heroEyebrow } : {}),
+    ...(loose.heroHeadline ? { heroHeadline: loose.heroHeadline } : {}),
+    ...(loose.heroSubtitle ? { heroSubtitle: loose.heroSubtitle } : {}),
     overview: partner.overview
       ? {
           title: partner.overview.title || partner.name,

@@ -40,11 +40,39 @@ export const partner = defineType({
       validation: (Rule) => Rule.max(240),
     }),
     defineField({
+      name: 'heroEyebrow',
+      title: 'Hero eyebrow',
+      type: 'string',
+      group: 'overview',
+      description:
+        'WHERE: a small, uppercase line above the hero headline, over the header image. ROLE: a short positioning phrase that sets up the headline (e.g. "Trusted AI for critical missions"). DIMENSIONS: 2–6 words. TIP: optional — leave blank if it would just repeat the logo/company name. Rendered in caps automatically, so type it in normal case.',
+      validation: (Rule) => Rule.max(80),
+    }),
+    defineField({
+      name: 'heroHeadline',
+      title: 'Hero headline',
+      type: 'string',
+      group: 'overview',
+      description:
+        'WHERE: the large headline (H1) in the hero, over the header image, beneath the logo. ROLE: the single strongest statement of what this partner delivers — their marketing voice, adapted for the Beringia partnership. DIMENSIONS: 4–10 words; one line reads best. TIP: sentence case is fine — it renders in caps. If blank, the hero falls back to the logo (or the partner name) alone.',
+      validation: (Rule) => Rule.max(140),
+    }),
+    defineField({
+      name: 'heroSubtitle',
+      title: 'Hero subtitle',
+      type: 'text',
+      rows: 3,
+      group: 'overview',
+      description:
+        'WHERE: the supporting sentence directly under the hero headline. ROLE: one or two sentences expanding on the headline — the "why it matters". DIMENSIONS: 1–2 sentences, max ~280 characters. TIP: this sits above the longer Overview paragraph; keep it punchy and distinct from it.',
+      validation: (Rule) => Rule.max(280),
+    }),
+    defineField({
       name: 'headerImage',
       title: 'Header image',
       type: 'image',
       group: 'overview',
-      description: 'The large hero image at the top of the partner page. Landscape works best (roughly 16:9 or 3:2).',
+      description: 'The large hero image at the top of the partner page. Landscape works best (roughly 16:9 or 3:2). Without it, the hero/overview section does not render.',
       options: { hotspot: true },
       fields: [
         defineField({

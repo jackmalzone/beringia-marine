@@ -113,6 +113,9 @@ export function adaptPartner(partner: SanityPartner): PartnerJson {
       description: partner.seo?.description || partner.tagline || partner.overview?.description || '',
       ogImage: ogUrl,
     },
+    ...(partner.heroEyebrow ? { heroEyebrow: partner.heroEyebrow } : {}),
+    ...(partner.heroHeadline ? { heroHeadline: partner.heroHeadline } : {}),
+    ...(partner.heroSubtitle ? { heroSubtitle: partner.heroSubtitle } : {}),
     overview: {
       title: partner.overview?.title || partner.name,
       description: partner.overview?.description || '',

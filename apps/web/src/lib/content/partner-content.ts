@@ -9,7 +9,13 @@ import advancedNavigation from './partners/advanced-navigation.json';
 import independentRobotics from './partners/independent-robotics.json';
 import type { Solution, SolutionDocument, SolutionMedia } from './solution-types';
 
-export type PartnerJson = typeof missionRobotics | typeof anchorBot | typeof advancedNavigation;
+// Optional hero fields are added additively (managed in Sanity Studio, surfaced via the
+// Sanity adapter). They are not present in the verbatim static JSON, hence optional.
+export type PartnerJson = (typeof missionRobotics | typeof anchorBot | typeof advancedNavigation) & {
+  heroEyebrow?: string;
+  heroHeadline?: string;
+  heroSubtitle?: string;
+};
 
 // Independent Robotics is a consulting / market-representation partnership. Its JSON omits
 // media assets (logo/hero are managed in Sanity Studio), so it is cast to the verbatim

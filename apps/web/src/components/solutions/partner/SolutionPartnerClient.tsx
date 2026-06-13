@@ -168,6 +168,9 @@ export function SolutionPartnerClient({ partner }: { partner: PartnerJson }) {
               logo={logoSrc}
               logoWhite={logoWhite}
               website={mediaLinks?.website}
+              heroEyebrow={partner.heroEyebrow}
+              heroHeadline={partner.heroHeadline}
+              heroSubtitle={partner.heroSubtitle}
             />
           ) : null}
         </div>

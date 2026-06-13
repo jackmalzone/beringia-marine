@@ -80,6 +80,9 @@ export interface SanityPartner {
   name: string;
   slug: { current: string };
   tagline?: string;
+  heroEyebrow?: string;
+  heroHeadline?: string;
+  heroSubtitle?: string;
   headerImage?: SanityImageWithAlt;
   logo?: SanityImageWithAlt;
   logoTreatment?: 'default' | 'white';

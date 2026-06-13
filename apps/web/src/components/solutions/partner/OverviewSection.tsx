@@ -11,9 +11,25 @@ export interface OverviewSectionProps {
   /** Render the logo as a white silhouette (for dark/coloured logos on the dark header). */
   logoWhite?: boolean;
   website?: string | null;
+  /** Optional hero copy rendered over the header image (small uppercase line above the headline). */
+  heroEyebrow?: string | null;
+  /** Optional hero headline (H1) over the header image. */
+  heroHeadline?: string | null;
+  /** Optional supporting sentence beneath the hero headline. */
+  heroSubtitle?: string | null;
 }
 
-export function OverviewSection({ title, description, headerImage, logo, logoWhite, website }: OverviewSectionProps) {
+export function OverviewSection({
+  title,
+  description,
+  headerImage,
+  logo,
+  logoWhite,
+  website,
+  heroEyebrow,
+  heroHeadline,
+  heroSubtitle,
+}: OverviewSectionProps) {
   const logoClass = logoWhite ? `${styles.logo} ${styles.logoWhite}` : styles.logo;
   return (
     <div className={styles.wrapper}>
@@ -48,10 +64,15 @@ export function OverviewSection({ title, description, headerImage, logo, logoWhi
                 />
               )}
             </div>
-          ) : (
+          ) : null}
+          {heroEyebrow ? <p className={styles.eyebrow}>{heroEyebrow}</p> : null}
+          {heroHeadline ? (
+            <h1 className={styles.headline}>{heroHeadline}</h1>
+          ) : !logo ? (
             <h1 className={styles.title}>{title}</h1>
-          )}
-          <p className={styles.description}>{description}</p>
+          ) : null}
+          {heroSubtitle ? <p className={styles.subtitle}>{heroSubtitle}</p> : null}
+          {description ? <p className={styles.description}>{description}</p> : null}
         </div>
       </section>
     </div>

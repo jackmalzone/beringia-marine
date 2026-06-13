@@ -70,8 +70,12 @@ Robotics**, then Publish:
       **Logo color treatment is left on "Use uploaded colours" (default); do NOT Force white**
       (that's only for dark/coloured marks). A copy also lives at
       `~/Downloads/independent-robotics-logo.png`.
-- [ ] **Header image** — landscape hero (≥1600×900). Source from Independent Robotics (e.g.
-      an Aqua2 deployment shot).
+- [x] **Header image** — DONE. The hero uses IR's own homepage `operator.png` composition (a
+      military operator at a command-and-control station; 1536×1024, dark/moody — reads well on
+      the dark hero). Sanity asset:
+      `image-f1635284834a1c7eff7a93fe2dbb297e65acca25-1536x1024-png`. A copy is at
+      `~/Downloads/independent-robotics-operator.png`. Swap in a higher-res or first-party
+      deployment shot in Studio if preferred.
 - [ ] **Documents / brochures** — upload as PDFs and attach via the partner **Documents** field
       or per-selling-point **Documentation** links (see list below).
 - [ ] **LinkedIn / YouTube** — add under **Connect-with-us links** if desired (website is set).
@@ -92,6 +96,22 @@ Brochures subfolder: **`1EAF4QEIBsIDd-L4X7Xn47JsEfN4Y40r1`**
 
 Brochures are marketing PDFs and belong in Sanity as uploadable assets — they are intentionally
 **not** committed to the repo.
+
+## Hero section
+
+The hero (the `OverviewSection` over the header image) is populated from three additive Partner
+fields plus the existing logo / header image / overview description:
+
+- **Hero eyebrow:** "Trusted AI for critical missions" (IR's homepage H2; renders small + uppercase)
+- **Hero headline (H1):** "Accelerating mission advantage through intelligent autonomy" (IR's H1)
+- **Hero subtitle:** "Transparency, controllability, and layered safety controls are built into the
+  autonomy stack so AI strengthens human judgment under pressure." (IR's homepage body)
+- Logo (white mark) and the longer company Overview paragraph render beneath.
+
+`heroEyebrow` / `heroHeadline` / `heroSubtitle` were **added to the Partner schema** (Overview
+tab) in this change — they are optional, so existing partners are unaffected and render exactly
+as before. Edit them per-partner in Studio. Source copy is IR's own homepage hero, adapted for
+the Beringia partnership framing.
 
 ## Where the brochure content lives on the page
 
