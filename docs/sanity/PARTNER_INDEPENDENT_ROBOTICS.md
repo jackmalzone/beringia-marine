@@ -63,9 +63,13 @@ The page currently renders with **no logo and no hero image** (the index card fa
 the Beringia mark). Add the following via Studio → **Partners / Solutions → Independent
 Robotics**, then Publish:
 
-- [ ] **Logo** — candidate `Untitled.png` in the Drive brochures folder (verify it's the
-      Independent Robotics mark before using — it may not be theirs). If it's a dark/coloured
-      wordmark, set **Logo color treatment → Force white** so it reads on the dark header.
+- [x] **Logo** — DONE. Set on the doc from the official horizontal mono mark
+      (`ir_logo_horizontal_mono_high_res`, 2500×521 PNG, transparent).
+      Sanity asset: `image-d83054b5f3abfcb71c639f7e19b40d30839750e7-2500x521-png`.
+      It is a **white** monochrome logo, so it reads correctly on the dark navy hero as-is —
+      **Logo color treatment is left on "Use uploaded colours" (default); do NOT Force white**
+      (that's only for dark/coloured marks). A copy also lives at
+      `~/Downloads/independent-robotics-logo.png`.
 - [ ] **Header image** — landscape hero (≥1600×900). Source from Independent Robotics (e.g.
       an Aqua2 deployment shot).
 - [ ] **Documents / brochures** — upload as PDFs and attach via the partner **Documents** field
