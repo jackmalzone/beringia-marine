@@ -365,10 +365,17 @@ export const partner = defineType({
               ],
               validation: (Rule) => Rule.required(),
             }),
+            defineField({
+              name: 'group',
+              title: 'Group / section',
+              type: 'string',
+              description:
+                'WHERE: groups the gallery into labelled sub-sections (a small heading above a cluster of thumbnails). ROLE: keeps related shots together, e.g. one product line, the sensor accessories, or operations photos. DIMENSIONS: 1–3 words; reuse the EXACT same label across images that belong together (it is matched verbatim). SUBJECT: e.g. "Aqua2", "Sensors & payloads", "IMPAC", "Insight Engine". TIP: leave blank to drop the image into a default ungrouped run.',
+            }),
           ],
           preview: {
-            select: { media: 'image', title: 'image.alt' },
-            prepare: ({ media, title }) => ({ media, title: title || 'Image' }),
+            select: { media: 'image', title: 'image.alt', subtitle: 'group' },
+            prepare: ({ media, title, subtitle }) => ({ media, title: title || 'Image', subtitle }),
           },
         }),
         defineArrayMember({

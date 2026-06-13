@@ -33,6 +33,7 @@ type LoosePartner = {
     alt?: string;
     bundledAsset?: string;
     modelId?: string;
+    group?: string;
   }>;
   mediaLinks?: {
     website?: string;
@@ -121,6 +122,7 @@ export async function buildPartnerDocument(partner: PartnerJson) {
             _type: 'gallerySketchfab' as const,
             modelId: item.modelId,
             alt: item.alt || '',
+            ...(item.group ? { group: item.group } : {}),
           };
         }
         const asset = await uploadOptionalImage(item.bundledAsset);
@@ -129,6 +131,7 @@ export async function buildPartnerDocument(partner: PartnerJson) {
           _key: item.id || `image-${idx}`,
           _type: 'galleryImage' as const,
           image: imageRef(asset._id, item.alt || ''),
+          ...(item.group ? { group: item.group } : {}),
         };
       })
     )

@@ -162,12 +162,19 @@ export function adaptPartner(partner: SanityPartner): PartnerJson {
     demo: partner.demo,
     gallery: (partner.gallery || []).map((item, idx) =>
       item._type === 'gallerySketchfab'
-        ? { id: item._key || `model-${idx}`, type: 'sketchfab', modelId: item.modelId, alt: item.alt || '' }
+        ? {
+            id: item._key || `model-${idx}`,
+            type: 'sketchfab',
+            modelId: item.modelId,
+            alt: item.alt || '',
+            ...(item.group ? { group: item.group } : {}),
+          }
         : {
             id: item._key || `image-${idx}`,
             type: 'image',
             bundledAsset: resolveImageUrl(item.image, 1600) || '',
             alt: item.image?.alt || '',
+            ...(item.group ? { group: item.group } : {}),
           }
     ),
     documentation: partner.documents,

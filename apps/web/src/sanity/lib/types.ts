@@ -70,8 +70,8 @@ export interface SanityPartnerUseCase {
 }
 
 export type SanityGalleryItem =
-  | { _key: string; _type: 'galleryImage'; image: SanityImageWithAlt }
-  | { _key: string; _type: 'gallerySketchfab'; modelId: string; alt?: string };
+  | { _key: string; _type: 'galleryImage'; image: SanityImageWithAlt; group?: string }
+  | { _key: string; _type: 'gallerySketchfab'; modelId: string; alt?: string; group?: string };
 
 export interface SanityPartner {
   _id: string;

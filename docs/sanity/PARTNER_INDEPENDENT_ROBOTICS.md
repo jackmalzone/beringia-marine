@@ -113,6 +113,34 @@ tab) in this change — they are optional, so existing partners are unaffected a
 as before. Edit them per-partner in Studio. Source copy is IR's own homepage hero, adapted for
 the Beringia partnership framing.
 
+## Gallery
+
+The page gallery is populated with **14 images sourced from independentrobotics.com** (home,
+/hardware, /impac, /insight-engine), uploaded to the production Sanity dataset and grouped into
+labelled scroll strips. Staging copies live in `~/Downloads/independent-robotics-gallery/`.
+
+A `group` field was **added additively to the gallery image schema** (Media tab → Gallery item →
+"Group / section", with WHERE/ROLE/DIMENSIONS/SUBJECT guidance). Images sharing the exact same
+`group` label render together under a small sub-heading; the `MediaGallerySection` falls back to a
+single flat grid when no item has a group, so other partners are unaffected. To regroup, edit the
+`group` label per image in Studio.
+
+Groups and order:
+
+- **Aqua2** (5): deployed-in-water hero, aerial drone shot, close-up detail, field-deployment
+  action, underside-with-DVL.
+- **Sensors & payloads** (3): IR SNS100 Duo dual-GNSS, Sonoptix Echo sonar, Water Linked DVL A50
+  (transparent product cutouts — kept as PNG with alpha).
+- **IMPAC** (3): mission-console UI screenshot, real-world field ops, abstract visual.
+- **Insight Engine** (3): field-ops photo, abstract visual, field-operator shot.
+
+The Unsplash stock photo on IR's site was intentionally skipped (not IR-owned), and the
+operator-at-console shot is used as the page **hero** rather than repeated in the gallery.
+
+Source images are WebP from Squarespace's CDN; they were converted to true JPEG/PNG (alpha
+preserved on the sensor cutouts) before upload. The gallery is mirrored into the static
+`independent-robotics.json` (as Sanity CDN URLs) so a re-seed is non-destructive.
+
 ## Where the brochure content lives on the page
 
 The product copy from these brochures is already authored into the **Core Technology** cards

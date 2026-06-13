@@ -67,7 +67,7 @@ const partnerProjection = groq`
   demo,
   gallery[] {
     _key, _type,
-    modelId, alt,
+    modelId, alt, group,
     image { ..., asset->{ _id, url } }
   },
   documents,

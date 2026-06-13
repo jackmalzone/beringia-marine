@@ -6,8 +6,8 @@ import { sketchfabEmbedUrl } from '@/lib/media/sketchfab';
 import styles from './MediaGallerySection.module.css';
 
 export type GalleryRenderable =
-  | { id: string; type: 'image'; url: string; alt: string }
-  | { id: string; type: 'sketchfab'; modelId: string; alt: string };
+  | { id: string; type: 'image'; url: string; alt: string; group?: string }
+  | { id: string; type: 'sketchfab'; modelId: string; alt: string; group?: string };
 
 export function MediaGallerySection({ items }: { items: GalleryRenderable[] }) {
   const imageItems = items.filter((i) => i.type === 'image');
@@ -42,48 +42,70 @@ export function MediaGallerySection({ items }: { items: GalleryRenderable[] }) {
 
   if (!items.length) return null;
 
+  const renderItem = (item: GalleryRenderable) => {
+    if (item.type === 'image') {
+      const imgIdx = imageItems.findIndex((x) => x.id === item.id);
+      return (
+        <button
+          key={item.id}
+          type="button"
+          className={styles.thumb}
+          onClick={() => openAt(imgIdx >= 0 ? imgIdx : 0)}
+        >
+          <Image
+            src={item.url}
+            alt={item.alt}
+            width={400}
+            height={200}
+            className={styles.thumbImg}
+            unoptimized={item.url.endsWith('.webp')}
+          />
+          {item.alt ? <div className={styles.caption}>{item.alt}</div> : null}
+        </button>
+      );
+    }
+    return (
+      <div key={item.id} className={styles.thumb}>
+        <iframe
+          title={item.alt}
+          className={styles.thumbEmbed}
+          src={sketchfabEmbedUrl(item.modelId)}
+          allow="fullscreen; xr-spatial-tracking"
+          allowFullScreen
+          loading="lazy"
+        />
+        {item.alt ? <div className={styles.caption}>{item.alt}</div> : null}
+      </div>
+    );
+  };
+
+  // Group items by their `group` label, preserving first-appearance order. When no item has a
+  // group, this collapses to a single unlabelled section (identical to the original flat grid).
+  const sections: Array<{ key: string; label: string | null; items: GalleryRenderable[] }> = [];
+  if (items.some((i) => i.group)) {
+    const byGroup = new Map<string, GalleryRenderable[]>();
+    for (const item of items) {
+      const key = item.group || '';
+      if (!byGroup.has(key)) byGroup.set(key, []);
+      byGroup.get(key)!.push(item);
+    }
+    for (const [key, groupItems] of byGroup) {
+      sections.push({ key: key || '__ungrouped', label: key || null, items: groupItems });
+    }
+  } else {
+    sections.push({ key: '__all', label: null, items });
+  }
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.title}>Gallery</h2>
-        <div className={styles.grid}>
-          {items.map((item, idx) => {
-            if (item.type === 'image') {
-              const imgIdx = imageItems.findIndex((x) => x.id === item.id);
-              return (
-                <button
-                  key={item.id}
-                  type="button"
-                  className={styles.thumb}
-                  onClick={() => openAt(imgIdx >= 0 ? imgIdx : 0)}
-                >
-                  <Image
-                    src={item.url}
-                    alt={item.alt}
-                    width={400}
-                    height={200}
-                    className={styles.thumbImg}
-                    unoptimized={item.url.endsWith('.webp')}
-                  />
-                  {item.alt ? <div className={styles.caption}>{item.alt}</div> : null}
-                </button>
-              );
-            }
-            return (
-              <div key={item.id} className={styles.thumb}>
-                <iframe
-                  title={item.alt}
-                  className={styles.thumbEmbed}
-                  src={sketchfabEmbedUrl(item.modelId)}
-                  allow="fullscreen; xr-spatial-tracking"
-                  allowFullScreen
-                  loading="lazy"
-                />
-                {item.alt ? <div className={styles.caption}>{item.alt}</div> : null}
-              </div>
-            );
-          })}
-        </div>
+        {sections.map((section) => (
+          <div key={section.key} className={styles.group}>
+            {section.label ? <h3 className={styles.groupTitle}>{section.label}</h3> : null}
+            <div className={styles.grid}>{section.items.map(renderItem)}</div>
+          </div>
+        ))}
       </div>
 
       {open && imageItems[index] ? (

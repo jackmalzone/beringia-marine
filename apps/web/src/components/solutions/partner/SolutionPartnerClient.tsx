@@ -54,10 +54,11 @@ function buildGalleryItems(partner: PartnerJson): GalleryRenderable[] {
   const gallery = 'gallery' in partner && Array.isArray(partner.gallery) ? partner.gallery : [];
   const out: GalleryRenderable[] = [];
   for (const item of gallery) {
+    const group = (item as { group?: string }).group;
     if (item.type === 'image' && 'bundledAsset' in item) {
       const url = resolveAssetUrl(item.bundledAsset as string);
       if (url) {
-        out.push({ id: item.id, type: 'image', url, alt: item.alt || '' });
+        out.push({ id: item.id, type: 'image', url, alt: item.alt || '', ...(group ? { group } : {}) });
       }
     }
     if (item.type === 'sketchfab' && item.modelId && isValidSketchfabModelId(item.modelId)) {
@@ -66,6 +67,7 @@ function buildGalleryItems(partner: PartnerJson): GalleryRenderable[] {
         type: 'sketchfab',
         modelId: item.modelId.trim(),
         alt: item.alt || '',
+        ...(group ? { group } : {}),
       });
     }
   }

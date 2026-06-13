@@ -194,5 +194,21 @@
   "mediaLinks": {
     "website": "https://www.independentrobotics.com",
     "email": "info@independentrobotics.com"
-  }
+  },
+  "gallery": [
+    { "id": "aqua2-deployed", "type": "image", "group": "Aqua2", "alt": "Aqua2 autonomous underwater vehicle deployed in open water", "bundledAsset": "https://cdn.sanity.io/images/l183gjut/production/fb64d8b93cb661b97ed8d9a7d9b4747a2471d766-2500x1406.jpg" },
+    { "id": "aqua2-drone", "type": "image", "group": "Aqua2", "alt": "Aerial drone view of the Aqua2 vehicle on the surface", "bundledAsset": "https://cdn.sanity.io/images/l183gjut/production/848581cf4762e421f3654570a9f2bae35c2473af-1500x846.jpg" },
+    { "id": "aqua2-detail", "type": "image", "group": "Aqua2", "alt": "Close-up detail of the Aqua2 underwater vehicle", "bundledAsset": "https://cdn.sanity.io/images/l183gjut/production/084af772c877362e9e5aa4ee62b4856c3e9d75c9-1500x1129.jpg" },
+    { "id": "aqua2-action", "type": "image", "group": "Aqua2", "alt": "Aqua2 operating during a field deployment", "bundledAsset": "https://cdn.sanity.io/images/l183gjut/production/08c7c3d2e22f940265d0b1a4ad5db876db7bd886-1500x844.jpg" },
+    { "id": "aqua2-dvl", "type": "image", "group": "Aqua2", "alt": "Underside of the Aqua2 fitted with a Doppler velocity log (DVL) sensor", "bundledAsset": "https://cdn.sanity.io/images/l183gjut/production/b8e0eee2cc76c0f198d38efc366a3baef441d497-1500x846.jpg" },
+    { "id": "sensor-sns100", "type": "image", "group": "Sensors & payloads", "alt": "IR SNS100 Duo dual-GNSS sensor", "bundledAsset": "https://cdn.sanity.io/images/l183gjut/production/f99c153a185f31555cd81873aa5d4751e898670b-1827x1356.png" },
+    { "id": "sensor-echo", "type": "image", "group": "Sensors & payloads", "alt": "Sonoptix Echo forward-looking sonar", "bundledAsset": "https://cdn.sanity.io/images/l183gjut/production/fa9cb2f99a053c5475d034b70c2649c5b932a8ed-1744x1375.png" },
+    { "id": "sensor-dvl-a50", "type": "image", "group": "Sensors & payloads", "alt": "Water Linked DVL A50 Doppler velocity log", "bundledAsset": "https://cdn.sanity.io/images/l183gjut/production/c34a63b2ba4742624799ef9342ec0c35a90412f6-1630x899.png" },
+    { "id": "impac-console", "type": "image", "group": "IMPAC", "alt": "IMPAC mission console — natural-language tasking interface", "bundledAsset": "https://cdn.sanity.io/images/l183gjut/production/c7b2f989004e391ba6caf91252c3b00b0794934e-1916x955.png" },
+    { "id": "impac-field", "type": "image", "group": "IMPAC", "alt": "IMPAC in real-world field operations", "bundledAsset": "https://cdn.sanity.io/images/l183gjut/production/681089a5d0eda3cdf882857eb9f2dc27c10a684f-2500x1406.jpg" },
+    { "id": "impac-abstract", "type": "image", "group": "IMPAC", "alt": "IMPAC platform — abstract visual", "bundledAsset": "https://cdn.sanity.io/images/l183gjut/production/65786f70d27c0f11d5c3f4fee3436e0da778f377-1536x1024.png" },
+    { "id": "ie-field", "type": "image", "group": "Insight Engine", "alt": "Insight Engine analytics in real-world field operations", "bundledAsset": "https://cdn.sanity.io/images/l183gjut/production/7b1c3edf4b70bb2c7c6de230a91609c9554cb23c-2500x512.jpg" },
+    { "id": "ie-abstract", "type": "image", "group": "Insight Engine", "alt": "Insight Engine — abstract visual", "bundledAsset": "https://cdn.sanity.io/images/l183gjut/production/db6b74965c2e1dc20ce99525dc0de44fd7265168-1536x1024.png" },
+    { "id": "field-operator", "type": "image", "group": "Insight Engine", "alt": "Field operator in the loop with autonomous systems", "bundledAsset": "https://cdn.sanity.io/images/l183gjut/production/443d63b47be9de50b9a971f188b3082f5de92e6d-1536x1024.png" }
+  ]
 }
