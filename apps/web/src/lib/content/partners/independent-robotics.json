@@ -1,5 +1,5 @@
 {
-  "sourceFile": "Independent Robotics — IR Product Overview May 8 2026.pdf",
+  "sourceFile": "Independent Robotics brochures: IR Product Overview May 8 2026.pdf, Insight Engine Brochure, IMPAC Flyer, AQ3-LH Loggerhead datasheet",
   "id": "independent-robotics",
   "name": "Independent Robotics",
   "slug": "independent-robotics",
@@ -9,20 +9,30 @@
   },
   "overview": {
     "title": "Independent Robotics",
-    "description": "Independent Robotics is a Montreal-based robotics and AI company whose mission is to make robots useful in the real world. A 7–10 person team drawing from Samsung, Google, Clearpath, Locus Robotics, and Adept MobileRobots — and a NATO DIANA Tech Competition winner — they build natural-language mission planning (IMPAC), AI-powered robotic-data analytics (Insight Engine), and intelligent autonomous underwater vehicles (Aqua2 and its successor, the AQ3-LH \"Loggerhead\"). Beringia Marine serves as their primary US market representative, technical advisor, and US Prime contractor / integration partner for US government programs."
+    "description": "Independent Robotics is a Montreal-based robotics and AI company whose mission is to make robots useful in the real world. A 7–10 person team drawing from Samsung, Google, Clearpath, Locus Robotics, and Adept MobileRobots — and a NATO DIANA Tech Competition winner — they build natural-language mission planning (IMPAC), AI-powered robotic-data analytics (Insight Engine), and intelligent autonomous underwater vehicles (Aqua2 and its successor, the AQ3-LH \"Loggerhead\"). Proudly made in Canada. Beringia Marine serves as their primary US market representative, technical advisor, and US Prime contractor / integration partner for US government programs."
   },
   "sellingPoints": {
     "title": "Core Technology",
     "points": [
       {
         "id": "impac",
-        "title": "IMPAC — Semantic Mission Planning with Natural Language",
-        "description": "Speak to robots in plain language to tell them what to do. IMPAC provides semantic mission planning and monitoring as a common interface for any autonomous system — a force multiplier that speeds deployment with low operator overhead.",
+        "title": "IMPAC — Robotic Automation Platform",
+        "description": "A no-code solution that directly converts natural-language instructions into execution-ready state-machine DSL. Mission impact from launch to debrief — IMPAC increases operational tempo, tightens decision loops, and gives teams confidence that autonomous assets remain aligned with mission intent: in the field, on the factory floor, in the air, and underwater.",
+        "link": "https://www.independentrobotics.com/impac",
         "features": [
-          "Plan and monitor missions in plain natural language",
-          "Common interface for any autonomous system",
+          "Speak to robots in plain language — no-code natural-language instructions",
+          "Converts instructions into robust, validated state machines, visualized as human-intelligible steps — no more raw code review",
+          "Generation — Platform-Aware Automation: execution-ready state machines that leverage your platform's hardware and software without hitting constraints and limitations",
+          "Execution — IMPAC Execution Engine: run the generated DSL directly on local hardware; compatible with all common compute platforms",
+          "Awareness — Real-Time System Awareness: operators, supervisors, and analysts share one mission dashboard with instant visibility into task status and system health",
+          "Scale — one autonomy stack across heterogeneous field robots, indoor, or IoT automation and mission profiles",
+          "Integrate — Flexible Integration Layer: connect custom hardware, specialized sensors, and third-party AI modules without rebuilding core systems",
+          "Deploy — Cloud or On-Prem: deployment models aligned to your security posture, compliance requirements, and operational constraints",
           "Integrates with NATO Command and Control standards",
-          "Force multiplier: faster deployment, conditional planning, low operator overhead",
+          "Built for Complex Coordination — heterogeneous hardware platforms, robotic fleets, IoT/sensing clusters",
+          "Built for Defense & ISR — air, land, and sea missions with on-prem / off-grid deployment",
+          "Built for Inspection & Survey — roadway, runway, and infrastructure at fleet scale",
+          "Built for Custom Solutions — rapid onboarding of custom hardware and sensors",
           "Example: \"Send all drones above 60% battery to patrol the perimeter, the rest should come home and recharge\"",
           "Demonstrated controlling a Jackal UGV with natural language"
         ]
@@ -30,15 +40,23 @@
       {
         "id": "insight-engine",
         "title": "Insight Engine — AI Analytics for Robotic Data",
-        "description": "A SaaS cloud platform: upload data, configure analysis pipelines, and view results. A proprietary AI algorithm identifies related objects with little or no training, and works with any robotic data feed — aerial, underwater, or ground. NATO DIANA Tech Competition winner.",
+        "description": "Unlock actionable intelligence from your robots' data. A modular, robotics-first analytics suite to tackle your most difficult real-world challenges and largest datasets. NATO DIANA Tech Competition winner.",
         "features": [
-          "Upload data, configure pipelines, view results in the cloud",
-          "Proprietary AI identifies related objects with little or no training",
-          "Works with any robotic data feed: aerial, underwater, ground",
-          "Outputs: PDF, CSV, API, dashboards & alerts",
-          "Reports: object identification + location, damage assessments, heat maps, industry-standard formats",
+          "Increase analyst efficiency",
+          "Condense large datasets",
+          "Recall for long-term trends",
+          "Immediate notifications",
+          "Customizable to identify both known targets and anomalies across disparate data sources",
+          "Consistent, standard reports",
+          "Auditable historical records",
+          "Module — Summarization & Compression: automatically processes raw data with a user-selected toolset into digestible summaries (text, images, charts, heatmaps)",
+          "Module — Detection & Anomalies: detects known phenomena across many sensors (camera, sonar, temperature, …) from as little as a single example, then learns the patterns to identify outliers and anomalies",
+          "Module — Robot State & Location: understands the physical state of equipment, including location; augments other modules so detections become geolocated points of interest",
+          "Bespoke modules for unique problems, with deep AI and perception expertise; an off-the-shelf module library expanded regularly",
+          "Outputs: Email/SMS · Dashboard · API",
           "NATO DIANA Tech Competition Winner",
-          "Demonstrated FGVC accuracy gain from 17% to 77% baseline; 77–83% top-1 and 90%+ top-3 on military-vehicle subtypes"
+          "Demonstrated fine-grained visual classification gains: 17% → 77% baseline accuracy, with 77–83% top-1 and 90%+ top-3 on military-vehicle subtypes",
+          "Proudly made in Canada"
         ]
       },
       {
@@ -58,13 +76,39 @@
       {
         "id": "aq3-lh-loggerhead",
         "title": "AQ3-LH (Project Loggerhead) — Next-Generation Aqua2",
-        "description": "The successor to Aqua2, developed with Canada's Ocean Supercluster: improved depth rating, maneuverability, and payload at reduced cost with streamlined deployment. Built for arctic operation. Ready for pilots now; general release scheduled 2027.",
+        "description": "The next generation of agile underwater autonomy and successor to the Aqua2 AUV. Designed with both rapid deployment and continuous deployment in mind, AQ3-LH can be your first responder and your round-the-clock eyes beneath the waves — ready when you are. Developed with Canada's Ocean Supercluster. Coming 2026.",
         "features": [
-          "Developed with Canada's Ocean Supercluster",
-          "Improved depth-rating, maneuverability, and payload",
-          "Reduced cost and streamlined deployment",
-          "Built for arctic deployment",
-          "Ready for pilots now; general release scheduled 2027"
+          "Fully autonomous missions with tooling",
+          "Integration with advanced AI analytics",
+          "Rapid, single-person deployment",
+          "Edge compute powered by Nvidia Jetson",
+          "Modular plug-and-play sensor kit",
+          "Unique locomotion and acoustic signature",
+          "Resilient to silting out and tangling in flora",
+          "Highly efficient thrust vectoring",
+          "Continuous deployment (with dock)",
+          "Easy travel within airline guidelines",
+          "ROS2 API with a growing ecosystem",
+          "Application: autonomous inspection and survey",
+          "Application: rapid incident response",
+          "Application: security and policy enforcement",
+          "Application: robotics and marine-ecology research",
+          "Spec — Dimensions: 500 × 350 × 350 mm",
+          "Spec — Max depth: 300 m",
+          "Spec — Weight: 18 kg dry, 1 kg wet (buoyancy)",
+          "Spec — Materials: aluminum, Delrin, acrylic",
+          "Spec — Edge compute: Nvidia Jetson Orin NX",
+          "Spec — Dev environment: Ubuntu 24.04 Linux",
+          "Spec — Battery: 2 × 250 Wh lithium (standard), 2 × 120 Wh NiMH (travel)",
+          "Spec — Maneuverability: 6 DOF",
+          "Spec — Max speed: 3 kn (1.5 m/s)",
+          "Spec — Endurance: 8 hours (6+ km)",
+          "Spec — Primary camera: 4K (4,112 × 2,176), 30 fps @ 4K / 60 fps @ FHD, low-light optimized",
+          "Spec — Interface: up to 8 Ethernet + 8 serial (configurable), optical tether, lighting",
+          "Spec — Integrated sensors: IMU, depth, environmental/health",
+          "Spec — Modular payloads: MarineSitu C3 stereo camera, Deepwater Exploration exploreHD, Sonoptix Echo forward-looking sonar, Water Linked DVL A50/A125, IR SNS100 Duo dual-GNSS, Advanced Navigation Subsonus USBL/modem, YSI EXO water-quality sonde, subsea LED lighting, IR underwater HRI",
+          "Spec — Optional equipment: ruggedized command station, protective deployment standoff, deploy/recovery gear, surface buoy (acoustic link + USBL positioning), marine docking station (TBA)",
+          "Availability: AQ3-LH is coming 2026"
         ]
       }
     ]
@@ -80,7 +124,8 @@
         "keyPoints": [
           "NATO C2 alignment",
           "Naval and Coast Guard missions",
-          "Allied / coalition programs"
+          "Defense & ISR across air, land, and sea",
+          "On-prem / off-grid deployment"
         ]
       },
       {
@@ -90,6 +135,7 @@
         "keyPoints": [
           "High-fidelity 3D surveying",
           "Asset monitoring and inspection",
+          "Rapid incident response",
           "Commercial subsea operations"
         ]
       },
@@ -100,7 +146,7 @@
         "keyPoints": [
           "Harbor and port monitoring",
           "Naval-base force protection",
-          "Critical-infrastructure protection"
+          "Security and policy enforcement"
         ]
       },
       {
@@ -119,7 +165,8 @@
         "description": "AI analytics for any aerial, underwater, or ground robotic platform via the Insight Engine cloud.",
         "keyPoints": [
           "Aerial, underwater, and ground data",
-          "Little-or-no-training object identification",
+          "Single-example object identification",
+          "Summaries, detections, geolocated points of interest",
           "PDF, CSV, API, dashboards & alerts"
         ]
       }
@@ -140,6 +187,7 @@
     ]
   },
   "mediaLinks": {
-    "website": "https://www.independentrobotics.com"
+    "website": "https://www.independentrobotics.com",
+    "email": "info@independentrobotics.com"
   }
 }

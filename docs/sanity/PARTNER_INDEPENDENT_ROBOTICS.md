@@ -31,6 +31,16 @@ government programs.
 If a Leadership / Contacts section is added to the Partner schema later, move these onto the
 document. For now they live here as reference.
 
+### Company contact (from the brochures — schema only renders website + email)
+
+- **Website:** https://www.independentrobotics.com  ·  **IMPAC:** https://www.independentrobotics.com/impac
+- **Email:** info@independentrobotics.com  *(set on the doc → renders an "Email" button)*
+- **Phones:** +1 514-546-0752 (Montreal / CA) · +1 650-899-0752 (US)
+- **Address:** 4200 Boul. Saint-Laurent, Suite 1105, Montréal, Québec, Canada, H2W 2R2
+- **Tagline:** "Proudly made in Canada · Fièrement Canadien"
+
+The Partner `mediaLinks` field has no phone/address inputs, so those live here as reference.
+
 ## How this page was created
 
 Authored as static partner JSON (versioned in the repo, like the other partners) and pushed
@@ -78,3 +88,35 @@ Brochures subfolder: **`1EAF4QEIBsIDd-L4X7Xn47JsEfN4Y40r1`**
 
 Brochures are marketing PDFs and belong in Sanity as uploadable assets — they are intentionally
 **not** committed to the repo.
+
+## Where the brochure content lives on the page
+
+The product copy from these brochures is already authored into the **Core Technology** cards
+(each card expands to reveal its detail bullets):
+
+- **IMPAC** — no-code definition + "mission impact" value prop in the card description; the six
+  core capabilities (Generation, Execution, Awareness, Scale, Integrate, Deploy), the four
+  "Built for" use cases, the NATO C2 note, and the drone example as expand bullets. The card
+  title deep-links to `independentrobotics.com/impac`.
+- **Insight Engine** — "Unlock actionable intelligence…" tagline; the seven key features, the
+  three modules (Summarization & Compression / Detection & Anomalies / Robot State & Location),
+  output formats, the **NATO DIANA Tech Competition Winner** marker, and the FGVC accuracy
+  metrics as expand bullets.
+- **Aqua2** — intelligent-autonomy summary + key features (available for purchase now).
+- **AQ3-LH (Loggerhead)** — datasheet pitch + key features, applications, and the **full
+  technical spec block** (dimensions, depth, weight, compute, battery, speed, endurance,
+  camera, interfaces, modular payloads, optional equipment) as `Spec —` expand bullets.
+  Available 2026.
+
+**To add a "Specs" / "Manual" / "Evaluation" button to a card:** upload the relevant brochure
+PDF in Studio, then paste its asset URL into that selling point's **Documentation → Specs /
+Manual / Evaluation** field. (Left blank for now since the PDFs are not yet uploaded — the spec
+data itself is already on the AQ3-LH card as bullets.)
+
+### Note on schema vs. presentation
+
+The brochure detail is rendered through the existing `sellingPoint.features[]` accordion (the
+card's expandable bullet list) rather than a bespoke spec-table / capability-grid. A
+first-class spec-table or capabilities sub-grid would require additive schema fields **plus**
+new render markup in `SellingPointsSection.tsx`; it was deliberately deferred so all the
+content ships and renders today. Revisit if a richer spec presentation is wanted.
