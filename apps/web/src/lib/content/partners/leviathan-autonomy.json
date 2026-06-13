@@ -1,0 +1,111 @@
+{
+  "sourceFile": "consulting-agreement: Leviathan_Beringia_ConsultingAgreement_Rev010 (signed)",
+  "id": "leviathan-autonomy",
+  "name": "Leviathan Autonomy, Inc.",
+  "slug": "leviathan-autonomy",
+  "seo": {
+    "title": "Leviathan Autonomy | Beringia Marine",
+    "description": "Distributed passive acoustic monitoring (PAM) and sensor fusion for port, harbor, and naval-base security. Beringia Marine is Leviathan Autonomy's US market representative, technical advisor, and US Prime contractor / integration partner for US government programs."
+  },
+  "overview": {
+    "title": "Leviathan Autonomy",
+    "description": "Leviathan Autonomy is a pre-seed defense-technology company building a distributed passive acoustic monitoring (PAM) and sensor-fusion platform — the Insight Engine — for port, harbor, and naval-base security. A Delaware corporation with an operating subsidiary in Bergamo, Italy, Leviathan has signed Beringia Marine as its primary US market representative, strategic advisor, and US Prime contractor and integration partner for US government programs."
+  },
+  "sellingPoints": {
+    "title": "Core Technology",
+    "points": [
+      {
+        "id": "insight-engine",
+        "title": "Insight Engine — Distributed PAM & Sensor Fusion",
+        "description": "A distributed passive acoustic monitoring and sensor-fusion platform that detects, classifies, and tracks underwater and surface activity across a port, harbor, or naval base.",
+        "features": [
+          "Distributed passive acoustic monitoring (PAM) sensor network",
+          "Multi-sensor fusion across acoustic and complementary sensors",
+          "Real-time detection, classification, and tracking",
+          "Purpose-built for port, harbor, and naval-base security",
+          "Software platform with licensable analytics and data services"
+        ]
+      },
+      {
+        "id": "pam-hardware",
+        "title": "PAM Sensor Hardware",
+        "description": "Underwater passive-acoustic sensors deployed as a distributed array for persistent, wide-area monitoring of harbor and littoral environments.",
+        "features": [
+          "Distributed underwater acoustic sensors",
+          "Persistent, wide-area harbor coverage",
+          "Built for naval-base and critical-infrastructure protection"
+        ]
+      },
+      {
+        "id": "integration-services",
+        "title": "System Integration & Support",
+        "description": "Integration of the PAM array and software platform into operational maritime-security environments, with training, support, and maintenance.",
+        "features": [
+          "System architecture and integration planning",
+          "Sensor evaluation and system design",
+          "Training, support, and maintenance",
+          "Data services and analytics delivery"
+        ]
+      }
+    ]
+  },
+  "useCases": {
+    "title": "Target Markets",
+    "description": "Leviathan's platform is built for US and allied government maritime-security programs, brought to the US market by Beringia Marine.",
+    "cases": [
+      {
+        "id": "us-navy",
+        "title": "US Navy & Naval-Base Security",
+        "description": "Persistent passive acoustic monitoring for naval-base force protection and harbor security.",
+        "keyPoints": [
+          "Naval-base force protection",
+          "Harbor and littoral surveillance",
+          "Underwater threat detection"
+        ]
+      },
+      {
+        "id": "us-coast-guard",
+        "title": "US Coast Guard",
+        "description": "Maritime domain awareness and port-security monitoring for Coast Guard missions.",
+        "keyPoints": [
+          "Port security",
+          "Maritime domain awareness",
+          "Critical-infrastructure protection"
+        ]
+      },
+      {
+        "id": "port-authorities",
+        "title": "Port & Harbor Authorities",
+        "description": "Distributed monitoring for commercial and strategically significant ports and harbors.",
+        "keyPoints": [
+          "Commercial port security",
+          "Harbor monitoring",
+          "Infrastructure protection"
+        ]
+      },
+      {
+        "id": "allied-defense",
+        "title": "Allied Government Programs",
+        "description": "Maritime-security programs with US-allied defense partners.",
+        "keyPoints": [
+          "Allied naval programs",
+          "Coalition maritime security"
+        ]
+      }
+    ]
+  },
+  "valueProposition": {
+    "title": "Beringia's Role in the Partnership",
+    "description": "Under a consulting agreement signed in 2026, Beringia Marine serves as Leviathan Autonomy's primary US market representative and the US Prime contractor / integration partner for US government programs — a structure that enables ITAR-compliant access to US defense end-users and program offices.",
+    "highlights": [
+      "Primary US sales representative",
+      "Strategic advisor",
+      "US Prime contractor & integration partner for US government programs",
+      "Customer development with US defense end-users and program offices",
+      "Technical advisory: sensor evaluation, system architecture, integration planning",
+      "Proposal / RFI / RFP support",
+      "Identification of US technology partners, hardware suppliers, and research institutions",
+      "ITAR-compliant US program access via Beringia-held prime contracts"
+    ]
+  }
+}

@@ -6,11 +6,20 @@
 import missionRobotics from './partners/mission-robotics.json';
 import anchorBot from './partners/anchor-bot.json';
 import advancedNavigation from './partners/advanced-navigation.json';
+import leviathanAutonomy from './partners/leviathan-autonomy.json';
 import type { Solution, SolutionDocument, SolutionMedia } from './solution-types';
 
 export type PartnerJson = typeof missionRobotics | typeof anchorBot | typeof advancedNavigation;
 
-const PARTNERS: PartnerJson[] = [advancedNavigation, anchorBot, missionRobotics];
+// Leviathan Autonomy is a consulting / market-representation partnership (no media assets
+// yet — those are managed in Sanity Studio). Its JSON omits image fields, so it is cast to
+// the verbatim PartnerJson shape; consumers read its fields defensively (optional chaining).
+const PARTNERS: PartnerJson[] = [
+  advancedNavigation,
+  anchorBot,
+  missionRobotics,
+  leviathanAutonomy as unknown as PartnerJson,
+];
 
 /** Map legacy /images/clients → /assets/clients when present in verbatim */
 function normalizePublicPath(path: string): string {
